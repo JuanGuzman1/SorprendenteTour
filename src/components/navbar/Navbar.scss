@@ -1,0 +1,7 @@
+.navbar {
+  color: white;
+  background: linear-gradient(to top, transparent 0%, #04871A 50%);
+  &.scrolled {
+    background-color: var(--green-color);
+  }
+}
