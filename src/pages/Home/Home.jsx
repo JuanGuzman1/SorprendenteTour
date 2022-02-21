@@ -139,8 +139,8 @@ const Home = () => {
       </section>
       {/* contacto */}
       <section className="bg-[color:var(--green-color)] w-full">
-        <div className="flex flex-row w-full justify-between p-5">
-          <section className="flex flex-col m-2 w-1/2">
+        <div className="flex md:flex-row flex-col w-full md:justify-between items-center p-5">
+          <section className="flex flex-col m-2 md:w-1/2">
             <h1 className="text-white text-center text-[35px] font-bold">
               Sobre nosotros
             </h1>
@@ -154,7 +154,7 @@ const Home = () => {
               calidad, contribuyendo al cuidado del medio ambiente.
             </p>
           </section>
-          <section className="flex flex-col m-2 w-1/2">
+          <section className="flex flex-col m-2 md:w-1/2">
             <h1 className="text-white text-center text-[35px] font-bold">
               Contacto directo
             </h1>

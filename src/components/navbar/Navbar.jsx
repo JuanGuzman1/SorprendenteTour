@@ -63,27 +63,27 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                to="/about"
+                to="/nosotros"
                 class="text-white block py-2 pr-4 pl-3 border-b border-gray-100 hover:bg-cyan-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >
                 ¿Quienes somos?
               </Link>
             </li>
             <li>
-              <a
-                href="#"
+              <Link
+                to="/paquetes"
                 class="block py-2 pr-4 pl-3 text-white border-b border-gray-100 hover:bg-cyan-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >
                 Paquetes
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#"
+              <Link
+                to="/tours"
                 class="block py-2 pr-4 pl-3 text-white border-b border-gray-100 hover:bg-cyan-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >
                 Tours
-              </a>
+              </Link>
             </li>
             <li>
               <a
