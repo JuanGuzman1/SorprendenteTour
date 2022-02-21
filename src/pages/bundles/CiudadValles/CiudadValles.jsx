@@ -1,18 +1,18 @@
 import React, { useState } from "react";
-import "./Xilitla.scss";
+import "./CiudadValles.scss";
 import TourIcon from "@mui/icons-material/Tour";
 import Tours from "./Tours";
 
-const Xilitla = () => {
+const CiudadValles = () => {
   const [tour, setTour] = useState(1);
   return (
     <div>
       <div
-        className={`header-xilitla bg-cover bg-center rounded-br-3xl flex justify-center items-center`}
+        className={`header-valles bg-cover bg-center rounded-br-3xl flex justify-center items-center`}
       >
-        <h1 className="text-white font-bold text-[50px]">Xilitla</h1>
+        <h1 className="text-white font-bold text-[50px]">Ciudad Valles</h1>
       </div>
-
+      {/* tours */}
       <div className="flex md:flex-row flex-col">
         <aside class="w-64 m-5" aria-label="Sidebar">
           <div class="px-3 py-4 overflow-y-auto rounded bg-gray-50 dark:bg-gray-800">
@@ -108,14 +108,10 @@ const Xilitla = () => {
           Instrucciones
         </h1>
         <p className="text-white text-center text-[20px]">
-          PARA TOMAR EL PAQUETE, HAY QUE LLEGAR A XILITLA A LA HORA QUE PUEDA
-          PARA EL DIA SIGUIENTE TOMAR EL TOUR. EN CASO DE QUE LLEGUE ANTES DE
-          LAS 10 AM PODRIA TOMAR UN TOUR Y ASI ELEGIR OTRO TOUR ADICIONAL PARA
-          EL DIA SIGUIENTE, O EN CASO DE LLEGAR DESPUES DE LAS 11 AM DIA
-          PODRIAMOS AÑADIR UN TOURS DE COMO SON EN CUATRIMOTO O TIROLESAS O
-          RAPPEL EN CASCADA O CUEVA ESTO SERIA CON COSTO EXTRA Y OPCIONAL. NOTA:
-          SI REQUIERE TRASLADO DE AEROPUERTO DE S.L.P., QUERETARO, TAMPICO O
-          MEXICO A LA HUASTECA FAVOR DE SOLICITAR INFORMACION POR WHATSAPP{" "}
+          PARA TOMAR EL PAQUETE, HAY QUE LLEGAR A CIUDAD VALLES A LA HORA QUE
+          PUEDA PARA EL DIA SIGUIENTE TOMAR EL TOUR. NOTA: SI REQUIERE TRASLADO
+          DE AEROPUERTO DE S.L.P., QUERETARO, TAMPICO O MEXICO A LA HUASTECA
+          FAVOR DE SOLICITAR INFORMACION POR WHATSAPP{" "}
           <span className="text-[color:var(--blue-color)]">4441890212</span>{" "}
           PARA PROPORCIONARLE OPCIONES.
         </p>
@@ -133,7 +129,7 @@ const Xilitla = () => {
         </p>
       </section>
       {/* hoteles */}
-      <section className="hoteles-xilitla relative w-full bg-no-repeat bg-cover bg-fixed bg-center flex flex-col justify-around items-center">
+      <section className="hoteles-valles relative w-full bg-no-repeat bg-cover bg-fixed bg-center flex flex-col justify-around items-center">
         <div className="opacity-40 w-full h-full bg-black absolute" />
         <h1 className="text-white font-bold text-[40px] z-10">
           ¿Buscas Hospedaje?
@@ -146,4 +142,4 @@ const Xilitla = () => {
   );
 };
 
-export default Xilitla;
+export default CiudadValles;
