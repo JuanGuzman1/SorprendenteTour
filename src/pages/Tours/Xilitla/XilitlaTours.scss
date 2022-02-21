@@ -1,0 +1,37 @@
+.xilitla-tours {
+  .header-xilitla {
+    height: 400px;
+    background-image: url("../../../../public/assets/images/header/xilitla.jpeg");
+  }
+  .cards {
+    .zacahuil-card {
+      width: 400px;
+      background-image: url("../../../../public/assets/images/tours/zacahuil/zacahuil.jpeg");
+      height: 550px;
+    }
+
+    .bocoles-card {
+      width: 400px;
+      background-image: url("../../../../public/assets/images/tours/bocoles/bocoles.jpeg");
+      height: 550px;
+    }
+
+    .enchiladas-card {
+      width: 400px;
+      background-image: url("../../../../public/assets/images/tours/enchiladas/enchiladas.jpeg");
+      height: 550px;
+    }
+
+    .acamayas-card {
+      width: 400px;
+      background-image: url("../../../../public/assets/images/tours/acamayas/acamayas.jpeg");
+      height: 550px;
+    }
+
+    .mojarras-card {
+      width: 400px;
+      background-image: url("../../../../public/assets/images/tours/mojarras/mojarras.jpeg");
+      height: 550px;
+    }
+  }
+}
