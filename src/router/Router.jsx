@@ -11,6 +11,11 @@ import Bocoles from "../pages/Tours/Tours/Bocoles/Bocoles";
 import Enchiladas from "../pages/Tours/Tours/Enchiladas/Enchiladas";
 import Acamayas from "../pages/Tours/Tours/Acamayas/Acamayas";
 import Mojarras from "../pages/Tours/Tours/Mojarras/Mojarras";
+import Tours4X4 from "../pages/Tours4x4/Tours4X4";
+import Trinidad from "../pages/Tours4x4/Tours/Trinidad/Trinidad";
+import Surrealista from "../pages/Tours4x4/Tours/Surrealista/Surrealista";
+import Nacimiento from "../pages/Tours4x4/Tours/Nacimiento/Nacimiento";
+import Miradores from "../pages/Tours4x4/Tours/Miradores/Miradores";
 
 function Router() {
   return (
@@ -29,6 +34,12 @@ function Router() {
       <Route path="/tours/:place/enchiladas" element={<Enchiladas />} />
       <Route path="/tours/:place/acamayas" element={<Acamayas />} />
       <Route path="/tours/:place/mojarras" element={<Mojarras />} />
+      {/* tours 4x4 */}
+      <Route path="/tours4x4" element={<Tours4X4 />} />
+      <Route path="/tours4x4/trinidad" element={<Trinidad />} />
+      <Route path="/tours4x4/surrealista" element={<Surrealista />} />
+      <Route path="/tours4x4/nacimiento" element={<Nacimiento />} />
+      <Route path="/tours4x4/miradores" element={<Miradores />} />
     </Routes>
   );
 }

@@ -1,0 +1,34 @@
+.tours4x4 {
+  .header-tour4x4 {
+    height: 400px;
+    background-image: url("../../../public/assets/images/header/tours4x4.jpeg");
+  }
+
+  .cards-tours {
+    div {
+      .trinidad-card {
+        width: 500px;
+        height: 550px;
+        background-image: url("../../../public/assets/images/tours4x4/trinidad.jpeg");
+      }
+      .surrealista-card {
+        width: 500px;
+        height: 550px;
+        background-image: url("../../../public/assets/images/tours4x4/surrealista.jpeg");
+        background-position-x: center;
+      }
+      .nacimiento-card {
+        width: 500px;
+        height: 550px;
+        background-image: url("../../../public/assets/images/tours4x4/nacimiento.jpeg");
+        background-position-x: center;
+      }
+      .miradores-card {
+        width: 500px;
+        height: 550px;
+        background-image: url("../../../public/assets/images/tours4x4/mirador.jpeg");
+        background-position-x: center;
+      }
+    }
+  }
+}

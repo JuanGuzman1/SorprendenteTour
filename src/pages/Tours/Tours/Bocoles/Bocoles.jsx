@@ -1,7 +1,9 @@
 import React from "react";
 import "./Bocoles.scss";
+import { useParams } from "react-router-dom";
 
 const Bocoles = () => {
+  const { place } = useParams();
   return (
     <div className="bocoles">
       <div
@@ -237,16 +239,18 @@ const Bocoles = () => {
           </div>
         </div>
         {/* ruta */}
-        <section className="m-5">
-          <h1 className="text-[40px] text-[color:var(--green-color)] text-center text-bold">
-            Mapa de ruta
-          </h1>
-          <img
-            src="assets/images/tours/bocoles/ruta-xilitla.png"
-            alt=""
-            className="rounded-xl animate-pulse"
-          />
-        </section>
+        {place === "xilitla" && (
+          <section className="m-5">
+            <h1 className="text-[40px] text-[color:var(--green-color)] text-center text-bold">
+              Mapa de ruta
+            </h1>
+            <img
+              src="assets/images/tours/bocoles/ruta-xilitla.png"
+              alt=""
+              className="rounded-xl animate-pulse"
+            />
+          </section>
+        )}
       </div>
     </div>
   );

@@ -56,7 +56,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/"
-                className="block py-2 pr-4 pl-3 text-cyan-300  rounded md:bg-transparent  md:p-0 dark:text-white"
+                className="font-bold text-white block py-2 pr-4 pl-3 rounded md:bg-transparent  md:p-0 dark:text-white"
               >
                 Inicio
               </Link>
@@ -64,7 +64,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/nosotros"
-                class="text-white block py-2 pr-4 pl-3 border-b border-gray-100 hover:bg-cyan-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                class="font-bold text-white block py-2 pr-4 pl-3 border-b border-gray-100 hover:bg-cyan-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >
                 ¿Quienes somos?
               </Link>
@@ -72,7 +72,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/paquetes"
-                class="block py-2 pr-4 pl-3 text-white border-b border-gray-100 hover:bg-cyan-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                class="font-bold block py-2 pr-4 pl-3 text-white border-b border-gray-100 hover:bg-cyan-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >
                 Paquetes
               </Link>
@@ -80,23 +80,23 @@ const Navbar = () => {
             <li>
               <Link
                 to="/tours"
-                class="block py-2 pr-4 pl-3 text-white border-b border-gray-100 hover:bg-cyan-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                class="font-bold block py-2 pr-4 pl-3 text-white border-b border-gray-100 hover:bg-cyan-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >
                 Tours
               </Link>
             </li>
             <li>
-              <a
-                href="#"
-                class="block py-2 pr-4 pl-3 text-white border-b border-gray-100 hover:bg-cyan-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+              <Link
+                to="/tours4x4"
+                class="font-bold block py-2 pr-4 pl-3 text-red-500 animate-bounce border-b border-gray-100 hover:bg-cyan-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >
                 Tours Xilitla 4x4
-              </a>
+              </Link>
             </li>
             <li>
               <a
                 href="#"
-                class="block py-2 pr-4 pl-3 text-white border-b border-gray-100 hover:bg-cyan-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                class="font-bold block py-2 pr-4 pl-3 text-white border-b border-gray-100 hover:bg-cyan-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >
                 Galeria
               </a>
@@ -104,7 +104,7 @@ const Navbar = () => {
             <li>
               <a
                 href="#"
-                class="block py-2 pr-4 pl-3 text-white hover:bg-cyan-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                class="font-bold block py-2 pr-4 pl-3 text-white hover:bg-cyan-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
               >
                 Contacto
               </a>

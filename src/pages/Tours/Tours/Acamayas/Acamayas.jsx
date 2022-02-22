@@ -1,7 +1,9 @@
 import React from "react";
 import "./Acamayas.scss";
+import { useParams } from "react-router-dom";
 
 const Acamayas = () => {
+  const { place } = useParams();
   return (
     <div className="acamayas">
       <div
@@ -219,16 +221,18 @@ const Acamayas = () => {
           </div>
         </div>
         {/* ruta */}
-        <section className="m-5">
-          <h1 className="text-[40px] text-[color:var(--green-color)] text-center text-bold">
-            Mapa de ruta
-          </h1>
-          <img
-            src="assets/images/tours/acamayas/ruta-xilitla.png"
-            alt=""
-            className="rounded-xl animate-pulse"
-          />
-        </section>
+        {place === "xilitla" && (
+          <section className="m-5">
+            <h1 className="text-[40px] text-[color:var(--green-color)] text-center text-bold">
+              Mapa de ruta
+            </h1>
+            <img
+              src="assets/images/tours/acamayas/ruta-xilitla.png"
+              alt=""
+              className="rounded-xl animate-pulse"
+            />
+          </section>
+        )}
       </div>
     </div>
   );
