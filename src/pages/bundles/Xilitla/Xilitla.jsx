@@ -133,7 +133,7 @@ const Xilitla = () => {
         </p>
       </section>
       {/* hoteles */}
-      <section className="hoteles-xilitla relative w-full bg-no-repeat bg-cover bg-fixed bg-center flex flex-col justify-around items-center">
+      <section className="hoteles-xilitla relative h-screen bg-cover bg-fixed bg-center flex flex-col justify-around items-center">
         <div className="opacity-40 w-full h-full bg-black absolute" />
         <h1 className="text-white font-bold text-[40px] z-10">
           ¿Buscas Hospedaje?

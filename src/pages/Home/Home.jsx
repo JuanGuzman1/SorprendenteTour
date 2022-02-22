@@ -141,7 +141,7 @@ const Home = () => {
         </div>
       </section>
       {/* tours xilitla 4x4 */}
-      <section className="section3 relative w-full bg-no-repeat bg-cover bg-fixed bg-center">
+      <section className="section3 relative h-screen bg-cover bg-fixed bg-center">
         <div className="opacity-40 w-full h-full bg-black absolute" />
         <div className="w-full h-full flex flex-col justify-around items-center">
           <div className="z-10 m-5 text">

@@ -29,6 +29,14 @@
         background-image: url("../../../public/assets/images/tours4x4/mirador.jpeg");
         background-position-x: center;
       }
+      @media only screen and (max-width: 768px) {
+        .trinidad-card,
+        .surrealista-card,
+        .nacimiento-card,
+        .miradores-card {
+          width: 300px;
+        }
+      }
     }
   }
 }

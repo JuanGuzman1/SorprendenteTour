@@ -3,14 +3,23 @@
   background-image: url("../../../public/assets/images/header/paquetes.jpeg");
 }
 
-.card1 {
+.card1-bundles {
   width: 500px;
   height: 550px;
   background-image: url("../../../public/assets/images/homepage/xilitla.svg");
 }
-.card2 {
+.card2-bundles {
   width: 500px;
   height: 550px;
   background-image: url("../../../public/assets/images/homepage/ciudadvalles.jpeg");
   background-position-x: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .card1-bundles {
+    width: 300px;
+  }
+  .card2-bundles {
+    width: 300px;
+  }
 }

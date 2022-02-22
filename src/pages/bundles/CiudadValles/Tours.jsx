@@ -6,7 +6,7 @@ const Tours = (props) => {
     <>
       <div>
         {/* tours */}
-        <div className="grid grid-cols-3 gap-3">
+        <div className="grid md:grid-cols-3 grid-cols-2 gap-3">
           {/* mojarras */}
           {tour <= 6 && (
             <div className="bg-slate-200 rounded-md p-3">
