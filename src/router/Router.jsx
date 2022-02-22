@@ -17,6 +17,7 @@ import Surrealista from "../pages/Tours4x4/Tours/Surrealista/Surrealista";
 import Nacimiento from "../pages/Tours4x4/Tours/Nacimiento/Nacimiento";
 import Miradores from "../pages/Tours4x4/Tours/Miradores/Miradores";
 import Contact from "../pages/Contact/Contact";
+import Terms from "../pages/Terms/Terms";
 
 function Router() {
   return (
@@ -24,6 +25,7 @@ function Router() {
       <Route path="/" element={<Home />} />
       <Route path="/nosotros" element={<About />} />
       <Route path="/contacto" element={<Contact />} />
+      <Route path="/terminos-y-condiciones" element={<Terms />} />
       {/* paquetes */}
       <Route path="/paquetes" element={<Bundles />} />
       <Route path="/paquetes/xilitla" element={<Xilitla />} />

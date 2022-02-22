@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <footer class="p-4 bg-white rounded-lg shadow md:px-6 md:py-8 dark:bg-gray-800">
-      <div class="sm:flex sm:items-center sm:justify-between">
+      <div class="flex flex-col md:flex-row md:justify-between items-center justify-center">
         <a
-          href="https://flowbite.com"
+          href="https://sorprendentetour.com"
           target="_blank"
           class="flex items-center mb-4 sm:mb-0"
         >
@@ -26,12 +26,12 @@ const Footer = () => {
             </Link>
           </li>
           <li>
-            <a
-              href="#"
+            <Link
+              to="/terminos-y-condiciones"
               class="mr-4 text-sm text-gray-500 hover:underline md:mr-6 dark:text-gray-400"
             >
               Términos y condiciones
-            </a>
+            </Link>
           </li>
           <li>
             <Link
@@ -44,7 +44,7 @@ const Footer = () => {
         </ul>
       </div>
       <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-      <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
+      <span class="block text-sm text-gray-500 text-center dark:text-gray-400">
         © 2022{" "}
         <a href="https://flowbite.com" target="_blank" class="hover:underline">
           Sorprendente Tour
