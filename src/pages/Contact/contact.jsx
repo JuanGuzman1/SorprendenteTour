@@ -38,32 +38,36 @@ const Contact = () => {
         </p>
       </section>
       <section className="form-contact bg-center">
-        <div className="flex flex-col justify-center items-center">
-          <h1 className="text-white text-[40px] font-bold">
+        <div className="flex flex-col justify-center items-center p-5">
+          <h1 className="text-white text-[40px] text-center font-bold">
             Formulario de contacto
           </h1>
           <input
             type="text"
-            className="rounded-xl m-2 w-1/2"
+            className="rounded-xl m-2 md:w-1/2 flex flex-1"
             placeholder="Ingresa tu nombre"
           />
           <input
             type="text"
-            className="rounded-xl m-2 w-1/2"
+            className="rounded-xl m-2 md:w-1/2 flex flex-1"
             placeholder="Ingresa tu correo electronico"
           />
           <input
             type="text"
-            className="rounded-xl m-2 w-1/2"
+            className="rounded-xl m-2 md:w-1/2 flex flex-1"
             placeholder="# Telefono"
           />
-          <select name="type" id="type" className="rounded-xl m-2 w-1/2">
+          <select
+            name="type"
+            id="type"
+            className="rounded-xl m-2 md:w-1/2 flex flex-1"
+          >
             <option value="local">local</option>
             <option value="cel">celular</option>
           </select>
           <input
             type="text"
-            className="rounded-xl m-2 w-1/3"
+            className="rounded-xl m-2 md:w-1/2 flex flex-1"
             placeholder="Asunto"
           />
           <textarea
@@ -72,7 +76,7 @@ const Contact = () => {
             cols="30"
             rows="10"
             placeholder="Escribenos"
-            className="rounded-xl m-2 w-1/2"
+            className="rounded-xl m-2 md:w-1/2 flex flex-1"
           ></textarea>
           <button className="bg-[color:var(--green-color)] p-3 text-white font-bold rounded-md animate-pulse">
             Enviar
