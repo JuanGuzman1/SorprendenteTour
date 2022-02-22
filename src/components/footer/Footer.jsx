@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -17,36 +18,28 @@ const Footer = () => {
         </a>
         <ul class="flex flex-wrap items-center mb-6 sm:mb-0">
           <li>
-            <a
-              href="#"
+            <Link
+              to="/nosotros"
               class="mr-4 text-sm text-gray-500 hover:underline md:mr-6 dark:text-gray-400"
             >
               About
-            </a>
+            </Link>
           </li>
           <li>
             <a
               href="#"
               class="mr-4 text-sm text-gray-500 hover:underline md:mr-6 dark:text-gray-400"
             >
-              Privacy Policy
+              Términos y condiciones
             </a>
           </li>
           <li>
-            <a
-              href="#"
-              class="mr-4 text-sm text-gray-500 hover:underline md:mr-6 dark:text-gray-400"
-            >
-              Licensing
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
+            <Link
+              to="/contacto"
               class="text-sm text-gray-500 hover:underline dark:text-gray-400"
             >
-              Contact
-            </a>
+              Contacto
+            </Link>
           </li>
         </ul>
       </div>
@@ -54,7 +47,7 @@ const Footer = () => {
       <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
         © 2022{" "}
         <a href="https://flowbite.com" target="_blank" class="hover:underline">
-          Flowbite™
+          Sorprendente Tour
         </a>
         . All Rights Reserved.
       </span>

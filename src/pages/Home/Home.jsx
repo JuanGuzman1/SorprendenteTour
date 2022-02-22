@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import "./Home.scss";
 import BookOnlineRoundedIcon from "@mui/icons-material/BookOnlineRounded";
 import GroupIcon from "@mui/icons-material/Group";
@@ -8,6 +8,7 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import PhoneAndroidIcon from "@mui/icons-material/PhoneAndroid";
 import EmailIcon from "@mui/icons-material/Email";
+import { CountUp } from "countup.js";
 
 const tourists = [
   {
@@ -31,6 +32,41 @@ const tourists = [
 ];
 
 const Home = () => {
+  const count1 = useRef();
+  const count2 = useRef();
+  const count3 = useRef();
+  const count4 = useRef();
+  useEffect(() => {
+    isScrolledIntoView();
+  }, []);
+  const isScrolledIntoView = () => {
+    var observer = new IntersectionObserver(
+      function (entries) {
+        // isIntersecting is true when element and viewport are overlapping
+        // isIntersecting is false when element and viewport don't overlap
+        if (entries[0].isIntersecting === true)
+          console.log("Element has just become visible in screen");
+        var countUp1 = new CountUp(count1.current, 100000, {
+          suffix: "+",
+        });
+        var countUp2 = new CountUp(count2.current, 30000, {
+          suffix: "+",
+        });
+        var countUp3 = new CountUp(count3.current, 5000, {
+          suffix: "+",
+        });
+        var countUp4 = new CountUp(count4.current, 3000, {
+          suffix: "+",
+        });
+        countUp1.start();
+        countUp2.start();
+        countUp3.start();
+        countUp4.start();
+      },
+      { threshold: [0] }
+    );
+    observer.observe(count1.current);
+  };
   return (
     <div className="root">
       <div className="video">
@@ -135,6 +171,52 @@ const Home = () => {
               image={tourist.imageURI}
             />
           ))}
+        </div>
+      </section>
+      <section className="section4 w-full mt-7 mb-7 flex md:flex-row flex-col justify-around items-center">
+        <div className="mb-3 border-4 border-double border-[color:var(--green-color)] rounded-full w-48 h-48 flex flex-col justify-center items-center">
+          <h3
+            ref={count1}
+            className="text-[20px] text-[color:var(--green-color)] font-bold"
+          >
+            100000+
+          </h3>
+          <h1 className="text-[20px] text-[color:var(--blue-color)] font-bold animate-[ping_4s_ease-in-out_infinite]">
+            Turistas
+          </h1>
+        </div>
+        <div className="mb-3 border-4 border-double border-[color:var(--green-color)] rounded-full w-48 h-48 flex flex-col justify-center items-center">
+          <h3
+            ref={count2}
+            className="text-[20px] text-[color:var(--green-color)] font-bold"
+          >
+            30000+
+          </h3>
+          <h1 className="text-[20px] text-[color:var(--blue-color)] font-bold animate-[ping_4s_ease-in-out_infinite]">
+            Facebook Follows
+          </h1>
+        </div>
+        <div className="mb-3 border-4 border-double border-[color:var(--green-color)] rounded-full w-48 h-48 flex flex-col justify-center items-center">
+          <h3
+            ref={count3}
+            className="text-[20px] text-[color:var(--green-color)] font-bold"
+          >
+            14000+
+          </h3>
+          <h1 className="text-[20px] text-[color:var(--blue-color)] font-bold animate-[ping_4s_ease-in-out_infinite]">
+            Instagram Follows
+          </h1>
+        </div>
+        <div className="mb-3 border-4 border-double border-[color:var(--green-color)] rounded-full w-48 h-48 flex flex-col justify-center items-center">
+          <h3
+            ref={count4}
+            className="text-[20px] text-[color:var(--green-color)] font-bold"
+          >
+            3000+
+          </h3>
+          <h1 className="text-[20px] text-[color:var(--blue-color)] font-bold animate-[ping_4s_ease-in-out_infinite]">
+            TikTok Follows
+          </h1>
         </div>
       </section>
       {/* contacto */}

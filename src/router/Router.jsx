@@ -16,12 +16,14 @@ import Trinidad from "../pages/Tours4x4/Tours/Trinidad/Trinidad";
 import Surrealista from "../pages/Tours4x4/Tours/Surrealista/Surrealista";
 import Nacimiento from "../pages/Tours4x4/Tours/Nacimiento/Nacimiento";
 import Miradores from "../pages/Tours4x4/Tours/Miradores/Miradores";
+import Contact from "../pages/Contact/Contact";
 
 function Router() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/nosotros" element={<About />} />
+      <Route path="/contacto" element={<Contact />} />
       {/* paquetes */}
       <Route path="/paquetes" element={<Bundles />} />
       <Route path="/paquetes/xilitla" element={<Xilitla />} />
