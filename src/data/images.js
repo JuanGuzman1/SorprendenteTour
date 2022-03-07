@@ -82,3 +82,27 @@ export const hotelGrannHotel = [
   "assets/images/hotels/valles/GRANNHOTEL/image4.jpg",
   "assets/images/hotels/valles/GRANNHOTEL/image5.jpg",
 ];
+
+export const tours = [
+  "assets/images/tours/zacahuil/image1.jpeg",
+  "assets/images/tours/zacahuil/image2.jpeg",
+  "assets/images/tours/zacahuil/image3.jpeg",
+  "assets/images/tours/zacahuil/image4.jpeg",
+  "assets/images/tours/bocoles/image1.jpeg",
+  "assets/images/tours/bocoles/image2.jpeg",
+  "assets/images/tours/bocoles/image3.jpeg",
+  "assets/images/tours/bocoles/image4.jpeg",
+  "assets/images/tours/enchiladas/image1.jpeg",
+  "assets/images/tours/enchiladas/image2.jpeg",
+  "assets/images/tours/enchiladas/image3.jpeg",
+  "assets/images/tours/enchiladas/image4.jpeg",
+  "assets/images/tours/enchiladas/image5.jpeg",
+  "assets/images/tours/acamayas/image1.jpeg",
+  "assets/images/tours/acamayas/image2.jpeg",
+  "assets/images/tours/acamayas/image3.jpeg",
+  "assets/images/tours/acamayas/image4.jpeg",
+  "assets/images/tours/mojarras/image1.jpeg",
+  "assets/images/tours/mojarras/image2.jpeg",
+  "assets/images/tours/mojarras/image3.jpeg",
+  "assets/images/tours/mojarras/image4.jpeg",
+];
