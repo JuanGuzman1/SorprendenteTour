@@ -9,6 +9,7 @@ import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import PhoneAndroidIcon from "@mui/icons-material/PhoneAndroid";
 import EmailIcon from "@mui/icons-material/Email";
 import { CountUp } from "countup.js";
+import { Link } from "react-router-dom";
 
 const tourists = [
   {
@@ -151,9 +152,12 @@ const Home = () => {
               <span className="text-[color:var(--blue-color)]">Xilitla</span>.
             </h1>
           </div>
-          <button className="text-white z-10 bg-[color:var(--green-color)] p-3 rounded-md font-bold animate-pulse">
+          <Link
+            to={"/tours4x4"}
+            className="text-white z-10 bg-[color:var(--green-color)] p-3 rounded-md font-bold animate-pulse"
+          >
             Conoce aquí
-          </button>
+          </Link>
         </div>
       </section>
       {/* que dicen nuestros turistas */}

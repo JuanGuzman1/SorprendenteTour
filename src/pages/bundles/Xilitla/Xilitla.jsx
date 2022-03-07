@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Xilitla.scss";
 import TourIcon from "@mui/icons-material/Tour";
 import Tours from "./Tours";
+import { Link } from "react-router-dom";
 
 const Xilitla = () => {
   const [tour, setTour] = useState(1);
@@ -138,9 +139,12 @@ const Xilitla = () => {
         <h1 className="text-white font-bold text-[40px] z-10">
           ¿Buscas Hospedaje?
         </h1>
-        <button className="text-white z-10 bg-[color:var(--green-color)] p-3 rounded-md font-bold animate-pulse">
+        <Link
+          to={"/galeria/hoteles"}
+          className="text-white z-10 bg-[color:var(--green-color)] p-3 rounded-md font-bold animate-pulse"
+        >
           Conoce Aqui
-        </button>
+        </Link>
       </section>
     </div>
   );

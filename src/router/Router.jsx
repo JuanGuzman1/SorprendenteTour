@@ -20,6 +20,7 @@ import Contact from "../pages/Contact/Contact";
 import Terms from "../pages/Terms/Terms";
 import Gallery from "../pages/Gallery/Gallery";
 import HotelsGallery from "../pages/Gallery/Hotels/HotelsGallery";
+import ToursGallery from "../pages/Gallery/Tours/ToursGallery";
 import XilitlaHotels from "../pages/Gallery/Hotels/Xilitla/XilitlaHotels";
 import CiudadVallesHotels from "../pages/Gallery/Hotels/CiudadValles/CiudadVallesHotels";
 
@@ -51,7 +52,7 @@ function Router() {
 
       {/* gallery */}
       <Route path="/galeria" element={<Gallery />} />
-      <Route path="/galeria/tours" element={<Gallery />} />
+      <Route path="/galeria/tours" element={<ToursGallery />} />
       <Route path="/galeria/hoteles" element={<HotelsGallery />} />
       <Route path="/galeria/hoteles/xilitla" element={<XilitlaHotels />} />
       <Route
