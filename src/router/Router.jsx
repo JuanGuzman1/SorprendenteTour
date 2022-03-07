@@ -19,6 +19,9 @@ import Miradores from "../pages/Tours4x4/Tours/Miradores/Miradores";
 import Contact from "../pages/Contact/Contact";
 import Terms from "../pages/Terms/Terms";
 import Gallery from "../pages/Gallery/Gallery";
+import HotelsGallery from "../pages/Gallery/Hotels/HotelsGallery";
+import XilitlaHotels from "../pages/Gallery/Hotels/Xilitla/XilitlaHotels";
+import CiudadVallesHotels from "../pages/Gallery/Hotels/CiudadValles/CiudadVallesHotels";
 
 function Router() {
   return (
@@ -49,7 +52,12 @@ function Router() {
       {/* gallery */}
       <Route path="/galeria" element={<Gallery />} />
       <Route path="/galeria/tours" element={<Gallery />} />
-      <Route path="/galeria/hoteles" element={<Gallery />} />
+      <Route path="/galeria/hoteles" element={<HotelsGallery />} />
+      <Route path="/galeria/hoteles/xilitla" element={<XilitlaHotels />} />
+      <Route
+        path="/galeria/hoteles/ciudad-valles"
+        element={<CiudadVallesHotels />}
+      />
     </Routes>
   );
 }

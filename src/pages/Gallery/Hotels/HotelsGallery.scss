@@ -1,0 +1,27 @@
+.hotels-gallery {
+  .header-hotels-gallery {
+    height: 400px;
+    background-image: url("../../../../public/assets/images/hotelsPhotos.jpeg");
+  }
+
+  .card1-gallery-hotels {
+    width: 500px;
+    height: 550px;
+    background-image: url("../../../../public/assets/images/hotels/xilitla/hotel1.jpeg");
+  }
+  .card2-gallery-hotels {
+    width: 500px;
+    height: 550px;
+    background-image: url("../../../../public/assets/images/hotels/valles/hotel1.jpeg");
+    background-position-x: center;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .card1-gallery-hotels {
+      width: 300px;
+    }
+    .card2-gallery-hotels {
+      width: 300px;
+    }
+  }
+}
