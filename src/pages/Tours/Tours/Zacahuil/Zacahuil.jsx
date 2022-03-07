@@ -35,7 +35,7 @@ const Zacahuil = () => {
         {/* acordeon de info */}
         <div
           id="accordion-collapse"
-          data-accordion="collapse"
+          data-accordion="collapse" 
           className="w-full"
         >
           <h2 id="accordion-collapse-heading-1">

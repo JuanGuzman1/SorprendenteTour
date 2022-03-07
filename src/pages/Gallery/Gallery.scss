@@ -1,0 +1,26 @@
+.gallery {
+  .header-gallery {
+    height: 400px;
+    background-image: url("../../../public/assets/images/header/gallery.jpeg");
+  }
+  .card1-gallery {
+    width: 500px;
+    height: 550px;
+    background-image: url("../../../public/assets/images/toursPhotos.jpeg");
+  }
+  .card2-gallery {
+    width: 500px;
+    height: 550px;
+    background-image: url("../../../public/assets/images/hotelsPhotos.jpeg");
+    background-position-x: center;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .card1-gallery {
+      width: 300px;
+    }
+    .card2-gallery {
+      width: 300px;
+    }
+  }
+}

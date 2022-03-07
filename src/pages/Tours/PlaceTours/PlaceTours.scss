@@ -37,5 +37,15 @@
       background-image: url("../../../../public/assets/images/tours/mojarras/mojarras.jpeg");
       height: 550px;
     }
+
+    @media only screen and (max-width: 768px) {
+      .zacahuil-card,
+      .bocoles-card,
+      .enchiladas-card,
+      .acamayas-card,
+      .mojarras-card {
+        width: 300px;
+      }
+    }
   }
 }

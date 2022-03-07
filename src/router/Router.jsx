@@ -1,10 +1,10 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "../pages/Home/Home";
 import About from "../pages/About/About";
-import Bundles from "../pages/bundles/Bundles";
+import Bundles from "../pages/Bundles/Bundles";
 import Tours from "../pages/Tours/Tours";
-import Xilitla from "../pages/bundles/Xilitla/Xilitla";
-import CiudadValles from "../pages/bundles/CiudadValles/CiudadValles";
+import Xilitla from "../pages/Bundles/Xilitla/Xilitla";
+import CiudadValles from "../pages/Bundles/CiudadValles/CiudadValles";
 import PlaceTours from "../pages/Tours/PlaceTours/PlaceTours";
 import Zacahuil from "../pages/Tours/Tours/Zacahuil/Zacahuil";
 import Bocoles from "../pages/Tours/Tours/Bocoles/Bocoles";
@@ -18,6 +18,7 @@ import Nacimiento from "../pages/Tours4x4/Tours/Nacimiento/Nacimiento";
 import Miradores from "../pages/Tours4x4/Tours/Miradores/Miradores";
 import Contact from "../pages/Contact/Contact";
 import Terms from "../pages/Terms/Terms";
+import Gallery from "../pages/Gallery/Gallery";
 
 function Router() {
   return (
@@ -44,6 +45,11 @@ function Router() {
       <Route path="/tours4x4/surrealista" element={<Surrealista />} />
       <Route path="/tours4x4/nacimiento" element={<Nacimiento />} />
       <Route path="/tours4x4/miradores" element={<Miradores />} />
+
+      {/* gallery */}
+      <Route path="/galeria" element={<Gallery />} />
+      <Route path="/galeria/tours" element={<Gallery />} />
+      <Route path="/galeria/hoteles" element={<Gallery />} />
     </Routes>
   );
 }
