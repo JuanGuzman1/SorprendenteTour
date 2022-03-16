@@ -1,7 +1,16 @@
 .navbar {
   color: white;
-  background: linear-gradient(to top, transparent 0%, #04871A 50%);
+  background: linear-gradient(to top, transparent 0%, #04871a 50%);
   &.scrolled {
     background-color: var(--green-color);
+  }
+  .container {
+    div {
+      ul {
+        li {
+          font-size: 17px;
+        }
+      }
+    }
   }
 }

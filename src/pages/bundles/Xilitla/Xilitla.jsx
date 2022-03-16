@@ -3,6 +3,9 @@ import "./Xilitla.scss";
 import TourIcon from "@mui/icons-material/Tour";
 import Tours from "./Tours";
 import { Link } from "react-router-dom";
+import ChatBubbleIcon from "@mui/icons-material/ChatBubble";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import LibraryBooksIcon from "@mui/icons-material/LibraryBooks";
 
 const Xilitla = () => {
   const [tour, setTour] = useState(1);
@@ -131,6 +134,46 @@ const Xilitla = () => {
           (ACUASHOES), TENIS ANTIDERRAPANTES, ROPA LIJERA PARA CAMINAR PANS,
           SHORTS, PLAYERA, GORRA, SOMBRERO, LENTES, BLOQUEADOR SOLAR, REPELENTE
           DE MOSQUITOS Y TODA LA PILA PARA DISFRUTAR DE LA HUASTECA POTOSINA.
+        </p>
+      </section>
+      {/* Cotizacion */}
+      <section className="bg-[color:var(--green-color)] flex flex-col justify-center p-5">
+        <h1 className="text-white text-[40px] font-bold text-center">
+          Cotizar
+        </h1>
+        <div className="justify-center flex md:flex-row flex-col gap-3 m-3">
+          <div className="items-center justify-center flex flex-row bg-slate-300 p-5 rounded-xl">
+            <ChatBubbleIcon style={{ color: "white" }} />
+            <a
+              href="https://my.artibot.ai/gssyysqb"
+              target="_blank"
+              className="text-[20px] text-center text-white font-bold"
+            >
+              Chat en linea
+            </a>
+          </div>
+          <div className="items-center justify-center flex flex-row bg-green-300 p-5 rounded-xl">
+            <WhatsAppIcon style={{ color: "white" }} />
+            <a
+              href="https://api.whatsapp.com/send?phone=+5214441890212"
+              target="_blank"
+              className="text-[20px] text-center text-white font-bold"
+            >
+              WhatsApp
+            </a>
+          </div>
+          <div className="items-center justify-center flex flex-row bg-cyan-300 p-5 rounded-xl">
+            <LibraryBooksIcon style={{ color: "white" }} />
+            <Link
+              to={"/contacto"}
+              className="text-[20px] text-center text-white font-bold"
+            >
+              Formulario
+            </Link>
+          </div>
+        </div>
+        <p className="text-white text-center text-[20px]">
+          SELECCIONA UN MEDIO PARA COTIZAR TU PAQUETE.
         </p>
       </section>
       {/* hoteles */}
