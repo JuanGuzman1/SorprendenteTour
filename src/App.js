@@ -6,12 +6,12 @@ import Router from "./router/Router";
 
 function App() {
   return (
-    <>
+    <div className="w-full">
       <Navbar />
       <Router />
       <Whatsapp />
       <Footer />
-    </>
+    </div>
   );
 }
 

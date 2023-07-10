@@ -8,6 +8,17 @@ const Navbar = () => {
     setIsScrolled(window.pageYOffset === 0 ? false : true);
     return () => (window.onscroll = null);
   };
+
+  function gtag_report_conversion(url) {
+    let callback = function () { 
+     if (typeof(url) != 'undefined') { 
+       return url; 
+      } 
+     }; 
+       window.gtag('event', 'conversion', { 'send_to': 'AW-834809898/3dnhCNClhqgYEKrgiI4D', 'event_callback': callback });
+      return false;
+     }
+
   return (
     <nav
       class={`border-gray-200 px-2 sm:px-4 py-2.5 fixed top-0 z-50 w-full ${
@@ -60,6 +71,7 @@ const Navbar = () => {
           <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
             <li>
               <Link
+                onClick={() => gtag_report_conversion("/")}
                 to="/"
                 className="font-bold text-white block py-2 pr-4 pl-3 rounded md:bg-transparent  md:p-0 dark:text-white"
               >
@@ -68,6 +80,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link
+                onClick={() => gtag_report_conversion("/nosotros")}
                 to="/nosotros"
                 class="font-bold text-white block py-2 pr-4 pl-3 border-b border-gray-100 hover:bg-cyan-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >
@@ -76,6 +89,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link
+               onClick={() => gtag_report_conversion("/paquetes")}
                 to="/paquetes"
                 class="font-bold block py-2 pr-4 pl-3 text-white border-b border-gray-100 hover:bg-cyan-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >
@@ -84,6 +98,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link
+               onClick={() => gtag_report_conversion("/tours")}
                 to="/tours"
                 class="font-bold block py-2 pr-4 pl-3 text-white border-b border-gray-100 hover:bg-cyan-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >
@@ -92,6 +107,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link
+                onClick={() => gtag_report_conversion("/tours4x4")}
                 to="/tours4x4"
                 class="font-bold block py-2 pr-4 pl-3 text-red-500 animate-bounce border-b border-gray-100 hover:bg-cyan-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >
@@ -100,6 +116,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link
+                onClick={() => gtag_report_conversion("/galeria")}
                 to="/galeria"
                 class="font-bold block py-2 pr-4 pl-3 text-white border-b border-gray-100 hover:bg-cyan-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >
@@ -108,6 +125,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link
+                onClick={() => gtag_report_conversion("/contacto")}
                 to="/contacto"
                 class="font-bold block py-2 pr-4 pl-3 text-white hover:bg-cyan-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
               >

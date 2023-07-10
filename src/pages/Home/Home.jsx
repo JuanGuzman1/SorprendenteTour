@@ -41,22 +41,22 @@ const Home = () => {
     isScrolledIntoView();
   }, []);
   const isScrolledIntoView = () => {
-    var observer = new IntersectionObserver(
+    let observer = new IntersectionObserver(
       function (entries) {
         // isIntersecting is true when element and viewport are overlapping
         // isIntersecting is false when element and viewport don't overlap
         if (entries[0].isIntersecting === true)
           console.log("Element has just become visible in screen");
-        var countUp1 = new CountUp(count1.current, 100000, {
+        let countUp1 = new CountUp(count1.current, 100000, {
           suffix: "+",
         });
-        var countUp2 = new CountUp(count2.current, 30000, {
+        let countUp2 = new CountUp(count2.current, 30000, {
           suffix: "+",
         });
-        var countUp3 = new CountUp(count3.current, 5000, {
+        let countUp3 = new CountUp(count3.current, 5000, {
           suffix: "+",
         });
-        var countUp4 = new CountUp(count4.current, 3000, {
+        let countUp4 = new CountUp(count4.current, 3000, {
           suffix: "+",
         });
         countUp1.start();
@@ -68,6 +68,17 @@ const Home = () => {
     );
     observer.observe(count1.current);
   };
+
+  function gtag_report_conversion(url) {
+    let callback = function () { 
+     if (typeof(url) != 'undefined') { 
+       return url; 
+      } 
+     }; 
+       window.gtag('event', 'conversion', { 'send_to': 'AW-834809898/3dnhCNClhqgYEKrgiI4D', 'event_callback': callback });
+      return false;
+     }
+
   return (
     <div className="root">
       <div className="video">
@@ -153,6 +164,7 @@ const Home = () => {
             </h1>
           </div>
           <Link
+            onClick={() => gtag_report_conversion("/tours4x4")}
             to={"/tours4x4"}
             className="text-white z-10 bg-[color:var(--green-color)] p-3 rounded-md font-bold animate-pulse"
           >
@@ -251,15 +263,15 @@ const Home = () => {
               </p>
               <p className="text-white text-center text-[20px] m-1">
                 <PhoneAndroidIcon />
-                <a href="tel:+524441890212">4441890212</a>
+                <a onClick={() => gtag_report_conversion("tel:+524441890212")} href="tel:+524441890212">4441890212</a>
               </p>
               <p className="text-white text-center text-[20px] m-1">
                 <LocalPhoneIcon />
-                <a href="tel:+524896880496">4896880496</a>
+                <a onClick={() => gtag_report_conversion("tel:+524896880496")} href="tel:+524896880496">4896880496</a>
               </p>
               <p className="text-white text-center text-[20px] m-1">
                 <EmailIcon />
-                <a href="mail:sorprendentetour@gmail.com">
+                <a onClick={() => gtag_report_conversion("mail:sorprendentetour@gmail.com")} href="mail:sorprendentetour@gmail.com">
                   sorprendentetour@gmail.com
                 </a>
               </p>

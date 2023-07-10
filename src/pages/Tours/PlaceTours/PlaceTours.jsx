@@ -6,7 +6,7 @@ const PlaceTours = () => {
   const { place } = useParams();
 
   return (
-    <div className="xilitla-tours">
+    <div className="xilitla-tours w-full">
       <div
         className={`${
           place === "ciudad-valles" ? "header-valles" : "header-xilitla"
@@ -16,7 +16,7 @@ const PlaceTours = () => {
           {place === "ciudad-valles" ? "Ciudad Valles" : "Xilitla"}
         </h1>
       </div>
-      <div className="cards md:grid md:grid-cols-3 flex flex-col justify-center items-center">
+      <div className="cards md:grid md:grid-cols-3 flex flex-col md:ml-36 items-center">
         {/* zacahuil */}
         <Link to="zacahuil">
           <section className="zacahuil-card bg-no-repeat bg-cover bg-center rounded-lg m-5 relative">
