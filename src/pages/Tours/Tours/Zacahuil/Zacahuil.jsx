@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import "./Zacahuil.scss";
 import { useParams } from "react-router-dom";
+import PriceCard from "../../../../components/PriceCard/PriceCard";
 
 const Zacahuil = () => {
   const { place } = useParams();
@@ -240,24 +241,7 @@ const Zacahuil = () => {
             </section>
           )}
         </div>
-        <div className="w-3/4">
-          <div className="shadow-md rounded-md p-10 mt-32">
-            <h1 className="text-2xl font-semibold text-[color:var(--blue-color)]">
-              Reservar Tour
-            </h1>
-            <h1 className="text-2xl">Precio</h1>
-            <h1 className="text-6xl leading-relaxed text-[color:var(--green-color)] font-medium">
-              $200
-            </h1>
-            <p className="mb-3">No. personas</p>
-            <select>
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-            </select>
-          </div>
-        </div>
+       <PriceCard/>
       </div>
     </div>
   );

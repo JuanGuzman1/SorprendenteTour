@@ -23,6 +23,7 @@ import HotelsGallery from "../pages/Gallery/Hotels/HotelsGallery";
 import ToursGallery from "../pages/Gallery/Tours/ToursGallery";
 import XilitlaHotels from "../pages/Gallery/Hotels/Xilitla/XilitlaHotels";
 import CiudadVallesHotels from "../pages/Gallery/Hotels/CiudadValles/CiudadVallesHotels";
+import Shop from "../pages/Shop/Shop";
 
 function Router() {
   return (
@@ -31,6 +32,8 @@ function Router() {
       <Route path="/nosotros" element={<About />} />
       <Route path="/contacto" element={<Contact />} />
       <Route path="/terminos-y-condiciones" element={<Terms />} />
+      <Route path="/galeria" element={<Gallery />} />
+      <Route path="/checkout" element={<Shop />} />
       {/* paquetes */}
       <Route path="/paquetes" element={<Bundles />} />
       <Route path="/paquetes/xilitla" element={<Xilitla />} />

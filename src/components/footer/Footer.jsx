@@ -9,6 +9,7 @@ const Footer = () => {
           href="https://sorprendentetour.com"
           target="_blank"
           class="flex items-center mb-4 sm:mb-0"
+          rel="noreferrer"
         >
           <img
             src="assets/logo.png"
@@ -46,7 +47,7 @@ const Footer = () => {
       <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
       <span class="block text-sm text-gray-500 text-center dark:text-gray-400">
         © 2022{" "}
-        <a href="https://flowbite.com" target="_blank" class="hover:underline">
+        <a href="https://flowbite.com" target="_blank" class="hover:underline" rel="noreferrer">
           Sorprendente Tour
         </a>
         . All Rights Reserved.

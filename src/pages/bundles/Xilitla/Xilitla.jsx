@@ -22,7 +22,8 @@ const Xilitla = () => {
           <div class="px-3 py-4 overflow-y-auto rounded bg-gray-50 dark:bg-gray-800">
             <ul class="space-y-2">
               <li>
-                <a
+                <button
+                 
                   onClick={() => setTour(1)}
                   class={`${
                     tour === 1 ? "bg-green-300" : ""
@@ -30,10 +31,11 @@ const Xilitla = () => {
                 >
                   <TourIcon />
                   <span class="ml-3">1 Tour y 2 Noches</span>
-                </a>
+                </button>
               </li>
               <li>
-                <a
+                <button
+
                   onClick={() => setTour(2)}
                   class={`${
                     tour === 2 ? "bg-green-300" : ""
@@ -43,10 +45,10 @@ const Xilitla = () => {
                   <span class="flex-1 ml-3 whitespace-nowrap">
                     2 Tours y 3 Noches
                   </span>
-                </a>
+                </button>
               </li>
               <li>
-                <a
+                <button
                   onClick={() => setTour(3)}
                   class={`${
                     tour === 3 ? "bg-green-300" : ""
@@ -56,10 +58,11 @@ const Xilitla = () => {
                   <span class="flex-1 ml-3 whitespace-nowrap">
                     3 Tour y 4 Noches
                   </span>
-                </a>
+                </button>
               </li>
               <li>
-                <a
+                <button
+
                   onClick={() => setTour(4)}
                   class={`${
                     tour === 4 ? "bg-green-300" : ""
@@ -69,10 +72,10 @@ const Xilitla = () => {
                   <span class="flex-1 ml-3 whitespace-nowrap">
                     4 Tours y 5 Noches
                   </span>
-                </a>
+                </button>
               </li>
               <li>
-                <a
+                <button
                   onClick={() => setTour(5)}
                   class={`${
                     tour === 5 ? "bg-green-300" : ""
@@ -82,10 +85,10 @@ const Xilitla = () => {
                   <span class="flex-1 ml-3 whitespace-nowrap">
                     5 Tours y 6 Noches
                   </span>
-                </a>
+                </button>
               </li>
               <li>
-                <a
+                <button
                   onClick={() => setTour(6)}
                   class={`${
                     tour === 6 ? "bg-green-300" : ""
@@ -95,7 +98,7 @@ const Xilitla = () => {
                   <span class="flex-1 ml-3 whitespace-nowrap">
                     6 Tours y 7 Noches
                   </span>
-                </a>
+                </button>
               </li>
             </ul>
           </div>
@@ -144,23 +147,23 @@ const Xilitla = () => {
         <div className="justify-center flex md:flex-row flex-col gap-3 m-3">
           <div className="items-center justify-center flex flex-row bg-slate-300 p-5 rounded-xl">
             <ChatBubbleIcon style={{ color: "white" }} />
-            <a
+            <button
               href="https://my.artibot.ai/gssyysqb"
               target="_blank"
               className="text-[20px] text-center text-white font-bold"
             >
               Chat en linea
-            </a>
+            </button>
           </div>
           <div className="items-center justify-center flex flex-row bg-green-300 p-5 rounded-xl">
             <WhatsAppIcon style={{ color: "white" }} />
-            <a
+            <button
               href="https://api.whatsapp.com/send?phone=+5214441890212"
               target="_blank"
               className="text-[20px] text-center text-white font-bold"
             >
               WhatsApp
-            </a>
+            </button>
           </div>
           <div className="items-center justify-center flex flex-row bg-cyan-300 p-5 rounded-xl">
             <LibraryBooksIcon style={{ color: "white" }} />
