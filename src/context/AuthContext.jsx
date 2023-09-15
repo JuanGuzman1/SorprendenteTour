@@ -1,4 +1,4 @@
-import React, {createContext, useContext, useState, useMemo} from 'react'
+import React, {createContext, useContext, useState, useMemo, useEffect} from 'react'
 
 
 const AuthContext = createContext({});
@@ -6,6 +6,10 @@ const AuthContext = createContext({});
 function AuthContextProvider({children}) {
     const [user, setUser] = useState(null);
     const obj = useMemo(() => ({user}), [user]);
+
+    useEffect(()=>{
+        setUser(null);
+    },[])
 
   return (
     <AuthContext.Provider value={obj}>{children}</AuthContext.Provider>

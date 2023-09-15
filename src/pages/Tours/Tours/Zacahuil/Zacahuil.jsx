@@ -5,6 +5,10 @@ import PriceCard from "../../../../components/PriceCard/PriceCard";
 
 const Zacahuil = () => {
   const { place } = useParams();
+  const data = {
+    name: 'Tour Zacahuil',
+    price: 200,  
+  }
 
   useEffect(() => {
     const evt = new Event("DOMContentLoaded", {
@@ -241,7 +245,7 @@ const Zacahuil = () => {
             </section>
           )}
         </div>
-       <PriceCard/>
+       <PriceCard tour={data}/>
       </div>
     </div>
   );

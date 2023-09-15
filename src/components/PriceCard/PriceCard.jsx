@@ -1,16 +1,29 @@
-import React, {  useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { NumbersOption, formatCurrency } from "../../utils/hooks";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+import { useNavigate } from "react-router-dom";
+import { useCartContext } from "../../context/CartContext";
 
-function PriceCard() {
+function PriceCard({ tour }) {
   const [options, setOptions] = useState([]);
-  const [pricePerPerson] = useState(100);
-  const [price, setPrice] = useState(100);
+  const [pricePerPerson] = useState(tour.price);
+  const [price, setPrice] = useState();
   const [breakfast, setBreakfast] = useState("no");
-  const [numPeople, setNumPeople] = useState(1);
+  const [numPeople, setNumPeople] = useState(2);
+  const navigate = useNavigate();
+  const { cart, setCart } = useCartContext();
 
   const addToShopCar = () => {
-    return null
+    let newData = cart;
+    let data = {
+      name: tour.name,
+      price,
+      breakfast,
+      numPeople
+    }
+    newData.push(data);
+    setCart(newData);
+    navigate("/checkout");
   };
 
   useEffect(() => {
@@ -44,7 +57,7 @@ function PriceCard() {
           >
             {options.map(
               (number) =>
-                number > 0 && (
+                number > 1 && (
                   <option key={number} value={number}>
                     {number}
                   </option>

@@ -1,22 +1,11 @@
 import React, { useEffect } from "react";
 import "./Shop.scss";
 import ShopListItem from "../../components/ShopListItem/ShopListItem";
-import PaymentIcon from "@mui/icons-material/Payment";
+import { useCartContext } from "../../context/CartContext";
+import { formatCurrency } from "../../utils/hooks";
 
 function Shop() {
-
-//   useEffect(() => {
-//     window.paypal
-//       .Buttons({
-//         style: {
-//           layout: "vertical",
-//           color: "blue",
-//           shape: "rect",
-//           label: "paypal",
-//         },
-//       })
-//       .render("#paypal-button-container");
-//   }, []);
+  const { cart } = useCartContext();
 
   return (
     <div>
@@ -28,11 +17,20 @@ function Shop() {
       <div className="flex justify-between mx-36 my-10">
         <div className="border-2 border-gray-300 flex-auto mx-14">
           <div className="bg-gray-300 p-5 flex items-center">
-            <h1 className="text-2xl">Tu carrito de compras (1)</h1>
+            <h1 className="text-2xl">Tu carrito de compras ({cart.length})</h1>
           </div>
           <div className="m-5 mx-10">
-            <ShopListItem />
-            <ShopListItem />
+            {cart.length > 0 ? (
+              cart.map((item) => (
+                <div key={item.name}>
+                  <ShopListItem item={item} />
+                </div>
+              ))
+            ) : (
+              <h2 className="text-center">
+                No hay tours agregados al carrito.
+              </h2>
+            )}
           </div>
         </div>
         <div className="p-10 flex-auto shadow-lg rounded-md">
@@ -42,16 +40,23 @@ function Shop() {
           <hr />
           <div className="flex justify-between py-2">
             <h2 className="text-lg">Subtotal</h2>
-            <h2 className="text-lg">$200</h2>
+            <h2 className="text-lg">
+              ${cart.length > 0 ? cart.reduce((x, y) => x + y.price, 0) : 0}
+            </h2>
           </div>
           <hr />
           <div className="flex justify-between py-2">
             <h2 className="text-2xl font-medium">Total</h2>
-            <h2 className="text-2xl font-medium">$200</h2>
+            <h2 className="text-2xl font-medium">
+              $
+              {cart.length > 0
+                ? formatCurrency(cart.reduce((x, y) => x + y.price, 0))
+                : 0}
+            </h2>
           </div>
           <hr />
           <div className="flex items-center justify-center mt-10">
-            <div id="paypal-button-container" className="w-1/2" ></div>
+            <div id="paypal-button-container" className="w-1/2"></div>
           </div>
         </div>
       </div>

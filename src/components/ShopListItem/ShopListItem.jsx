@@ -1,8 +1,8 @@
 import React from "react";
 import { formatCurrency } from "../../utils/hooks";
-import CloseIcon from '@mui/icons-material/Close';
+import CloseIcon from "@mui/icons-material/Close";
 
-function ShopListItem() {
+function ShopListItem({ item }) {
   return (
     <div className="flex justify-between bg-white p-2 m-2 items-center">
       <div>
@@ -11,16 +11,18 @@ function ShopListItem() {
       </div>
       <div>
         {/* description */}
-        <h1 className="pb-3 text-xl font-medium">Tour Acamayas</h1>
-        <p className="text-sm">No. Personas: 3</p>
-        <p className="text-sm">Con desayuno: si</p>
+        <h1 className="pb-3 text-xl font-medium">{item?.name}</h1>
+        <p className="text-sm">No. Personas: {item?.numPeople}</p>
+        <p className="text-sm">Con desayuno: {item?.breakfast}</p>
       </div>
       <div>
         {/* price */}
-        <h2 className="text-xl text-primary font-medium">${formatCurrency("100")}</h2>
+        <h2 className="text-xl text-primary font-medium">
+          ${formatCurrency(item?.price)}
+        </h2>
       </div>
       <button>
-        <CloseIcon/>
+        <CloseIcon />
       </button>
     </div>
   );

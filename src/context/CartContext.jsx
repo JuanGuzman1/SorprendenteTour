@@ -4,7 +4,7 @@ const CartContext = createContext({});
 
 function CartContextProvider({children}) {
     const [cart, setCart] = useState([]);
-    const obj = useMemo(()=> ({cart}),[cart])
+    const obj = useMemo(()=> ({cart, setCart}),[cart])
 
   return (
     <CartContext.Provider value={obj}>{children}</CartContext.Provider>
