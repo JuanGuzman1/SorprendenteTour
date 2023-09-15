@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.scss";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { useCartContext } from "../../context/CartContext";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const { cart } = useCartContext();
+
   window.onscroll = () => {
     setIsScrolled(window.pageYOffset === 0 ? false : true);
     return () => (window.onscroll = null);
@@ -136,14 +139,21 @@ const Navbar = () => {
                 Contacto
               </Link>
             </li>
-            <li>
+            <li className="relative">
               <Link
                 onClick={() => gtag_report_conversion("/checkout")}
-                to={'/checkout'}
+                to={"/checkout"}
                 class="font-bold block py-2 pr-4 pl-3 text-white hover:bg-cyan-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
               >
                 <ShoppingCartIcon />
               </Link>
+              {cart.length > 0 && (
+                <div className="absolute top-[-10px] right-[-10px] bg-red-600 w-5 h-5 rounded-full">
+                  <p className="text-white text-center text-sm">
+                    {cart.length}
+                  </p>
+                </div>
+              )}
             </li>
           </ul>
         </div>

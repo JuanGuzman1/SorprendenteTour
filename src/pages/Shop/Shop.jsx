@@ -21,9 +21,9 @@ function Shop() {
           </div>
           <div className="m-5 mx-10">
             {cart.length > 0 ? (
-              cart.map((item) => (
+              cart.map((item, index) => (
                 <div key={item.name}>
-                  <ShopListItem item={item} />
+                  <ShopListItem item={item} index={index} />
                 </div>
               ))
             ) : (

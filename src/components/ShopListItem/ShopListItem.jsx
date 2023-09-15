@@ -1,8 +1,15 @@
 import React from "react";
 import { formatCurrency } from "../../utils/hooks";
 import CloseIcon from "@mui/icons-material/Close";
+import { useCartContext } from "../../context/CartContext";
 
-function ShopListItem({ item }) {
+function ShopListItem({ item, index}) {
+  const { cart, setCart } = useCartContext();
+
+  const onRemoveItem = () => {
+    setCart(cart.filter((element, i) => i !== index));
+  };
+
   return (
     <div className="flex justify-between bg-white p-2 m-2 items-center">
       <div>
@@ -21,7 +28,7 @@ function ShopListItem({ item }) {
           ${formatCurrency(item?.price)}
         </h2>
       </div>
-      <button>
+      <button onClick={onRemoveItem}>
         <CloseIcon />
       </button>
     </div>
