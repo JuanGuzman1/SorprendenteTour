@@ -3,10 +3,12 @@ import { Link } from "react-router-dom";
 import "./Navbar.scss";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { useCartContext } from "../../context/CartContext";
+import PersonIcon from "@mui/icons-material/Person";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const { cart } = useCartContext();
+  const [dropOpen, setDropOpen] = useState(false);
 
   window.onscroll = () => {
     setIsScrolled(window.pageYOffset === 0 ? false : true);
@@ -152,6 +154,58 @@ const Navbar = () => {
                   <p className="text-white text-center text-sm">
                     {cart.length}
                   </p>
+                </div>
+              )}
+            </li>
+            <li className="relative inline-block">
+              <button
+                className="inline-flex"
+                onClick={() => setDropOpen(!dropOpen)}
+              >
+                <PersonIcon />
+              </button>
+              {dropOpen && (
+                <div
+                  className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                  role="menu"
+                  aria-orientation="vertical"
+                  aria-labelledby="menu-button"
+                  tabindex="-1"
+                >
+                  <div className="py-1" role="none">
+                    <Link
+                      to={"/login"}
+                      class="text-gray-700 block px-4 py-2 text-sm"
+                    >
+                      Iniciar sesión
+                    </Link>
+                    <button
+                      class="text-gray-700 block px-4 py-2 text-sm"
+                      role="menuitem"
+                      tabindex="-1"
+                      id="menu-item-0"
+                    >
+                      Mis reservaciones
+                    </button>
+                    <button
+                      class="text-gray-700 block px-4 py-2 text-sm"
+                      role="menuitem"
+                      tabindex="-1"
+                      id="menu-item-1"
+                    >
+                      Perfil
+                    </button>
+
+                    <button
+                      type="submit"
+                      class="text-gray-700 block w-full px-4 py-2 text-left text-sm"
+                      role="menuitem"
+                      tabindex="-1"
+                      id="menu-item-3"
+                    >
+                      Cerrar sesion
+                    </button>
+                  </div>
                 </div>
               )}
             </li>

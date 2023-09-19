@@ -3,9 +3,31 @@ import "./Shop.scss";
 import ShopListItem from "../../components/ShopListItem/ShopListItem";
 import { useCartContext } from "../../context/CartContext";
 import { formatCurrency } from "../../utils/hooks";
+import { PayPalButtons } from "@paypal/react-paypal-js";
 
 function Shop() {
   const { cart } = useCartContext();
+
+  const createOrder = () => {
+    return fetch("/my-server/create-paypal-order", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      // use the "body" param to optionally pass additional order information
+      // like product ids and quantities
+      body: JSON.stringify({
+        cart: [
+          {
+            id: "YOUR_PRODUCT_ID",
+            quantity: "YOUR_PRODUCT_QUANTITY",
+          },
+        ],
+      }),
+    })
+      .then((response) => response.json())
+      .then((order) => order.id);
+  };
 
   return (
     <div>
@@ -55,8 +77,12 @@ function Shop() {
             </h2>
           </div>
           <hr />
-          <div className="flex items-center justify-center mt-10">
-            <div id="paypal-button-container" className="w-1/2"></div>
+          <div className="flex justify-center mt-10">
+            <PayPalButtons
+              style={{ layout: "vertical" }}
+              className="flex-1"
+              //createOrder={createOrder}
+            />
           </div>
         </div>
       </div>
