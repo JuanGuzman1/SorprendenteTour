@@ -25,6 +25,7 @@ import XilitlaHotels from "../pages/Gallery/Hotels/Xilitla/XilitlaHotels";
 import CiudadVallesHotels from "../pages/Gallery/Hotels/CiudadValles/CiudadVallesHotels";
 import Shop from "../pages/Shop/Shop";
 import Login from "../pages/Login/Login";
+import ConfirmationCode from "../pages/Login/ConfirmationCode";
 
 function Router() {
   return (
@@ -36,6 +37,7 @@ function Router() {
       <Route path="/galeria" element={<Gallery />} />
       <Route path="/checkout" element={<Shop />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/confirmar-registro" element={<ConfirmationCode />} />
 
       {/* paquetes */}
       <Route path="/paquetes" element={<Bundles />} />

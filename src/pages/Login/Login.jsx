@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { Auth } from "aws-amplify";
+import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 function Login() {
   const [isSignIn, setIsSignIn] = useState(true);
@@ -14,13 +17,26 @@ function Login() {
       {isSignIn ? (
         <SignIn setIsSignIn={setIsSignIn} />
       ) : (
-        <Register setIsSignIn={setIsSignIn} />
+        <SignUp setIsSignIn={setIsSignIn} />
       )}
     </div>
   );
 }
 
 function SignIn({ setIsSignIn }) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const onSignIn = async () => {
+    try {
+      await Auth.signIn({ username: email, password });
+      toast.success("Sesion iniciada correctamente");
+    } catch (error) {
+      toast.error(error.message);
+      console.log(error);
+    }
+  };
+
   return (
     <div className="flex flex-col items-center mt-14">
       <div className="shadow-md p-9 w-1/4 rounded-md">
@@ -28,15 +44,26 @@ function SignIn({ setIsSignIn }) {
           Ingresa tus datos para iniciar sesión
         </h1>
         <div className="mt-7">
-          <h2>Correo electronico</h2>
-          <input type="text" className="w-full" />
+          <h2>Correo electrónico</h2>
+          <input
+            type="text"
+            className="w-full"
+            onChange={(e) => setEmail(e.target.value)}
+          />
         </div>
         <div className="mt-4">
           <h2>Contraseña</h2>
-          <input type="password" className="w-full" />
+          <input
+            type="password"
+            className="w-full"
+            onChange={(e) => setPassword(e.target.value)}
+          />
         </div>
         <div className="mt-8">
-          <button className="bg-primary p-3 rounded-md text-white font-medium">
+          <button
+            className="bg-primary p-3 rounded-md text-white font-medium"
+            onClick={onSignIn}
+          >
             Ingresar
           </button>
         </div>
@@ -56,33 +83,79 @@ function SignIn({ setIsSignIn }) {
   );
 }
 
-function Register({ setIsSignIn }) {
+function SignUp({ setIsSignIn }) {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [password, setPassword] = useState();
+  const [passwordConfirm, setPasswordConfirm] = useState();
+  const navigate = useNavigate();
+
+  const onSignUp = async () => {
+    try {
+      const response = await Auth.signUp({
+        username: email,
+        password,
+        autoSignIn: false,
+      });
+      if (response) {
+        navigate("/confirmar-registro", { state: { email } });
+      }
+    } catch (error) {
+      toast.error(error.message);
+      console.log(error.message);
+    }
+  };
+
   return (
     <div className="flex flex-col items-center mt-14">
       <div className="shadow-md p-9 w-1/4 rounded-md">
         <h1 className="text-xl">Ingresa tus datos para registrarte</h1>
         <div className="mt-4">
           <h2>Nombre completo (*)</h2>
-          <input type="text" className="w-full" />
+          <input
+            type="text"
+            className="w-full"
+            onChange={(e) => setName(e.target.value)}
+          />
         </div>
         <div className="mt-4">
           <h2>Telefono (*)</h2>
-          <input type="text" className="w-full" />
+          <input
+            type="text"
+            className="w-full"
+            onChange={(e) => setPhone(e.target.value)}
+          />
         </div>
         <div className="mt-4">
-          <h2>Correo electronico (*)</h2>
-          <input type="text" className="w-full" />
+          <h2>Correo electrónico (*)</h2>
+          <input
+            type="text"
+            className="w-full"
+            onChange={(e) => setEmail(e.target.value)}
+          />
         </div>
         <div className="mt-4">
           <h2>Contraseña (*)</h2>
-          <input type="password" className="w-full" />
+          <input
+            type="password"
+            className="w-full"
+            onChange={(e) => setPassword(e.target.value)}
+          />
         </div>
         <div className="mt-4">
           <h2>Confirmar contraseña (*)</h2>
-          <input type="password" className="w-full" />
+          <input
+            type="password"
+            className="w-full"
+            onChange={(e) => setPasswordConfirm(e.target.value)}
+          />
         </div>
         <div className="mt-8">
-          <button className="bg-primary p-3 rounded-md text-white font-medium">
+          <button
+            className="bg-primary p-3 rounded-md text-white font-medium"
+            onClick={onSignUp}
+          >
             Registrarse
           </button>
         </div>

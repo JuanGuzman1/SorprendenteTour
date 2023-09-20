@@ -4,18 +4,22 @@ import "./Navbar.scss";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { useCartContext } from "../../context/CartContext";
 import PersonIcon from "@mui/icons-material/Person";
+import { useAuthContext } from "../../context/AuthContext";
+import { Auth } from "aws-amplify";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const { cart } = useCartContext();
   const [dropOpen, setDropOpen] = useState(false);
+  const { user } = useAuthContext();
 
   window.onscroll = () => {
     setIsScrolled(window.pageYOffset === 0 ? false : true);
     return () => (window.onscroll = null);
   };
 
-  function gtag_report_conversion(url) {
+  const gtag_report_conversion = (url) => {
     let callback = function () {
       if (typeof url != "undefined") {
         return url;
@@ -26,7 +30,12 @@ const Navbar = () => {
       event_callback: callback,
     });
     return false;
-  }
+  };
+
+  const onSignOut = () => {
+    Auth.signOut();
+    toast("Sesion finalizada");
+  };
 
   return (
     <nav
@@ -170,41 +179,33 @@ const Navbar = () => {
                   role="menu"
                   aria-orientation="vertical"
                   aria-labelledby="menu-button"
-                  tabindex="-1"
+                  tabIndex="-1"
                 >
                   <div className="py-1" role="none">
-                    <Link
-                      to={"/login"}
-                      class="text-gray-700 block px-4 py-2 text-sm"
-                    >
-                      Iniciar sesión
-                    </Link>
-                    <button
-                      class="text-gray-700 block px-4 py-2 text-sm"
-                      role="menuitem"
-                      tabindex="-1"
-                      id="menu-item-0"
-                    >
-                      Mis reservaciones
-                    </button>
-                    <button
-                      class="text-gray-700 block px-4 py-2 text-sm"
-                      role="menuitem"
-                      tabindex="-1"
-                      id="menu-item-1"
-                    >
-                      Perfil
-                    </button>
+                    {!user ? (
+                      <Link
+                        to={"/login"}
+                        class="text-gray-700 block px-4 py-2 text-sm"
+                      >
+                        Iniciar sesión
+                      </Link>
+                    ) : (
+                      <>
+                        <button class="text-gray-700 block px-4 py-2 text-sm">
+                          Mis reservaciones
+                        </button>
+                        <button class="text-gray-700 block px-4 py-2 text-sm">
+                          Perfil
+                        </button>
 
-                    <button
-                      type="submit"
-                      class="text-gray-700 block w-full px-4 py-2 text-left text-sm"
-                      role="menuitem"
-                      tabindex="-1"
-                      id="menu-item-3"
-                    >
-                      Cerrar sesion
-                    </button>
+                        <button
+                          class="text-gray-700 block w-full px-4 py-2 text-left text-sm"
+                          onClick={onSignOut}
+                        >
+                          Cerrar sesion
+                        </button>
+                      </>
+                    )}
                   </div>
                 </div>
               )}
