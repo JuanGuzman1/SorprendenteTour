@@ -97,6 +97,11 @@ function SignUp({ setIsSignIn }) {
         username: email,
         password,
         autoSignIn: false,
+        attributes: {
+          email,
+          phone_number: phone,
+          name,
+        },
       });
       if (response) {
         navigate("/confirmar-registro", { state: { email } });

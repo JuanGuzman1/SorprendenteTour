@@ -1,0 +1,29 @@
+enum PhoneType {
+  LOCAL
+  CELULAR
+}
+
+type ContactForm @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String
+  email: String
+  phone: String
+  phoneType: PhoneType
+  subject: String
+  message: String
+}
+
+type Tour @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String
+  pppValles: Float
+  pppXilitla: Float
+}
+
+type User @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  email: String!
+  name: String!
+  phone: String!
+  role: String
+}

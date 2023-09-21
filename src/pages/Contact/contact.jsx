@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Contact.scss";
 
 const Contact = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [phoneType, setPhoneType] = useState();
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+
   return (
     <div className="contact">
       <div
@@ -9,7 +16,7 @@ const Contact = () => {
       >
         <h1 className="text-white font-bold text-[50px]">Contacto</h1>
       </div>
-      <section className="m-5">
+      <section className="m-5 mx-40">
         <p className="text-[30px] text-center">
           Si desea cotizar alguno de nuestros paquetes o tour independientes por
           favor ponerse en contacto con nosotros, solo tiene que completar el
@@ -38,7 +45,7 @@ const Contact = () => {
         </p>
       </section>
       <section className="form-contact bg-center">
-        <div className="flex flex-col justify-center items-center p-5">
+        <div className="flex flex-col justify-center items-center p-5 mx-32">
           <h1 className="text-white text-[40px] text-center font-bold">
             Formulario de contacto
           </h1>
@@ -46,6 +53,7 @@ const Contact = () => {
             type="text"
             className="rounded-xl m-2 md:w-1/2 flex flex-1"
             placeholder="Ingresa tu nombre"
+            onChange={(e) => setName(e.target.value)}
           />
           <input
             type="text"

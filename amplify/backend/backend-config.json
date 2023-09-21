@@ -1,4 +1,27 @@
 {
+  "api": {
+    "SorprendenteTour": {
+      "dependsOn": [],
+      "output": {
+        "authConfig": {
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "AWS_IAM"
+            }
+          ],
+          "defaultAuthentication": {
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 30,
+              "description": "api key description"
+            },
+            "authenticationType": "API_KEY"
+          }
+        }
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "AppSync"
+    }
+  },
   "auth": {
     "SorprendenteTour": {
       "customAuth": false,
@@ -17,7 +40,11 @@
           ],
           "passwordPolicyMinLength": 8
         },
-        "signupAttributes": [],
+        "signupAttributes": [
+          "EMAIL",
+          "PHONE_NUMBER",
+          "NAME"
+        ],
         "socialProviders": [],
         "usernameAttributes": [
           "EMAIL"
