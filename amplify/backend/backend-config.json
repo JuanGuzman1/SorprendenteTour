@@ -56,5 +56,40 @@
       "providerPlugin": "awscloudformation",
       "service": "Cognito"
     }
+  },
+  "function": {
+    "contactformsubmitter": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput"
+          ],
+          "category": "api",
+          "resourceName": "SorprendenteTour"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_contactformsubmitter_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "contactformsubmitter"
+        }
+      ]
+    },
+    "AMPLIFY_function_contactformsubmitter_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "contactformsubmitter"
+        }
+      ]
+    }
   }
 }

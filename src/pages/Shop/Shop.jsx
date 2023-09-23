@@ -2,11 +2,14 @@ import React, { useEffect } from "react";
 import "./Shop.scss";
 import ShopListItem from "../../components/ShopListItem/ShopListItem";
 import { useCartContext } from "../../context/CartContext";
+import { useAuthContext } from "../../context/AuthContext";
 import { formatCurrency } from "../../utils/hooks";
 import { PayPalButtons } from "@paypal/react-paypal-js";
+import { Link } from "react-router-dom";
 
 function Shop() {
   const { cart } = useCartContext();
+  const { user } = useAuthContext();
 
   const createOrder = () => {
     return fetch("/my-server/create-paypal-order", {
@@ -78,11 +81,20 @@ function Shop() {
           </div>
           <hr />
           <div className="flex justify-center mt-10">
-            <PayPalButtons
-              style={{ layout: "vertical" }}
-              className="flex-1"
-              //createOrder={createOrder}
-            />
+            {user ? (
+              <PayPalButtons
+                style={{ layout: "vertical" }}
+                className="flex-1"
+                //createOrder={createOrder}
+              />
+            ) : (
+              <Link
+                to={"/login"}
+                className="bg-primary p-3 rounded-md text-white font-medium"
+              >
+                Inicia sesion
+              </Link>
+            )}
           </div>
         </div>
       </div>
