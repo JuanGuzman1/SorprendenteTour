@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback } from "react";
-import "./Enchiladas.scss";
+import "./Arqueologico.scss";
 import { useParams } from "react-router-dom";
 import PriceCard from "../../../../components/PriceCard/PriceCard";
 import { API, graphqlOperation } from "aws-amplify";
@@ -7,14 +7,14 @@ import { getTour } from "../../../../graphql/queries";
 import { toursIDs } from "../../../../data/toursIDs";
 import { dataTourFormat } from "../../../../utils/helpers";
 
-const Enchiladas = () => {
+const Arqueologico = () => {
   const { place } = useParams();
   const [tourData, setTourData] = useState();
-  
+
   const fetchTour = useCallback(async () => {
     const response = await API.graphql(
       graphqlOperation(getTour, {
-        id: toursIDs.tourEnchiladas,
+        id: toursIDs.tourArqueologico,
       })
     );
     const data = dataTourFormat(response.data.getTour, place);
@@ -35,52 +35,35 @@ const Enchiladas = () => {
   }, [fetchTour]);
 
   return (
-    <div className="enchiladas">
+    <div className="arqueologico">
       <div
-        className={`header-enchiladas bg-cover bg-center rounded-br-3xl flex justify-center items-center`}
+        className={`header-arqueologico bg-cover bg-center rounded-br-3xl flex justify-center items-center`}
       >
-        <h1 className="text-white font-bold text-[50px]">Tour Enchiladas</h1>
+        <h1 className="text-white font-bold text-[50px]">Tour Arqueologico</h1>
       </div>
       <div className="md:mx-48 flex md:flex-row flex-col">
         <div className="flex justify-center items-center m-5 flex-col">
           {/* Información */}
-          <div className="flex md:flex-row flex-col m-3">
+          <div className="flex md:flex-row flex-col m-7">
             <div className="self-center m-3">
               <p className="text-center font-bold text-[color:var(--green-color)] text-[30px]">
-                Tamul, La Cueva del Agua
+                Zona Arqueológica de Tamtoc y Tamohí
               </p>
               <p className="text-[20px] text-center">
-                Viaja con nosotros en una colorida canoa a una de las cascadas
-                más hermosas del mundo, con una altura de 105 metros, la Cascada
-                de Tamul es la más alta del estado. Tan solo a unos metros de
-                este paraje encontraremos una gran cueva casi completamente
-                inundada con bellos tonos azules, este lugar conocido como “La
-                Cueva del Agua”.
+                Zona Arqueológica de Tamtoc (lugar de nubes) Es un asentamiento
+                de la cultura Huasteca más importantes del último período
+                prehispánico. Zona Arqueológica Tamohí. Ciudad prehispánica con
+                Palacios, edificios y altares con extraordinarias pinturas
+                murales. Nacimiento Taninul, poza natural de agua cristalina
+                donde entraremos nadando a una cueva bajo la roca, apreciaremos
+                diversas formaciones rocosas.
               </p>
             </div>
             <img
-              src="assets/images/tours/enchiladas/image1.jpeg"
+              src="assets/images/tours/arqueologico/image1.jpg"
               alt=""
-               className="h-72 w-2/3 rounded-2xl self-center"
+              className="h-72 w-2/3 rounded-2xl self-center"
             />
-          </div>
-          <div className="flex md:flex-row flex-col m-3">
-            <img
-              src="assets/images/tours/enchiladas/image2.jpeg"
-              alt=""
-               className="h-64 w-2/3 rounded-2xl self-center"
-            />
-            <div className="self-center m-3">
-              <p className="text-center font-bold text-[color:var(--green-color)] text-[30px]">
-                El Sótano de las Huahuas
-              </p>
-              <p className="text-[20px] text-center">
-                El Sótano de las Huahuas es una gran cueva vertical con 478
-                metros de profundidad y un diámetro de 60 metros originada por
-                el colapso del suelo calizo. Es el impresionante santuario de
-                muchas especies de aves.
-              </p>
-            </div>
           </div>
           {/* acordeon de info */}
           <div
@@ -115,25 +98,15 @@ const Enchiladas = () => {
             <div
               id="accordion-collapse-body-1"
               aria-labelledby="accordion-collapse-heading-1"
+              className="w-full"
             >
-              <div class="p-5 border border-gray-200 dark:border-gray-700 dark:bg-gray-900 border-b-0">
-                <p class="mb-2 text-gray-500 dark:text-gray-400 font-bold">
-                  OPCIONES 2 HORARIOS DIFERENTES
-                </p>
-                <p class="mb-2 text-gray-500 dark:text-gray-400">
-                  Una salida de madrugada: 5:00 AM.
-                </p>
-                <p class="mb-2 text-gray-500 dark:text-gray-400">
-                  Una salida de mañana: 7:30 AM.
-                </p>
-                <p class="mb-2 text-gray-500 dark:text-gray-400">
-                  Se visitara la cascada de Tamul en un mágico recorrido de
-                  canoa sobre el río Tampaon, pasaremos por la cueva del agua,
-                  para posteriormente ir al imponente Sótano de las Huahuas y
-                  finalmente terminamos en un bello corredor de artesanías,
-                  llevate un recuerdo con ellos y deja una memoria de la hermosa
-                  Huasteca viajando con nosotros. Nota: Todo esta sujeto a
-                  temporada, si es alta o baja.
+              <div class="p-5 border border-gray-200 dark:border-gray-700 dark:bg-gray-900 border-b-0 w-full">
+                <p class="mb-2 text-gray-500 dark:text-gray-400 w-full">
+                  "El Nacimiento", en San Luis Potosí, es un lugar excelente
+                  para relajarte además cuenta con área para acampar, asadores
+                  para la carnita asada, baños, renta de chalecos salvavidas,
+                  vestidores y mesas, también podrás encontrar negocios de
+                  comida y souvenirs.
                 </p>
               </div>
             </div>
@@ -168,23 +141,30 @@ const Enchiladas = () => {
             >
               <div class="p-5 border border-gray-200 dark:border-gray-700 border-b-0">
                 <p class="mb-2 text-gray-500 dark:text-gray-400">
-                  -Se les incluye pago de entradas.
-                </p>
-                <p class="mb-2 text-gray-500 dark:text-gray-400">-Desayuno.</p>
-                <p class="mb-2 text-gray-500 dark:text-gray-400">
-                  -Equipo de seguridad.
+                  🥘Desayuno de platillos típicos de la Región.
                 </p>
                 <p class="mb-2 text-gray-500 dark:text-gray-400">
-                  -Fotografías en paquete basico y con gopro (gratis).
+                  🔖Entradas a los parques.
                 </p>
                 <p class="mb-2 text-gray-500 dark:text-gray-400">
-                  -Guía especializado en esta ruta.
+                  🧗‍♂️Guía especializado.
                 </p>
                 <p class="mb-2 text-gray-500 dark:text-gray-400">
-                  -Transporte acorde a la cantidad de personas todos de modelo
-                  reciente, cómodo y seguro.{" "}
+                  🚌Transporte de su hospedaje.
+                </p>
+                <p class="mb-2 text-gray-500 dark:text-gray-400">
+                  🦺Equipo de seguridad requerido.
+                </p>
+                <p class="mb-2 text-gray-500 dark:text-gray-400">
+                  🙋‍♂️Recorrido guiado y actividades acuáticas.
+                </p>
+                <p class="mb-2 text-gray-500 dark:text-gray-400">
+                  ⛑️Botiquín de P. A.
+                </p>
+                <p class="mb-2 text-gray-500 dark:text-gray-400">
+                  📸fotografías y videos.
                   <span className="font-bold">
-                    Una duración de tour de: aprox. 12 a 14 horas.
+                    😎mucha diversión garantizada.. ⏳Duración 12 horas.
                   </span>
                 </p>
               </div>
@@ -272,24 +252,24 @@ const Enchiladas = () => {
               aria-labelledby="accordion-collapse-heading-4"
             >
               <div class="p-5 border border-gray-200 dark:border-gray-700 border-t-0">
-                <img
-                  src="assets/images/tours/enchiladas/itinerario-xilitla.jpeg"
+                {/* <img
+                  src="assets/images/tours/acamayas/itinerario-xilitla.jpeg"
                   alt=""
-                />
+                /> */}
               </div>
             </div>
           </div>
           {/* ruta */}
           {place === "xilitla" && (
             <section className="m-5">
-              <h1 className="text-[40px] text-[color:var(--green-color)] text-center text-bold">
+              {/* <h1 className="text-[40px] text-[color:var(--green-color)] text-center text-bold">
                 Mapa de ruta
               </h1>
               <img
-                src="assets/images/tours/enchiladas/ruta-xilitla.png"
+                src="assets/images/tours/acamayas/ruta-xilitla.png"
                 alt=""
                 className="rounded-xl animate-pulse"
-              />
+              /> */}
             </section>
           )}
         </div>
@@ -299,4 +279,4 @@ const Enchiladas = () => {
   );
 };
 
-export default Enchiladas;
+export default Arqueologico;

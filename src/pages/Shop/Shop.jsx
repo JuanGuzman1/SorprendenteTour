@@ -82,11 +82,17 @@ function Shop() {
           <hr />
           <div className="flex justify-center mt-10">
             {user ? (
-              <PayPalButtons
-                style={{ layout: "vertical" }}
-                className="flex-1"
-                //createOrder={createOrder}
-              />
+              // <PayPalButtons
+              //   style={{ layout: "vertical" }}
+              //   className="flex-1"
+              //   //createOrder={createOrder}
+              // />
+              <Link
+                to={"/contacto"}
+                className="bg-primary p-3 rounded-md text-white font-medium"
+              >
+                Contactanos
+              </Link>
             ) : (
               <Link
                 to={"/login"}

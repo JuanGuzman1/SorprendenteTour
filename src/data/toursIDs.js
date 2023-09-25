@@ -4,4 +4,6 @@ export const toursIDs = {
   tourEnchiladas: "4939b3ea-9a75-4172-bdf9-e83865205fbf",
   tourAcamayas: "e2b61d87-4e3f-40af-9297-ef70fefbd13d",
   tourMojarras: "a9000256-78a3-46ec-a246-54627b4aa9ab",
+  tourMarranada: "748fe2ef-de51-406e-b8a8-466c43ca230d",
+  tourArqueologico: "3e08421e-e4eb-4f56-9408-4dfd4218b55e",
 };

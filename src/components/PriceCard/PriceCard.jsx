@@ -6,7 +6,7 @@ import { useCartContext } from "../../context/CartContext";
 
 function PriceCard({ tour }) {
   const [options, setOptions] = useState([]);
-  const [pricePerPerson] = useState(tour.price);
+  const [pricePerPerson, setPricePerPerson] = useState();
   const [price, setPrice] = useState();
   const [breakfast, setBreakfast] = useState("no");
   const [numPeople, setNumPeople] = useState(2);
@@ -19,8 +19,8 @@ function PriceCard({ tour }) {
       name: tour.name,
       price,
       breakfast,
-      numPeople
-    }
+      numPeople,
+    };
     newData.push(data);
     setCart(newData);
     navigate("/checkout");
@@ -29,19 +29,20 @@ function PriceCard({ tour }) {
   useEffect(() => {
     const opts = NumbersOption();
     setOptions(opts);
-  }, []);
+    setPricePerPerson(tour.price);
+  }, [tour.price]);
 
   useEffect(() => {
     if (breakfast === "si") {
-      setPrice(pricePerPerson * numPeople + 50);
+      setPrice(pricePerPerson * numPeople + 50 * numPeople);
     } else if (breakfast === "no") {
       setPrice(pricePerPerson * numPeople);
     }
   }, [breakfast, numPeople, pricePerPerson]);
 
   return (
-    <div className="w-3/4">
-      <div className="shadow-lg rounded-md  p-5 mt-32 ">
+    <div className="w-3/4 self-center md:self-start">
+      <div className="shadow-lg rounded-md p-5 md:mt-28">
         <div>
           <h1 className="text-3xl font-semibold text-[color:var(--blue-color)]">
             Reservar Tour

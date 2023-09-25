@@ -1,14 +1,26 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import "./Zacahuil.scss";
 import { useParams } from "react-router-dom";
 import PriceCard from "../../../../components/PriceCard/PriceCard";
+import { API, graphqlOperation } from "aws-amplify";
+import { getTour } from "../../../../graphql/queries";
+import { toursIDs } from "../../../../data/toursIDs";
+import { dataTourFormat } from "../../../../utils/helpers";
 
 const Zacahuil = () => {
   const { place } = useParams();
-  const data = {
-    name: 'Tour Zacahuil',
-    price: 200,  
-  }
+  const [tourData, setTourData] = useState();
+
+  const fetchTour = useCallback(async () => {
+    const response = await API.graphql(
+      graphqlOperation(getTour, {
+        id: toursIDs.tourZacahuil,
+      })
+    );
+    const data = dataTourFormat(response.data.getTour, place);
+
+    setTourData(data);
+  }, [place]);
 
   useEffect(() => {
     const evt = new Event("DOMContentLoaded", {
@@ -18,6 +30,10 @@ const Zacahuil = () => {
     document.dispatchEvent(evt);
   });
 
+  useEffect(() => {
+    fetchTour();
+  }, [fetchTour]);
+
   return (
     <div className="zacahuil">
       <div
@@ -26,7 +42,7 @@ const Zacahuil = () => {
         <h1 className="text-white font-bold text-[50px]">Tour Zacahuil</h1>
       </div>
 
-      <div className="md:mx-48 flex flex-row">
+      <div className="md:mx-48 flex md:flex-row flex-col">
         <div className="flex justify-center items-center m-5 flex-col">
           {/* Información */}
           <div className="flex md:flex-row flex-col m-7">
@@ -245,7 +261,7 @@ const Zacahuil = () => {
             </section>
           )}
         </div>
-       <PriceCard tour={data}/>
+        {tourData && <PriceCard tour={tourData} />}
       </div>
     </div>
   );

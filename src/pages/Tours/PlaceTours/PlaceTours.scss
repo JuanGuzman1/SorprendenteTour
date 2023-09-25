@@ -38,6 +38,19 @@
       height: 550px;
     }
 
+    .marranada-card {
+      width: 400px;
+      background-image: url("../../../../public/assets/images/tours/marranada/marranada.jpg");
+      height: 550px;
+    }
+
+    .arqueologico-card {
+      width: 400px;
+      background-image: url("../../../../public/assets/images/tours/arqueologico/arqueologico.jpg");
+      height: 550px;
+    }
+
+
     @media only screen and (max-width: 768px) {
       .zacahuil-card,
       .bocoles-card,

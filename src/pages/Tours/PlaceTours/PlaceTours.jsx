@@ -61,6 +61,24 @@ const PlaceTours = () => {
             </span>
           </section>
         </Link>
+
+        {/* marranada */}
+        <Link to="marranada">
+          <section className="marranada-card bg-no-repeat bg-cover bg-center rounded-lg m-5 relative">
+            <span class="absolute right-0 bg-green-300 text-white text-lg font-medium animate-pulse px-4 py-2 rounded dark:bg-blue-200 dark:text-blue-800">
+              Tour Marranada
+            </span>
+          </section>
+        </Link>
+
+        {/* arqueologico */}
+        <Link to="arqueologico">
+          <section className="arqueologico-card bg-no-repeat bg-cover bg-center rounded-lg m-5 relative">
+            <span class="absolute right-0 bg-green-300 text-white text-lg font-medium animate-pulse px-4 py-2 rounded dark:bg-blue-200 dark:text-blue-800">
+              Tour Arqueológico
+            </span>
+          </section>
+        </Link>
       </div>
     </div>
   );
