@@ -1,6 +1,72 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const createBundle = /* GraphQL */ `
+  mutation CreateBundle(
+    $input: CreateBundleInput!
+    $condition: ModelBundleConditionInput
+  ) {
+    createBundle(input: $input, condition: $condition) {
+      id
+      name
+      p2pXilitla
+      p3pXilitla
+      p4pXilitla
+      p5pXilitla
+      p2pValles
+      p3pValles
+      p4pValles
+      p5pValles
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const updateBundle = /* GraphQL */ `
+  mutation UpdateBundle(
+    $input: UpdateBundleInput!
+    $condition: ModelBundleConditionInput
+  ) {
+    updateBundle(input: $input, condition: $condition) {
+      id
+      name
+      p2pXilitla
+      p3pXilitla
+      p4pXilitla
+      p5pXilitla
+      p2pValles
+      p3pValles
+      p4pValles
+      p5pValles
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const deleteBundle = /* GraphQL */ `
+  mutation DeleteBundle(
+    $input: DeleteBundleInput!
+    $condition: ModelBundleConditionInput
+  ) {
+    deleteBundle(input: $input, condition: $condition) {
+      id
+      name
+      p2pXilitla
+      p3pXilitla
+      p4pXilitla
+      p5pXilitla
+      p2pValles
+      p3pValles
+      p4pValles
+      p5pValles
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
 export const createContactForm = /* GraphQL */ `
   mutation CreateContactForm(
     $input: CreateContactFormInput!

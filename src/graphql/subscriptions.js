@@ -1,6 +1,63 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const onCreateBundle = /* GraphQL */ `
+  subscription OnCreateBundle($filter: ModelSubscriptionBundleFilterInput) {
+    onCreateBundle(filter: $filter) {
+      id
+      name
+      p2pXilitla
+      p3pXilitla
+      p4pXilitla
+      p5pXilitla
+      p2pValles
+      p3pValles
+      p4pValles
+      p5pValles
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onUpdateBundle = /* GraphQL */ `
+  subscription OnUpdateBundle($filter: ModelSubscriptionBundleFilterInput) {
+    onUpdateBundle(filter: $filter) {
+      id
+      name
+      p2pXilitla
+      p3pXilitla
+      p4pXilitla
+      p5pXilitla
+      p2pValles
+      p3pValles
+      p4pValles
+      p5pValles
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onDeleteBundle = /* GraphQL */ `
+  subscription OnDeleteBundle($filter: ModelSubscriptionBundleFilterInput) {
+    onDeleteBundle(filter: $filter) {
+      id
+      name
+      p2pXilitla
+      p3pXilitla
+      p4pXilitla
+      p5pXilitla
+      p2pValles
+      p3pValles
+      p4pValles
+      p5pValles
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
 export const onCreateContactForm = /* GraphQL */ `
   subscription OnCreateContactForm(
     $filter: ModelSubscriptionContactFormFilterInput

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import "./CiudadValles.scss";
 import TourIcon from "@mui/icons-material/Tour";
 import Tours from "./Tours";
@@ -6,9 +6,58 @@ import { Link } from "react-router-dom";
 import ChatBubbleIcon from "@mui/icons-material/ChatBubble";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import LibraryBooksIcon from "@mui/icons-material/LibraryBooks";
+import { bundlesIDs } from "../../../data/bundlesIDs";
+import { API, graphqlOperation } from "aws-amplify";
+import { getBundle } from "../../../graphql/queries";
+import PriceCard from "../../../components/PriceCard/PriceCard";
 
 const CiudadValles = () => {
   const [tour, setTour] = useState(1);
+  const [bundleData, setBundleData] = useState();
+
+  const fetchBundle = useCallback(async () => {
+    let bundleID;
+    switch (tour) {
+      case 1:
+        bundleID = bundlesIDs.bundle1;
+        break;
+      case 2:
+        bundleID = bundlesIDs.bundle2;
+        break;
+      case 3:
+        bundleID = bundlesIDs.bundle3;
+        break;
+      case 4:
+        bundleID = bundlesIDs.bundle4;
+        break;
+      case 5:
+        bundleID = bundlesIDs.bundle5;
+        break;
+      case 6:
+        bundleID = bundlesIDs.bundle6;
+        break;
+      default:
+        break;
+    }
+    const { data } = await API.graphql(
+      graphqlOperation(getBundle, {
+        id: bundleID,
+      })
+    );
+    const newBundleData = {
+      name: data.getBundle.name,
+      p2price: data.getBundle.p2pValles,
+      p3price: data.getBundle.p3pValles,
+      p4price: data.getBundle.p4pValles,
+      p5price: data.getBundle.p5pValles,
+    };
+    setBundleData(newBundleData);
+  }, [tour]);
+
+  useEffect(() => {
+    fetchBundle();
+  }, [fetchBundle]);
+
   return (
     <div>
       <div
@@ -17,7 +66,7 @@ const CiudadValles = () => {
         <h1 className="text-white font-bold text-[50px]">Ciudad Valles</h1>
       </div>
       {/* tours */}
-      <div className="flex md:flex-row flex-col">
+      <div className="flex md:flex-row justify-between flex-col">
         <aside class="w-64 m-5" aria-label="Sidebar">
           <div class="px-3 py-4 overflow-y-auto rounded bg-gray-50 dark:bg-gray-800">
             <ul class="space-y-2">
@@ -104,6 +153,9 @@ const CiudadValles = () => {
           <section className="m-5">
             <Tours tour={tour} />
           </section>
+        </div>
+        <div className="md:w-1/3 w-full mb-8 md:mb-0">
+          {bundleData && <PriceCard bundle={bundleData} />}
         </div>
       </div>
       {/* instruciones */}

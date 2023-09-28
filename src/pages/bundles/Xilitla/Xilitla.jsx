@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import "./Xilitla.scss";
 import TourIcon from "@mui/icons-material/Tour";
 import Tours from "./Tours";
@@ -6,9 +6,58 @@ import { Link } from "react-router-dom";
 import ChatBubbleIcon from "@mui/icons-material/ChatBubble";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import LibraryBooksIcon from "@mui/icons-material/LibraryBooks";
+import { bundlesIDs } from "../../../data/bundlesIDs";
+import { API, graphqlOperation } from "aws-amplify";
+import { getBundle } from "../../../graphql/queries";
+import PriceCard from "../../../components/PriceCard/PriceCard";
 
 const Xilitla = () => {
   const [tour, setTour] = useState(1);
+  const [bundleData, setBundleData] = useState();
+
+  const fetchBundle = useCallback(async () => {
+    let bundleID;
+    switch (tour) {
+      case 1:
+        bundleID = bundlesIDs.bundle1;
+        break;
+      case 2:
+        bundleID = bundlesIDs.bundle2;
+        break;
+      case 3:
+        bundleID = bundlesIDs.bundle3;
+        break;
+      case 4:
+        bundleID = bundlesIDs.bundle4;
+        break;
+      case 5:
+        bundleID = bundlesIDs.bundle5;
+        break;
+      case 6:
+        bundleID = bundlesIDs.bundle6;
+        break;
+      default:
+        break;
+    }
+    const { data } = await API.graphql(
+      graphqlOperation(getBundle, {
+        id: bundleID,
+      })
+    );
+    const newBundleData = {
+      name: data.getBundle.name,
+      p2price: data.getBundle.p2pXilitla,
+      p3price: data.getBundle.p3pXilitla,
+      p4price: data.getBundle.p4pXilitla,
+      p5price: data.getBundle.p5pXilitla,
+    };
+    setBundleData(newBundleData);
+  }, [tour]);
+
+  useEffect(() => {
+    fetchBundle();
+  }, [fetchBundle]);
+
   return (
     <div>
       <div
@@ -17,8 +66,8 @@ const Xilitla = () => {
         <h1 className="text-white font-bold text-[50px]">Xilitla</h1>
       </div>
 
-      <div className="flex md:flex-row flex-col">
-        <aside class="w-64 m-5" aria-label="Sidebar">
+      <div className="flex md:flex-row justify-between flex-col">
+        <aside className="w-64 m-5" aria-label="Sidebar">
           <div class="px-3 py-4 overflow-y-auto rounded bg-gray-50 dark:bg-gray-800">
             <ul class="space-y-2">
               <li>
@@ -101,9 +150,12 @@ const Xilitla = () => {
           </div>
         </aside>
         <div>
-          <section className="m-5">
+          <section className="m-5 ">
             <Tours tour={tour} />
           </section>
+        </div>
+        <div className="md:w-1/3 w-full mb-8 md:mb-0">
+          {bundleData && <PriceCard bundle={bundleData} />}
         </div>
       </div>
       {/* instruciones */}

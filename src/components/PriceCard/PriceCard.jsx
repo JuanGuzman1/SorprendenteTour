@@ -4,7 +4,7 @@ import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import { useNavigate } from "react-router-dom";
 import { useCartContext } from "../../context/CartContext";
 
-function PriceCard({ tour }) {
+function PriceCard({ tour, bundle }) {
   const [options, setOptions] = useState([]);
   const [pricePerPerson, setPricePerPerson] = useState();
   const [price, setPrice] = useState();
@@ -27,10 +27,34 @@ function PriceCard({ tour }) {
   };
 
   useEffect(() => {
+    if (tour) {
+      setPricePerPerson(tour.price);
+    }
+    if (bundle) {
+      switch (numPeople) {
+        case 2:
+          setPricePerPerson(bundle.p2price);
+          break;
+        case 3:
+          setPricePerPerson(bundle.p3price);
+          break;
+        case 4:
+          setPricePerPerson(bundle.p4price);
+          break;
+        case 5:
+          setPricePerPerson(bundle.p5price);
+          break;
+        default:
+          setPricePerPerson(bundle.p5price);
+          break;
+      }
+    }
+  }, [tour, bundle, numPeople]);
+
+  useEffect(() => {
     const opts = NumbersOption();
     setOptions(opts);
-    setPricePerPerson(tour.price);
-  }, [tour.price]);
+  }, []);
 
   useEffect(() => {
     if (breakfast === "si") {
@@ -45,7 +69,7 @@ function PriceCard({ tour }) {
       <div className="shadow-lg rounded-md p-5 md:mt-28">
         <div>
           <h1 className="text-3xl font-semibold text-[color:var(--blue-color)]">
-            Reservar Tour
+            Reservar {bundle ? "Paquete" : "Tour"}
           </h1>
           <h1 className="text-6xl leading-relaxed text-[color:var(--green-color)] font-medium">
             ${formatCurrency(price)}
@@ -53,7 +77,7 @@ function PriceCard({ tour }) {
           <p className="mt-3">No. personas</p>
           <select
             value={numPeople}
-            onChange={(e) => setNumPeople(e.target.value)}
+            onChange={(e) => setNumPeople(parseInt(e.target.value))}
             className="rounded-md"
           >
             {options.map(
@@ -66,7 +90,8 @@ function PriceCard({ tour }) {
             )}
           </select>
           <p className="mt-3">
-            Con comida <span className="text-primary">(+200 p/p)</span>
+            Con {bundle ? "desayuno y comida" : "comida"}{" "}
+            <span className="text-primary">(+200 p/p)</span>
           </p>
           <select
             onChange={(e) => setBreakfast(e.target.value)}
