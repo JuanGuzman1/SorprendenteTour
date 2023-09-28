@@ -91,7 +91,7 @@ const Navbar = () => {
               <Link
                 onClick={() => gtag_report_conversion("/")}
                 to="/"
-                className="font-bold text-white block py-2 pr-4 pl-3 rounded md:bg-transparent  md:p-0 dark:text-white"
+                className="text-xl font-medium text-white block py-2 pr-4 pl-3 rounded md:bg-transparent  md:p-0 dark:text-white"
               >
                 Inicio
               </Link>
@@ -100,7 +100,7 @@ const Navbar = () => {
               <Link
                 onClick={() => gtag_report_conversion("/nosotros")}
                 to="/nosotros"
-                class="font-bold text-white block py-2 pr-4 pl-3 border-b border-gray-100 hover:bg-cyan-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                class="text-xl font-medium text-white block py-2 pr-4 pl-3 border-b border-gray-100 hover:bg-cyan-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >
                 ¿Quienes somos?
               </Link>
@@ -109,7 +109,7 @@ const Navbar = () => {
               <Link
                 onClick={() => gtag_report_conversion("/paquetes")}
                 to="/paquetes"
-                class="font-bold block py-2 pr-4 pl-3 text-white border-b border-gray-100 hover:bg-cyan-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                class="text-xl font-medium block py-2 pr-4 pl-3 text-white border-b border-gray-100 hover:bg-cyan-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >
                 Paquetes
               </Link>
@@ -118,7 +118,7 @@ const Navbar = () => {
               <Link
                 onClick={() => gtag_report_conversion("/tours")}
                 to="/tours"
-                class="font-bold block py-2 pr-4 pl-3 text-white border-b border-gray-100 hover:bg-cyan-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                class="text-xl font-medium block py-2 pr-4 pl-3 text-white border-b border-gray-100 hover:bg-cyan-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >
                 Tours
               </Link>
@@ -127,7 +127,7 @@ const Navbar = () => {
               <Link
                 onClick={() => gtag_report_conversion("/tours4x4")}
                 to="/tours4x4"
-                class="font-bold block py-2 pr-4 pl-3 text-red-500 animate-bounce border-b border-gray-100 hover:bg-cyan-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                class="text-xl font-medium block py-2 pr-4 pl-3 text-red-500 animate-bounce border-b border-gray-100 hover:bg-cyan-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >
                 Tours Xilitla 4x4
               </Link>
@@ -136,7 +136,7 @@ const Navbar = () => {
               <Link
                 onClick={() => gtag_report_conversion("/galeria")}
                 to="/galeria"
-                class="font-bold block py-2 pr-4 pl-3 text-white border-b border-gray-100 hover:bg-cyan-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                class="text-xl font-medium block py-2 pr-4 pl-3 text-white border-b border-gray-100 hover:bg-cyan-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >
                 Galeria
               </Link>
@@ -145,7 +145,7 @@ const Navbar = () => {
               <Link
                 onClick={() => gtag_report_conversion("/contacto")}
                 to="/contacto"
-                class="font-bold block py-2 pr-4 pl-3 text-white hover:bg-cyan-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                class="text-xl font-medium block py-2 pr-4 pl-3 text-white hover:bg-cyan-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
               >
                 Contacto
               </Link>
@@ -154,7 +154,7 @@ const Navbar = () => {
               <Link
                 onClick={() => gtag_report_conversion("/checkout")}
                 to={"/checkout"}
-                class="font-bold block py-2 pr-4 pl-3 text-white hover:bg-cyan-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                class="text-xl font-medium block py-2 pr-4 pl-3 text-white hover:bg-cyan-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
               >
                 <ShoppingCartIcon />
               </Link>
@@ -168,7 +168,7 @@ const Navbar = () => {
             </li>
             <li className="relative inline-block">
               <button
-                className="inline-flex"
+                class="text-xl font-medium block py-2 pr-4 pl-3 text-white hover:bg-cyan-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 onClick={() => setDropOpen(!dropOpen)}
               >
                 <PersonIcon />

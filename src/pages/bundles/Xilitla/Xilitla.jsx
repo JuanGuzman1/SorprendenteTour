@@ -23,7 +23,6 @@ const Xilitla = () => {
             <ul class="space-y-2">
               <li>
                 <button
-                 
                   onClick={() => setTour(1)}
                   class={`${
                     tour === 1 ? "bg-green-300" : ""
@@ -35,7 +34,6 @@ const Xilitla = () => {
               </li>
               <li>
                 <button
-
                   onClick={() => setTour(2)}
                   class={`${
                     tour === 2 ? "bg-green-300" : ""
@@ -62,7 +60,6 @@ const Xilitla = () => {
               </li>
               <li>
                 <button
-
                   onClick={() => setTour(4)}
                   class={`${
                     tour === 4 ? "bg-green-300" : ""
@@ -147,23 +144,25 @@ const Xilitla = () => {
         <div className="justify-center flex md:flex-row flex-col gap-3 m-3">
           <div className="items-center justify-center flex flex-row bg-slate-300 p-5 rounded-xl">
             <ChatBubbleIcon style={{ color: "white" }} />
-            <button
+            <a
               href="https://my.artibot.ai/gssyysqb"
               target="_blank"
               className="text-[20px] text-center text-white font-bold"
+              rel="noreferrer"
             >
               Chat en linea
-            </button>
+            </a>
           </div>
           <div className="items-center justify-center flex flex-row bg-green-300 p-5 rounded-xl">
             <WhatsAppIcon style={{ color: "white" }} />
-            <button
-              href="https://api.whatsapp.com/send?phone=+5214441890212"
+            <a
+              href="https://api.whatsapp.com/send?phone=+5214441890212&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20paquetes%20saliendo%20de%20xilitla%20."
               target="_blank"
               className="text-[20px] text-center text-white font-bold"
+              rel="noreferrer"
             >
               WhatsApp
-            </button>
+            </a>
           </div>
           <div className="items-center justify-center flex flex-row bg-cyan-300 p-5 rounded-xl">
             <LibraryBooksIcon style={{ color: "white" }} />

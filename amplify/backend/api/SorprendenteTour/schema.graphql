@@ -1,3 +1,16 @@
+type Bundle @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String
+  p2pXilitla: Float
+  p3pXilitla: Float
+  p4pXilitla: Float
+  p5pXilitla: Float
+  p2pValles: Float
+  p3pValles: Float
+  p4pValles: Float
+  p5pValles: Float
+}
+
 enum PhoneType {
   LOCAL
   CELULAR
@@ -27,3 +40,4 @@ type User @model @auth(rules: [{allow: public}]) {
   phone: String!
   role: String
 }
+ 

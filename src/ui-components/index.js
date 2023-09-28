@@ -4,6 +4,8 @@
  * Any changes to this file will be overwritten when running amplify pull. *
  **************************************************************************/
 
+export { default as BundleCreateForm } from "./BundleCreateForm";
+export { default as BundleUpdateForm } from "./BundleUpdateForm";
 export { default as ContactFormCreateForm } from "./ContactFormCreateForm";
 export { default as ContactFormUpdateForm } from "./ContactFormUpdateForm";
 export { default as TourCreateForm } from "./TourCreateForm";

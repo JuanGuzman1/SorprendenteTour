@@ -34,7 +34,7 @@ function PriceCard({ tour }) {
 
   useEffect(() => {
     if (breakfast === "si") {
-      setPrice(pricePerPerson * numPeople + 50 * numPeople);
+      setPrice(pricePerPerson * numPeople + 200 * numPeople);
     } else if (breakfast === "no") {
       setPrice(pricePerPerson * numPeople);
     }
@@ -65,7 +65,9 @@ function PriceCard({ tour }) {
                 )
             )}
           </select>
-          <p className="mt-3">Con desayuno</p>
+          <p className="mt-3">
+            Con comida <span className="text-primary">(+200 p/p)</span>
+          </p>
           <select
             onChange={(e) => setBreakfast(e.target.value)}
             className="rounded-md"
