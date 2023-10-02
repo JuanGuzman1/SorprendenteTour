@@ -19,6 +19,20 @@ export type AmplifyDependentResourcesAttributes = {
     }
   },
   "function": {
+    "CapturePayment": {
+      "Arn": "string",
+      "LambdaExecutionRole": "string",
+      "LambdaExecutionRoleArn": "string",
+      "Name": "string",
+      "Region": "string"
+    },
+    "CreatePaymentIntent": {
+      "Arn": "string",
+      "LambdaExecutionRole": "string",
+      "LambdaExecutionRoleArn": "string",
+      "Name": "string",
+      "Region": "string"
+    },
     "contactformsubmitter": {
       "Arn": "string",
       "LambdaExecutionRole": "string",

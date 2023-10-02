@@ -6,30 +6,52 @@ import { useAuthContext } from "../../context/AuthContext";
 import { formatCurrency } from "../../utils/hooks";
 import { PayPalButtons } from "@paypal/react-paypal-js";
 import { Link } from "react-router-dom";
+import { createPaymentIntent, capturePayment } from "../../graphql/mutations";
+import { API, graphqlOperation } from "aws-amplify";
+import toast from "react-hot-toast";
 
 function Shop() {
   const { cart } = useCartContext();
   const { user } = useAuthContext();
 
+  const paymentIntent = async () => {
+    const amount = cart.reduce((x, y) => x + y.price, 0);
+    try {
+      const response = await API.graphql(
+        graphqlOperation(createPaymentIntent, { amount })
+      );
+
+      return response;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const paymentCapture = async (orderId) => {
+    try {
+      const response = await API.graphql(
+        graphqlOperation(capturePayment, { orderId })
+      );
+      console.log(response);
+      return response;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const createOrder = () => {
-    return fetch("/my-server/create-paypal-order", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      // use the "body" param to optionally pass additional order information
-      // like product ids and quantities
-      body: JSON.stringify({
-        cart: [
-          {
-            id: "YOUR_PRODUCT_ID",
-            quantity: "YOUR_PRODUCT_QUANTITY",
-          },
-        ],
-      }),
-    })
-      .then((response) => response.json())
+    return paymentIntent()
+      .then((response) => response.data.createPaymentIntent)
       .then((order) => order.id);
+  };
+
+  const onApprove = (data) => {
+    return paymentCapture(data.orderID)
+      .then((response) => JSON.parse(response.data.capturePayment.data))
+      .then((orderData) => {
+        const name = orderData.payer.name.given_name;
+        toast.success(`Transaction completed by ${name}`);
+      });
   };
 
   return (
@@ -82,17 +104,21 @@ function Shop() {
           <hr />
           <div className="flex justify-center mt-10">
             {user ? (
-              // <PayPalButtons
-              //   style={{ layout: "vertical" }}
-              //   className="flex-1"
-              //   //createOrder={createOrder}
-              // />
-              <Link
-                to={"/contacto"}
-                className="bg-primary p-3 rounded-md text-white font-medium"
-              >
-                Contactanos
-              </Link>
+              <div className="flex flex-col flex-1">
+                <PayPalButtons
+                  style={{ layout: "vertical" }}
+                  className="flex-1"
+                  createOrder={createOrder}
+                  onApprove={onApprove}
+                />
+                <p className="text-xl text-center font-normal">O tambien:</p>
+                <Link
+                  to={"/contacto"}
+                  className="bg-primary p-3 rounded-md text-white font-medium text-center mt-3"
+                >
+                  Contactanos
+                </Link>
+              </div>
             ) : (
               <Link
                 to={"/login"}

@@ -19,6 +19,14 @@
         "contactformsubmitter": {
           "deploymentBucketName": "amplify-sorprendentetour-staging-191459-deployment",
           "s3Key": "amplify-builds/contactformsubmitter-5874656673594c706778-build.zip"
+        },
+        "CreatePaymentIntent": {
+          "deploymentBucketName": "amplify-sorprendentetour-staging-191459-deployment",
+          "s3Key": "amplify-builds/CreatePaymentIntent-6554684d433851534641-build.zip"
+        },
+        "CapturePayment": {
+          "deploymentBucketName": "amplify-sorprendentetour-staging-191459-deployment",
+          "s3Key": "amplify-builds/CapturePayment-51657069466244626370-build.zip"
         }
       },
       "api": {

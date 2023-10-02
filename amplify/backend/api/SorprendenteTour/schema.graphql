@@ -1,4 +1,18 @@
-type Bundle @model @auth(rules: [{allow: public}]) {
+enum OrderStatus {
+  PENDING
+  CANCELLED
+  APPROVED
+}
+
+type Order @model @auth(rules: [{ allow: public }]) {
+  id: ID!
+  cart: String
+  total: String
+  status: OrderStatus
+  User: User @hasOne
+}
+
+type Bundle @model @auth(rules: [{ allow: public }]) {
   id: ID!
   name: String
   p2pXilitla: Float
@@ -16,7 +30,7 @@ enum PhoneType {
   CELULAR
 }
 
-type ContactForm @model @auth(rules: [{allow: public}]) {
+type ContactForm @model @auth(rules: [{ allow: public }]) {
   id: ID!
   name: String
   email: String
@@ -26,18 +40,33 @@ type ContactForm @model @auth(rules: [{allow: public}]) {
   message: String
 }
 
-type Tour @model @auth(rules: [{allow: public}]) {
+type Tour @model @auth(rules: [{ allow: public }]) {
   id: ID!
   name: String
   pppValles: Float
   pppXilitla: Float
 }
 
-type User @model @auth(rules: [{allow: public}]) {
+type User @model @auth(rules: [{ allow: public }]) {
   id: ID!
   email: String!
   name: String!
   phone: String!
   role: String
 }
- 
+
+type Mutation {
+  createPaymentIntent(amount: Float!): PaymentIntent!
+    @function(name: "CreatePaymentIntent-${env}")
+  capturePayment(orderId: String!): Payment!
+    @function(name: "CapturePayment-${env}")
+}
+
+type PaymentIntent {
+  id: String!
+  status: String!
+}
+
+type Payment {
+  data: String!
+}

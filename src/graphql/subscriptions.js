@@ -1,6 +1,78 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const onCreateOrder = /* GraphQL */ `
+  subscription OnCreateOrder($filter: ModelSubscriptionOrderFilterInput) {
+    onCreateOrder(filter: $filter) {
+      id
+      cart
+      total
+      status
+      User {
+        id
+        email
+        name
+        phone
+        role
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      orderUserId
+      __typename
+    }
+  }
+`;
+export const onUpdateOrder = /* GraphQL */ `
+  subscription OnUpdateOrder($filter: ModelSubscriptionOrderFilterInput) {
+    onUpdateOrder(filter: $filter) {
+      id
+      cart
+      total
+      status
+      User {
+        id
+        email
+        name
+        phone
+        role
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      orderUserId
+      __typename
+    }
+  }
+`;
+export const onDeleteOrder = /* GraphQL */ `
+  subscription OnDeleteOrder($filter: ModelSubscriptionOrderFilterInput) {
+    onDeleteOrder(filter: $filter) {
+      id
+      cart
+      total
+      status
+      User {
+        id
+        email
+        name
+        phone
+        role
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      orderUserId
+      __typename
+    }
+  }
+`;
 export const onCreateBundle = /* GraphQL */ `
   subscription OnCreateBundle($filter: ModelSubscriptionBundleFilterInput) {
     onCreateBundle(filter: $filter) {

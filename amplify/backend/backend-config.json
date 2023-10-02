@@ -58,6 +58,16 @@
     }
   },
   "function": {
+    "CapturePayment": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "CreatePaymentIntent": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
     "contactformsubmitter": {
       "build": true,
       "dependsOn": [
@@ -75,6 +85,38 @@
     }
   },
   "parameters": {
+    "AMPLIFY_function_CapturePayment_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "CapturePayment"
+        }
+      ]
+    },
+    "AMPLIFY_function_CapturePayment_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "CapturePayment"
+        }
+      ]
+    },
+    "AMPLIFY_function_CreatePaymentIntent_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "CreatePaymentIntent"
+        }
+      ]
+    },
+    "AMPLIFY_function_CreatePaymentIntent_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "CreatePaymentIntent"
+        }
+      ]
+    },
     "AMPLIFY_function_contactformsubmitter_deploymentBucketName": {
       "usedBy": [
         {

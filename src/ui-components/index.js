@@ -8,6 +8,8 @@ export { default as BundleCreateForm } from "./BundleCreateForm";
 export { default as BundleUpdateForm } from "./BundleUpdateForm";
 export { default as ContactFormCreateForm } from "./ContactFormCreateForm";
 export { default as ContactFormUpdateForm } from "./ContactFormUpdateForm";
+export { default as OrderCreateForm } from "./OrderCreateForm";
+export { default as OrderUpdateForm } from "./OrderUpdateForm";
 export { default as TourCreateForm } from "./TourCreateForm";
 export { default as TourUpdateForm } from "./TourUpdateForm";
 export { default as UserCreateForm } from "./UserCreateForm";
