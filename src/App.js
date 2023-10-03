@@ -19,8 +19,9 @@ function App() {
         <PayPalScriptProvider
           options={{
             clientId:
-              "ATRRVB5ZCLEylxvFMplD6ChKfjMQpiIvr1ELVssZz2KjMgtk53ZgU7nzw8HFGL179xOsu-N0l52E7Tw3",
+              "AbT5vOVLxPoex5gVFpp7tTPmweWcfavRREdao8snyvL2YKobgedBJeCAMTvPoAVqI2hQVEqaDPdorM_H",
             currency: "MXN",
+            locale: "es_MX",
           }}
         >
           <CartContextProvider>

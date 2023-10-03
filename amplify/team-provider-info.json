@@ -22,11 +22,11 @@
         },
         "CreatePaymentIntent": {
           "deploymentBucketName": "amplify-sorprendentetour-staging-191459-deployment",
-          "s3Key": "amplify-builds/CreatePaymentIntent-6554684d433851534641-build.zip"
+          "s3Key": "amplify-builds/CreatePaymentIntent-496848696e7334563066-build.zip"
         },
         "CapturePayment": {
           "deploymentBucketName": "amplify-sorprendentetour-staging-191459-deployment",
-          "s3Key": "amplify-builds/CapturePayment-51657069466244626370-build.zip"
+          "s3Key": "amplify-builds/CapturePayment-554436696a68624d5a44-build.zip"
         }
       },
       "api": {

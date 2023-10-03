@@ -13,11 +13,10 @@ exports.handler = async (event) => {
   if (!arg?.amount) {
     throw new Error("Amount argument is required");
   }
-  const base = "https://api-m.sandbox.paypal.com";
-  const { CLIENT_ID, APP_SECRET } = process.env;
+  const { CLIENT_ID, APP_SECRET, BASE_URL } = process.env;
 
   const auth = Buffer.from(CLIENT_ID + ":" + APP_SECRET).toString("base64");
-  const responseToken = await fetch(`${base}/v1/oauth2/token`, {
+  const responseToken = await fetch(`${BASE_URL}/v1/oauth2/token`, {
     method: "post",
     body: "grant_type=client_credentials",
     headers: {
@@ -29,7 +28,7 @@ exports.handler = async (event) => {
 
   const purchaseAmount = arg.amount;
   const accessToken = tokenData.access_token;
-  const url = `${base}/v2/checkout/orders`;
+  const url = `${BASE_URL}/v2/checkout/orders`;
   const response = await fetch(url, {
     method: "post",
     headers: {
