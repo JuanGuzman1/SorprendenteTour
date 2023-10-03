@@ -16,7 +16,7 @@ function PriceCard({ tour, bundle }) {
   const addToShopCar = () => {
     let newData = cart;
     let data = {
-      name: tour.name,
+      name: tour ? tour.name : bundle.name,
       price,
       breakfast,
       numPeople,

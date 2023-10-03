@@ -191,9 +191,12 @@ const Navbar = () => {
                       </Link>
                     ) : (
                       <>
-                        <button class="text-gray-700 block px-4 py-2 text-sm">
+                        <Link
+                          to={"/reservaciones"}
+                          class="text-gray-700 block px-4 py-2 text-sm"
+                        >
                           Mis reservaciones
-                        </button>
+                        </Link>
                         <button class="text-gray-700 block px-4 py-2 text-sm">
                           Perfil
                         </button>

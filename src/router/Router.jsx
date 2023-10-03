@@ -28,6 +28,7 @@ import CiudadVallesHotels from "../pages/Gallery/Hotels/CiudadValles/CiudadValle
 import Shop from "../pages/Shop/Shop";
 import Login from "../pages/Login/Login";
 import ConfirmationCode from "../pages/Login/ConfirmationCode";
+import Reservations from "../pages/Reservations/Reservations";
 
 function Router() {
   return (
@@ -40,6 +41,7 @@ function Router() {
       <Route path="/checkout" element={<Shop />} />
       <Route path="/login" element={<Login />} />
       <Route path="/confirmar-registro" element={<ConfirmationCode />} />
+      <Route path="/reservaciones" element={<Reservations />} />
 
       {/* paquetes */}
       <Route path="/paquetes" element={<Bundles />} />
