@@ -26,7 +26,7 @@ const Miradores = () => {
           <img
             src="assets/images/tours4x4/mirador-1.jpg"
             alt=""
-            className="h-1/4 w-1/2 rounded-2xl animate-pulse self-center"
+            className="h-1/4 w-1/2 rounded-2xl self-center"
           />
         </div>
         {/* acordeon de info */}

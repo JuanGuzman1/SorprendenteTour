@@ -8,7 +8,7 @@ function PriceCard({ tour, bundle }) {
   const [options, setOptions] = useState([]);
   const [pricePerPerson, setPricePerPerson] = useState();
   const [price, setPrice] = useState();
-  const [breakfast, setBreakfast] = useState("no");
+  const [breakfast, setBreakfast] = useState(bundle ? "si" : "no");
   const [numPeople, setNumPeople] = useState(2);
   const navigate = useNavigate();
   const { cart, setCart } = useCartContext();
@@ -89,18 +89,22 @@ function PriceCard({ tour, bundle }) {
                 )
             )}
           </select>
-          <p className="mt-3">
-            Con {bundle ? "desayuno y comida" : "comida"}{" "}
-            <span className="text-primary">(+200 p/p)</span>
-          </p>
-          <select
-            onChange={(e) => setBreakfast(e.target.value)}
-            className="rounded-md"
-            value={breakfast}
-          >
-            <option value={"si"}>si</option>
-            <option value={"no"}>no</option>
-          </select>
+          {tour && (
+            <>
+              <p className="mt-3">
+                Con {bundle ? "desayuno y comida" : "comida"}{" "}
+                <span className="text-primary">(+200 p/p)</span>
+              </p>
+              <select
+                onChange={(e) => setBreakfast(e.target.value)}
+                className="rounded-md"
+                value={breakfast}
+              >
+                <option value={"si"}>si</option>
+                <option value={"no"}>no</option>
+              </select>{" "}
+            </>
+          )}
         </div>
         <div className="flex items-center justify-center mt-5">
           <button

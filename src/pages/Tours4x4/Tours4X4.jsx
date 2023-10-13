@@ -11,9 +11,9 @@ const Tours4X4 = () => {
         <h1 className="text-white font-bold text-[50px]">Tours 4x4</h1>
       </div>
       <div className="cards-tours flex justify-center">
-        <div className="md:grid md:grid-cols-2 mt-10 mb-10">
+        <div className="md:grid md:grid-cols-3 mt-10 mb-10">
           <Link to="trinidad">
-            <section className="trinidad-card bg-no-repeat bg-cover rounded-lg m-5 relative">
+            <section className="trinidad-card bg-no-repeat bg-cover rounded-lg m-8 relative">
               <span class="absolute right-0 bg-red-500 text-white text-lg font-medium animate-pulse px-4 py-2 rounded dark:bg-blue-200 dark:text-blue-800">
                 Ruta Trinidad
               </span>
@@ -21,7 +21,7 @@ const Tours4X4 = () => {
           </Link>
 
           <Link to="surrealista">
-            <section className="surrealista-card bg-no-repeat bg-cover rounded-lg m-5 relative">
+            <section className="surrealista-card bg-no-repeat bg-cover rounded-lg m-8 relative">
               <span class="absolute right-0 bg-red-500 text-white text-lg font-medium animate-pulse px-4 py-2 rounded dark:bg-blue-200 dark:text-blue-800">
                 Tour Surrealista
               </span>
@@ -29,7 +29,7 @@ const Tours4X4 = () => {
           </Link>
 
           <Link to="nacimiento">
-            <section className="nacimiento-card bg-no-repeat bg-cover rounded-lg m-5 relative">
+            <section className="nacimiento-card bg-no-repeat bg-cover rounded-lg m-8 relative">
               <span class="absolute right-0 bg-red-500 text-white text-lg font-medium animate-pulse px-4 py-2 rounded dark:bg-blue-200 dark:text-blue-800">
                 Nacimiento Off Road
               </span>
@@ -37,12 +37,18 @@ const Tours4X4 = () => {
           </Link>
 
           <Link to="miradores">
-            <section className="miradores-card bg-no-repeat bg-cover rounded-lg m-5 relative">
+            <section className="miradores-card bg-no-repeat bg-cover rounded-lg m-8 relative">
               <span class="absolute right-0 bg-red-500 text-white text-lg font-medium animate-pulse px-4 py-2 rounded dark:bg-blue-200 dark:text-blue-800">
                 Tour Miradores
               </span>
             </section>
           </Link>
+
+          <section className="nanacatli-card bg-no-repeat bg-cover rounded-lg m-8 relative">
+            <span class="absolute right-0 bg-red-500 text-white text-lg font-medium animate-pulse px-4 py-2 rounded dark:bg-blue-200 dark:text-blue-800">
+              Ruta Nanacatli
+            </span>
+          </section>
         </div>
       </div>
     </div>

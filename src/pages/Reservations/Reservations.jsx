@@ -11,10 +11,11 @@ function Reservations() {
     const response = await API.graphql(
       graphqlOperation(listOrders, {
         filter: {
-          userOrderId: user.attributes.id,
+          orderUserId: { eq: user.attributes.sub },
         },
       })
     );
+
     setOrders(response.data.listOrders.items);
   }, [user]);
 
@@ -33,8 +34,6 @@ function Reservations() {
       fetchUserOrders();
     }
   }, [fetchUserOrders, user, fetchOrders]);
-
-  console.log(user);
 
   return (
     <div>
