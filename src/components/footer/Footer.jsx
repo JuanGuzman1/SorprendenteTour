@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer class="p-4 bg-white rounded-lg shadow md:px-6 md:py-8 dark:bg-gray-800">
+    <footer class="bg-white rounded-lg shadow md:px-6 md:py-2 dark:bg-gray-800">
       <div class="flex flex-col md:flex-row md:justify-between items-center justify-center">
         <a
           href="https://sorprendentetour.com"
           target="_blank"
-          class="flex items-center mb-4 sm:mb-0"
+          class="flex items-center mb-2 sm:mb-0"
           rel="noreferrer"
         >
           <img

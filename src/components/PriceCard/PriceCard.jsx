@@ -66,12 +66,12 @@ function PriceCard({ tour, bundle }) {
 
   return (
     <div className="w-3/4 self-center md:self-start">
-      <div className="shadow-lg rounded-md p-5 md:mt-28">
+      <div className="shadow-lg rounded-md p-5 md:mt-28 bg-[color:#79aece]">
         <div>
           <h1 className="text-3xl font-semibold text-[color:var(--blue-color)]">
             Reservar {bundle ? "Paquete" : "Tour"}
           </h1>
-          <h1 className="text-6xl leading-relaxed text-[color:var(--green-color)] font-medium">
+          <h1 className="text-6xl leading-relaxed text-white font-medium">
             ${formatCurrency(price)}
           </h1>
           <p className="mt-3">No. personas</p>
@@ -93,7 +93,7 @@ function PriceCard({ tour, bundle }) {
             <>
               <p className="mt-3">
                 Con {bundle ? "desayuno y comida" : "comida"}{" "}
-                <span className="text-primary">(+200 p/p)</span>
+                <span className="text-white">(+200 p/p)</span>
               </p>
               <select
                 onChange={(e) => setBreakfast(e.target.value)}
@@ -109,7 +109,7 @@ function PriceCard({ tour, bundle }) {
         <div className="flex items-center justify-center mt-5">
           <button
             onClick={addToShopCar}
-            className="bg-primary p-5 rounded-xl text-white font-semibold"
+            className="bg-primary p-3 rounded-xl text-white font-semibold"
           >
             <AddShoppingCartIcon className="mr-2" />
             Agregar al carrito

@@ -84,8 +84,8 @@ export const hotelGrannHotel = [
 ];
 
 export const tours = [
-  "assets/images/tours/zacahuil/image1.jpeg",
-  "assets/images/tours/zacahuil/image2.jpeg",
+  "assets/images/tours/zacahuil/image1.jpg",
+  "assets/images/tours/zacahuil/image2.jpg",
   "assets/images/tours/zacahuil/image3.jpeg",
   "assets/images/tours/zacahuil/image4.jpeg",
   "assets/images/tours/bocoles/image1.jpeg",
@@ -101,7 +101,7 @@ export const tours = [
   "assets/images/tours/acamayas/image2.jpeg",
   "assets/images/tours/acamayas/image3.jpeg",
   "assets/images/tours/acamayas/image4.jpeg",
-  "assets/images/tours/mojarras/image1.jpeg",
+  "assets/images/tours/mojarras/image1.jpg",
   "assets/images/tours/mojarras/image2.jpeg",
   "assets/images/tours/mojarras/image3.jpeg",
   "assets/images/tours/mojarras/image4.jpeg",

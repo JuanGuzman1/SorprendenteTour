@@ -10,7 +10,7 @@ import { dataTourFormat } from "../../../../utils/helpers";
 const Enchiladas = () => {
   const { place } = useParams();
   const [tourData, setTourData] = useState();
-  
+
   const fetchTour = useCallback(async () => {
     const response = await API.graphql(
       graphqlOperation(getTour, {
@@ -42,253 +42,150 @@ const Enchiladas = () => {
         <h1 className="text-white font-bold text-[50px]">Tour Enchiladas</h1>
       </div>
       <div className="md:mx-48 flex md:flex-row flex-col">
-        <div className="flex justify-center items-center m-5 flex-col">
+        <div className="flex m-5 flex-col">
           {/* Información */}
-          <div className="flex md:flex-row flex-col m-3">
-            <div className="self-center m-3">
-              <p className="text-center font-bold text-[color:var(--green-color)] text-[30px]">
-                Tamul, La Cueva del Agua
-              </p>
-              <p className="text-[20px] text-center">
-                Viaja con nosotros en una colorida canoa a una de las cascadas
-                más hermosas del mundo, con una altura de 105 metros, la Cascada
-                de Tamul es la más alta del estado. Tan solo a unos metros de
-                este paraje encontraremos una gran cueva casi completamente
-                inundada con bellos tonos azules, este lugar conocido como “La
-                Cueva del Agua”.
+          <div className="flex flex-col m-7">
+            <div className="mt-3">
+              <p className="text-[20px] text-left text-white">
+                Nuestra primer parada sera la cascada de tamul que es la mas
+                alta en toda la huasteca tiene 105 metros de alto donde haremos
+                un recorrido en canoa por el rio tampaon hasta llegar al pie de
+                la cascada donde nos pondremos tomar unas fotos fantasticas.
+                Posteriormente iremos al unico cenote cueva del agua en la
+                huasteca potosina donde nos permitiran realizar actividad
+                acuatica y tomarnos fotos y nuestra ultima parada sera el sotano
+                de las huahuas donde observaremos el show de las golondrinas.
               </p>
             </div>
-            <img
-              src="assets/images/tours/enchiladas/image1.jpeg"
-              alt=""
-               className="h-72 w-2/3 rounded-2xl self-center"
-            />
-          </div>
-          <div className="flex md:flex-row flex-col m-3">
-            <img
-              src="assets/images/tours/enchiladas/image2.jpeg"
-              alt=""
-               className="h-64 w-2/3 rounded-2xl self-center"
-            />
-            <div className="self-center m-3">
-              <p className="text-center font-bold text-[color:var(--green-color)] text-[30px]">
-                El Sótano de las Huahuas
-              </p>
-              <p className="text-[20px] text-center">
-                El Sótano de las Huahuas es una gran cueva vertical con 478
-                metros de profundidad y un diámetro de 60 metros originada por
-                el colapso del suelo calizo. Es el impresionante santuario de
-                muchas especies de aves.
-              </p>
+            <div className="flex justify-between mt-3">
+              <img
+                src="assets/images/tours/enchiladas/image3.jpeg"
+                alt=""
+                className="h-3/2 w-1/4 rounded-2xl m-4"
+              />
+              <img
+                src="assets/images/tours/enchiladas/image1.jpeg"
+                alt=""
+                className="h-3/2 w-1/4 rounded-2xl m-4"
+              />
+              <img
+                src="assets/images/tours/enchiladas/image2.jpeg"
+                alt=""
+                className="h-3/2 w-1/4 rounded-2xl m-4"
+              />
             </div>
           </div>
-          {/* acordeon de info */}
-          <div
-            id="accordion-collapse"
-            data-accordion="collapse"
-            className="w-full"
-          >
-            <h2 id="accordion-collapse-heading-1">
-              <button
-                type="button"
-                class="flex items-center focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 justify-between p-5 w-full font-medium text-left border border-gray-200 dark:border-gray-700 border-b-0 text-gray-900 dark:text-white bg-gray-100 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-t-xl"
-                data-accordion-target="#accordion-collapse-body-1"
-                aria-expanded="true"
-                aria-controls="accordion-collapse-body-1"
-              >
-                <span>Información del tour</span>
-                <svg
-                  data-accordion-icon
-                  class="w-6 h-6 shrink-0 rotate-180"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                    clip-rule="evenodd"
-                  ></path>
-                </svg>
-              </button>
-            </h2>
-            <div
-              id="accordion-collapse-body-1"
-              aria-labelledby="accordion-collapse-heading-1"
-            >
-              <div class="p-5 border border-gray-200 dark:border-gray-700 dark:bg-gray-900 border-b-0">
-                <p class="mb-2 text-gray-500 dark:text-gray-400 font-bold">
-                  OPCIONES 2 HORARIOS DIFERENTES
+          {/* info */}
+          <div className="mt-3">
+            <h1 className="text-3xl text-white font-semibold">¿Que incluye?</h1>
+            <div className="flex justify-between mt-3 text-white text-xl">
+              <div className="leading-9">
+                <p>🔘Desayuno o comida de platillos tipicos.</p>
+                <p>🔘Transporte desde tu hospedaje.</p>
+                <p>🔘Equipo de seguridad requerido</p>
+              </div>
+              <div className="leading-9">
+                <p>🔘Entradas a los parques.</p>
+                <p>🔘Paseo en canoa.</p>
+                <p>🔘Guia especializado.</p>
+              </div>
+              <div className="leading-9">
+                <p>🔘Fotografias.</p>
+                <p>🔘Recorrido guiado.</p>
+                <p>🔘Botiquin P.A.</p>
+              </div>
+            </div>
+          </div>
+          {/* que llevar */}
+          <div className="mt-8 mb-0">
+            <img
+              src="assets/images/tours/enchiladas/banner1.jpeg"
+              alt=""
+              className="w-full h-[400px]"
+            />
+
+            <div className="mt-8">
+              <h1 className="text-white text-3xl font-semibold">
+                ¿Que debes llevar?
+              </h1>
+              <div className="text-white text-xl leading-8 mt-3">
+                <p>
+                  🔶Acudir con ropa comoda para caminar puede ser pans, licra,
+                  short pantalon de senderismo asi como ropa para meterse al
+                  agua (traje de baño).
                 </p>
-                <p class="mb-2 text-gray-500 dark:text-gray-400">
-                  Una salida de madrugada: 5:00 AM.
+                <p>🔶Zapato acuatico y tenis comodos antiderrapante.</p>
+                <p>🔶Bloqueador solar (de preferencia biodegradable)</p>
+                <p>🔶Repelente (biodegradable).</p>
+                <p>🔶Toalla.</p>
+                <p>🔶En caso de mareo Dramamine.</p>
+                <p>🔶Cuidar nuestra Flora y Fauna</p>
+                <p>🔶Respete las recomendaciones del guia.</p>
+                <p>
+                  🔶Respete a los de mas compañeros mantenimiento silencio
+                  durante las explicaciones y contestando tu telefono lejos del
+                  grupo si hacerlo puede interrumpir explicaciones.
                 </p>
-                <p class="mb-2 text-gray-500 dark:text-gray-400">
-                  Una salida de mañana: 7:30 AM.
+                <p>
+                  🔶Respete los tiempos establecidos, estos estan pensafos para
+                  hacer grata la experiencia para todos los participantes de la
+                  actividad.
                 </p>
-                <p class="mb-2 text-gray-500 dark:text-gray-400">
-                  Se visitara la cascada de Tamul en un mágico recorrido de
-                  canoa sobre el río Tampaon, pasaremos por la cueva del agua,
-                  para posteriormente ir al imponente Sótano de las Huahuas y
-                  finalmente terminamos en un bello corredor de artesanías,
-                  llevate un recuerdo con ellos y deja una memoria de la hermosa
-                  Huasteca viajando con nosotros. Nota: Todo esta sujeto a
-                  temporada, si es alta o baja.
+                <p>
+                  🔶Si va con niños recuerde que ellos son su responsabilidad.
+                </p>
+                <p className="pt-7 pb-0">
+                  🔴LA BASURA NO VUELVE SOLA ES PARTE DE SU EQUIPAJE, LLEVELA
+                  SIEMPRE CONSIGO HASTA LLEGAR CASA, NO ENSUCIE CAMINOS, RIOS,
+                  BOSQUES, CUIDE LA NATURALEZA. 🌿🍃
                 </p>
               </div>
             </div>
-            <h2 id="accordion-collapse-heading-2">
-              <button
-                type="button"
-                class="flex items-center focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 justify-between p-5 w-full font-medium border border-gray-200 dark:border-gray-700 border-b-0 text-left text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800"
-                data-accordion-target="#accordion-collapse-body-2"
-                aria-expanded="false"
-                aria-controls="accordion-collapse-body-2"
-              >
-                <span>¿Que te ofrece el Tour?</span>
-                <svg
-                  data-accordion-icon
-                  class="w-6 h-6 shrink-0"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                    clip-rule="evenodd"
-                  ></path>
-                </svg>
-              </button>
-            </h2>
-            <div
-              id="accordion-collapse-body-2"
-              class="hidden"
-              aria-labelledby="accordion-collapse-heading-2"
-            >
-              <div class="p-5 border border-gray-200 dark:border-gray-700 border-b-0">
-                <p class="mb-2 text-gray-500 dark:text-gray-400">
-                  -Se les incluye pago de entradas.
+          </div>
+          {/* importante */}
+          <div className="mt-3">
+            <img
+              src="assets/images/tours/enchiladas/banner2.jpeg"
+              alt=""
+              className="w-full h-[400px]"
+            />
+            <div className="mt-8">
+              <h1 className="text-white text-3xl font-semibold">IMPORTANTE</h1>
+              <div className="text-white text-xl mt-3">
+                <p>
+                  🔘Sorprendente Tour te proporciona un guia acreditado y todo
+                  el equipo necesario para desarrollar cada una de las
+                  actividades.
                 </p>
-                <p class="mb-2 text-gray-500 dark:text-gray-400">-Desayuno.</p>
-                <p class="mb-2 text-gray-500 dark:text-gray-400">
-                  -Equipo de seguridad.
+                <p>
+                  🔘La huasteca tiene ciclos metereologicos que hacen que los
+                  niveles de agua en cada paraje pueden aumentar, nuestra
+                  empresa no es responsable si algun paraje cierra sus puertas
+                  al publico por los niveles de agua altos, mas sin embargo
+                  compensaremos con alguna otra actividad.
                 </p>
-                <p class="mb-2 text-gray-500 dark:text-gray-400">
-                  -Fotografías en paquete basico y con gopro (gratis).
+                <p>
+                  🔘Algunos trayectos seran largos de 1 a 3 horas e incluso un
+                  poco mas donde se le notificara para que tome ciertas medidas
+                  en cuestiones personales (medicamentos, mareos, etc).
                 </p>
-                <p class="mb-2 text-gray-500 dark:text-gray-400">
-                  -Guía especializado en esta ruta.
+                <p>
+                  🔘Contar con algo de dinero en efectivo, ya que no hay bancos
+                  ni cajeros automaticos en los lugares a visitar.
                 </p>
-                <p class="mb-2 text-gray-500 dark:text-gray-400">
-                  -Transporte acorde a la cantidad de personas todos de modelo
-                  reciente, cómodo y seguro.{" "}
-                  <span className="font-bold">
-                    Una duración de tour de: aprox. 12 a 14 horas.
-                  </span>
-                </p>
-              </div>
-            </div>
-            <h2 id="accordion-collapse-heading-3">
-              <button
-                type="button"
-                class="flex items-center border focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 border-gray-200 dark:border-gray-700 justify-between p-5 w-full font-medium text-left text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800"
-                data-accordion-target="#accordion-collapse-body-3"
-                aria-expanded="false"
-                aria-controls="accordion-collapse-body-3"
-              >
-                <span>Vestimenta y recomendaciones</span>
-                <svg
-                  data-accordion-icon
-                  class="w-6 h-6 shrink-0"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                    clip-rule="evenodd"
-                  ></path>
-                </svg>
-              </button>
-            </h2>
-            <div
-              id="accordion-collapse-body-3"
-              class="hidden"
-              aria-labelledby="accordion-collapse-heading-3"
-            >
-              <div class="p-5 border border-gray-200 dark:border-gray-700 border-t-0">
-                <p class="mb-2 text-gray-500 dark:text-gray-400">
-                  Bloqueador solar.
-                </p>
-                <p class="mb-2 text-gray-500 dark:text-gray-400">Repelente.</p>
-                <p class="mb-2 text-gray-500 dark:text-gray-400">
-                  Liga para el pelo en caso de pelo largo.
-                </p>
-                <p class="mb-2 text-gray-500 dark:text-gray-400">Ropa comoda</p>
-                <p class="mb-2 text-gray-500 dark:text-gray-400">
-                  Una gorra para el sol si gustas también.
-                </p>
-                <p class="mb-2 text-gray-500 dark:text-gray-400">
-                  Lycras o playeras comodad, todo lo que no sea algodón de
-                  preferencia.
-                </p>
-                <p class="mb-2 text-gray-500 dark:text-gray-400">
-                  Zapato para el agua o Sandalias ajustables.
-                </p>
-                <p class="mb-2 text-gray-500 dark:text-gray-400">
-                  Shord o lycra de igual manera.
-                </p>
-              </div>
-            </div>
-            <h2 id="accordion-collapse-heading-4">
-              <button
-                type="button"
-                class="flex items-center border focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 border-gray-200 dark:border-gray-700 justify-between p-5 w-full font-medium text-left text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800"
-                data-accordion-target="#accordion-collapse-body-4"
-                aria-expanded="false"
-                aria-controls="accordion-collapse-body-4"
-              >
-                <span>Itinerario</span>
-                <svg
-                  data-accordion-icon
-                  class="w-6 h-6 shrink-0"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                    clip-rule="evenodd"
-                  ></path>
-                </svg>
-              </button>
-            </h2>
-            <div
-              id="accordion-collapse-body-4"
-              class="hidden"
-              aria-labelledby="accordion-collapse-heading-4"
-            >
-              <div class="p-5 border border-gray-200 dark:border-gray-700 border-t-0">
-                <img
-                  src="assets/images/tours/enchiladas/itinerario-xilitla.jpeg"
-                  alt=""
-                />
               </div>
             </div>
           </div>
           {/* ruta */}
           {place === "xilitla" && (
             <section className="m-5">
-              <h1 className="text-[40px] text-[color:var(--green-color)] text-center text-bold">
+              <h1 className="text-[40px] text-[color:var(--green-color)] text-left text-bold">
                 Mapa de ruta
               </h1>
               <img
                 src="assets/images/tours/enchiladas/ruta-xilitla.png"
                 alt=""
-                className="rounded-xl animate-pulse"
+                className="rounded-xl"
               />
             </section>
           )}
