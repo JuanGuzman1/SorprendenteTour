@@ -102,7 +102,7 @@ const Acamayas = () => {
             <img
               src="assets/images/tours/acamayas/banner1.jpeg"
               alt=""
-              className="w-full h-[400px]"
+              className="w-full md:h-[400px] h-[200px]"
             />
 
             <div className="mt-8">
@@ -148,7 +148,7 @@ const Acamayas = () => {
             <img
               src="assets/images/tours/acamayas/banner2.jpeg"
               alt=""
-              className="w-full h-[400px]"
+              className="w-full md:h-[400px] h-[200px]"
             />
             <div className="mt-8">
               <h1 className="text-white text-3xl font-semibold">IMPORTANTE</h1>
