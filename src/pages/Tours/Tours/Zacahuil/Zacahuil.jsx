@@ -51,12 +51,15 @@ const Zacahuil = () => {
                 Nuestro primer punto por visitar es el jardin surrealista de
                 Edward James, el lugar mas surrealista de Mexico, vive una
                 experiencia como en un cuento de hadas y maravillate con la
-                interesante historia de su creacion. Posterior es el castillo de
-                Beto Ramon un lugar de sabiduria, herbolaria, limpias, masajes y
-                sanacion. Por ultimo visitamos el nacimiento de xilitla donde
-                nadaremos en el rio cristalino, asi como apreciar la naturaleza
-                cueva de quilas lugar donde se forman figuras de animales en las
-                rocas.
+                interesante historia de su creacion es un conjunto de
+                estructuras arquitectonicas de concreto y rutas fantasticas que
+                conforman un jardin escultorico por un rio con cascadas y
+                rodeado por la selva potosina en un extenso terreno. Posterior
+                es el castillo de Beto Ramon un lugar de sabiduria, herbolaria,
+                limpias, masajes y sanacion. Por ultimo visitamos el nacimiento
+                de xilitla donde nadaremos en el rio cristalino, asi como
+                apreciar la naturaleza cueva de quilas lugar donde se forman
+                figuras de animales en las rocas.
               </p>
             </div>
             <div className="flex justify-between mt-3">
@@ -175,6 +178,65 @@ const Zacahuil = () => {
                   🔘Contar con algo de dinero en efectivo, ya que no hay bancos
                   ni cajeros automaticos en los lugares a visitar.
                 </p>
+              </div>
+            </div>
+          </div>
+          {/* itinerario */}
+          <div className="mt-3">
+            <img
+              src="assets/images/tours/zacahuil/banner3.jpeg"
+              alt=""
+              className="w-full md:h-[400px] h-[200px]"
+            />
+            <div className="mt-8">
+              <h1 className="text-white text-3xl font-semibold">
+                Itinerario del dia
+              </h1>
+              <div className="text-white text-xl mt-3">
+                <p>8:00 am a 8:30 am Punto de reunion o traslado de su hotel</p>
+                <p>8:30 am a 9:30 am Desayuno.</p>
+                <p>
+                  10:00 am a 12:00 pm Jardin surrealista (Podria cambiar el
+                  horario por cuestion de accessos al jardin).
+                </p>
+                <p>12:00 pm a 12:30 pm Trayecto al castillo de la salud.</p>
+                <p>12:30 pm a 2:00 pm Recorrido en el castillo de la salud.</p>
+                <p>
+                  2:00 pm a 2:30 pm Trayecto al nacimiento y cueva de quillas.
+                </p>
+                <p>2:30 pm a 3:00 pm Recorrido en cueva de quillas.</p>
+                <p>
+                  3:00 pm a 4:00 pm Actividad en el nacimiento (actividad
+                  acuatica).
+                </p>
+                <p>4:20 pm a 5:30 pm Comida</p>
+                <p>5:30 pm Regreso a CD Valles o Xilitla</p>
+              </div>
+            </div>
+          </div>
+          {/* precio */}
+          <div className="mt-3">
+            <img
+              src="assets/images/tours/zacahuil/banner4.jpeg"
+              alt=""
+              className="w-full md:h-[400px] h-[200px]"
+            />
+            <div className="mt-8">
+              <h1 className="text-white text-3xl font-semibold">Precio</h1>
+              <div className="text-white text-xl mt-4 md:mt-0 md:flex-row flex md:justify-between flex-col md:items-center">
+                <div>
+                  <h2 className="text-3xl font-bold">Xilitla</h2>
+                  <h3 className="text-2xl">$1,200 por persona</h3>
+                </div>
+                <div className="h-40 w-36 bg-lime-600 flex justify-center items-center rounded-2xl my-5 md:my-0">
+                  <p className="text-center text-black font-semibold">
+                    Pregunta por nuestros paquetes Todo Incluido!
+                  </p>
+                </div>
+                <div>
+                  <h2 className="text-3xl font-bold">Cd. Valles</h2>
+                  <h3 className="text-2xl">$1,600 por persona</h3>
+                </div>
               </div>
             </div>
           </div>

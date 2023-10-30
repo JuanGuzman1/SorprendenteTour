@@ -179,6 +179,58 @@ const Mojarras = () => {
               </div>
             </div>
           </div>
+          {/* itinerario */}
+          <div className="mt-3">
+            <img
+              src="assets/images/tours/mojarras/banner3.jpeg"
+              alt=""
+              className="w-full md:h-[400px] h-[200px]"
+            />
+            <div className="mt-8">
+              <h1 className="text-white text-3xl font-semibold">
+                Itinerario del dia
+              </h1>
+              <div className="text-white text-xl mt-3">
+                <p>7:40 am a 8:00 am Punto de reunion o traslado de su hotel</p>
+                <p>8:00 am a 9:00 am Desayuno.</p>
+                <p>
+                  9:00 am a 11:40 am Trayecto a llegar a puente de Dios en
+                  Tamasopo.
+                </p>
+                <p>11:40 am a 1:30 pm Recorrido en el puente de Dios.</p>
+                <p>1:30 pm a 1:45 pm Trayeto a Hacienda los Gomez.</p>
+                <p>1:45 pm a 3:30 pm Actividades en Hacienda los Gomez.</p>
+                <p>3:30 pm a 4:30 pm Comida.</p>
+                <p>4:30 pm Regreso a CD valles o Xilitla.</p>
+              </div>
+            </div>
+          </div>
+          {/* precio */}
+          <div className="mt-3">
+            <img
+              src="assets/images/tours/mojarras/banner4.jpeg"
+              alt=""
+              className="w-full md:h-[400px] h-[200px]"
+            />
+            <div className="mt-8">
+              <h1 className="text-white text-3xl font-semibold">Precio</h1>
+              <div className="text-white text-xl mt-4 md:mt-0 md:flex-row flex md:justify-between flex-col md:items-center">
+                <div>
+                  <h2 className="text-3xl font-bold">Xilitla</h2>
+                  <h3 className="text-2xl">$1,400 por persona</h3>
+                </div>
+                <div className="h-40 w-36 bg-lime-600 flex justify-center items-center rounded-2xl my-5 md:my-0">
+                  <p className="text-center text-black font-semibold">
+                    Pregunta por nuestros paquetes Todo Incluido!
+                  </p>
+                </div>
+                <div>
+                  <h2 className="text-3xl font-bold">Cd. Valles</h2>
+                  <h3 className="text-2xl">$1,300 por persona</h3>
+                </div>
+              </div>
+            </div>
+          </div>
           {/* ruta */}
           {place === "xilitla" && (
             <section className="m-5">
@@ -188,7 +240,7 @@ const Mojarras = () => {
               <img
                 src="assets/images/tours/mojarras/ruta-xilitla.png"
                 alt=""
-                className="rounded-xl animate-pulse"
+                className="rounded-xl"
               />
             </section>
           )}

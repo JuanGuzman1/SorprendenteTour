@@ -48,13 +48,15 @@ const Enchiladas = () => {
             <div className="mt-3">
               <p className="text-[20px] text-left text-white">
                 Nuestra primer parada sera la cascada de tamul que es la mas
-                alta en toda la huasteca tiene 105 metros de alto donde haremos
-                un recorrido en canoa por el rio tampaon hasta llegar al pie de
-                la cascada donde nos pondremos tomar unas fotos fantasticas.
-                Posteriormente iremos al unico cenote cueva del agua en la
-                huasteca potosina donde nos permitiran realizar actividad
-                acuatica y tomarnos fotos y nuestra ultima parada sera el sotano
-                de las huahuas donde observaremos el show de las golondrinas.
+                alta en toda la huasteca tiene 105 metros de alto con la caida
+                de las aguas del rio Gallinas, que se integra por otros que
+                nacen en el municipio de Tamasopo y donde haremos un recorrido
+                en canoa por el rio tampaon hasta llegar al pie de la cascada
+                donde nos pondremos tomar unas fotos fantasticas. Posteriormente
+                iremos al unico cenote cueva del agua en la huasteca potosina
+                donde nos permitiran realizar actividad acuatica y tomarnos
+                fotos y nuestra ultima parada sera el sotano de huahuas donde
+                observaremos el show de las golondrinas.
               </p>
             </div>
             <div className="flex justify-between mt-3">
