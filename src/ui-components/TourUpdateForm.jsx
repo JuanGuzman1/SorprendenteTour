@@ -7,8 +7,7 @@
 /* eslint-disable */
 import * as React from "react";
 import { Button, Flex, Grid, TextField } from "@aws-amplify/ui-react";
-import { getOverrideProps } from "@aws-amplify/ui-react/internal";
-import { fetchByPath, validateField } from "./utils";
+import { fetchByPath, getOverrideProps, validateField } from "./utils";
 import { API } from "aws-amplify";
 import { getTour } from "../graphql/queries";
 import { updateTour } from "../graphql/mutations";
@@ -48,7 +47,7 @@ export default function TourUpdateForm(props) {
       const record = idProp
         ? (
             await API.graphql({
-              query: getTour,
+              query: getTour.replaceAll("__typename", ""),
               variables: { id: idProp },
             })
           )?.data?.getTour
@@ -122,7 +121,7 @@ export default function TourUpdateForm(props) {
             }
           });
           await API.graphql({
-            query: updateTour,
+            query: updateTour.replaceAll("__typename", ""),
             variables: {
               input: {
                 id: tourRecord.id,

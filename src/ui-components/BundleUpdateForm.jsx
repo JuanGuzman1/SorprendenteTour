@@ -7,8 +7,7 @@
 /* eslint-disable */
 import * as React from "react";
 import { Button, Flex, Grid, TextField } from "@aws-amplify/ui-react";
-import { getOverrideProps } from "@aws-amplify/ui-react/internal";
-import { fetchByPath, validateField } from "./utils";
+import { fetchByPath, getOverrideProps, validateField } from "./utils";
 import { API } from "aws-amplify";
 import { getBundle } from "../graphql/queries";
 import { updateBundle } from "../graphql/mutations";
@@ -66,7 +65,7 @@ export default function BundleUpdateForm(props) {
       const record = idProp
         ? (
             await API.graphql({
-              query: getBundle,
+              query: getBundle.replaceAll("__typename", ""),
               variables: { id: idProp },
             })
           )?.data?.getBundle
@@ -152,7 +151,7 @@ export default function BundleUpdateForm(props) {
             }
           });
           await API.graphql({
-            query: updateBundle,
+            query: updateBundle.replaceAll("__typename", ""),
             variables: {
               input: {
                 id: bundleRecord.id,

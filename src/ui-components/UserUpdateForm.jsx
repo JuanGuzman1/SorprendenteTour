@@ -7,8 +7,7 @@
 /* eslint-disable */
 import * as React from "react";
 import { Button, Flex, Grid, TextField } from "@aws-amplify/ui-react";
-import { getOverrideProps } from "@aws-amplify/ui-react/internal";
-import { fetchByPath, validateField } from "./utils";
+import { fetchByPath, getOverrideProps, validateField } from "./utils";
 import { API } from "aws-amplify";
 import { getUser } from "../graphql/queries";
 import { updateUser } from "../graphql/mutations";
@@ -51,7 +50,7 @@ export default function UserUpdateForm(props) {
       const record = idProp
         ? (
             await API.graphql({
-              query: getUser,
+              query: getUser.replaceAll("__typename", ""),
               variables: { id: idProp },
             })
           )?.data?.getUser
@@ -127,7 +126,7 @@ export default function UserUpdateForm(props) {
             }
           });
           await API.graphql({
-            query: updateUser,
+            query: updateUser.replaceAll("__typename", ""),
             variables: {
               input: {
                 id: userRecord.id,

@@ -7,8 +7,7 @@
 /* eslint-disable */
 import * as React from "react";
 import { Button, Flex, Grid, TextField } from "@aws-amplify/ui-react";
-import { getOverrideProps } from "@aws-amplify/ui-react/internal";
-import { fetchByPath, validateField } from "./utils";
+import { fetchByPath, getOverrideProps, validateField } from "./utils";
 import { API } from "aws-amplify";
 import { createTour } from "../graphql/mutations";
 export default function TourCreateForm(props) {
@@ -101,7 +100,7 @@ export default function TourCreateForm(props) {
             }
           });
           await API.graphql({
-            query: createTour,
+            query: createTour.replaceAll("__typename", ""),
             variables: {
               input: {
                 ...modelFields,

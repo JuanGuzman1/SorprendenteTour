@@ -13,8 +13,7 @@ import {
   SelectField,
   TextField,
 } from "@aws-amplify/ui-react";
-import { getOverrideProps } from "@aws-amplify/ui-react/internal";
-import { fetchByPath, validateField } from "./utils";
+import { fetchByPath, getOverrideProps, validateField } from "./utils";
 import { API } from "aws-amplify";
 import { getOrder } from "../graphql/queries";
 import { updateOrder } from "../graphql/mutations";
@@ -54,7 +53,7 @@ export default function OrderUpdateForm(props) {
       const record = idProp
         ? (
             await API.graphql({
-              query: getOrder,
+              query: getOrder.replaceAll("__typename", ""),
               variables: { id: idProp },
             })
           )?.data?.getOrder
@@ -128,7 +127,7 @@ export default function OrderUpdateForm(props) {
             }
           });
           await API.graphql({
-            query: updateOrder,
+            query: updateOrder.replaceAll("__typename", ""),
             variables: {
               input: {
                 id: orderRecord.id,

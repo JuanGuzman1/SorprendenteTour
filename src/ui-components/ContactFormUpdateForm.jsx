@@ -13,8 +13,7 @@ import {
   SelectField,
   TextField,
 } from "@aws-amplify/ui-react";
-import { getOverrideProps } from "@aws-amplify/ui-react/internal";
-import { fetchByPath, validateField } from "./utils";
+import { fetchByPath, getOverrideProps, validateField } from "./utils";
 import { API } from "aws-amplify";
 import { getContactForm } from "../graphql/queries";
 import { updateContactForm } from "../graphql/mutations";
@@ -64,7 +63,7 @@ export default function ContactFormUpdateForm(props) {
       const record = idProp
         ? (
             await API.graphql({
-              query: getContactForm,
+              query: getContactForm.replaceAll("__typename", ""),
               variables: { id: idProp },
             })
           )?.data?.getContactForm
@@ -144,7 +143,7 @@ export default function ContactFormUpdateForm(props) {
             }
           });
           await API.graphql({
-            query: updateContactForm,
+            query: updateContactForm.replaceAll("__typename", ""),
             variables: {
               input: {
                 id: contactFormRecord.id,

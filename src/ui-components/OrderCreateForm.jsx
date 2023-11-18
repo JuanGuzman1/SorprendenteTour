@@ -13,8 +13,7 @@ import {
   SelectField,
   TextField,
 } from "@aws-amplify/ui-react";
-import { getOverrideProps } from "@aws-amplify/ui-react/internal";
-import { fetchByPath, validateField } from "./utils";
+import { fetchByPath, getOverrideProps, validateField } from "./utils";
 import { API } from "aws-amplify";
 import { createOrder } from "../graphql/mutations";
 export default function OrderCreateForm(props) {
@@ -107,7 +106,7 @@ export default function OrderCreateForm(props) {
             }
           });
           await API.graphql({
-            query: createOrder,
+            query: createOrder.replaceAll("__typename", ""),
             variables: {
               input: {
                 ...modelFields,

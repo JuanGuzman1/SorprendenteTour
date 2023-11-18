@@ -18,6 +18,7 @@ import Trinidad from "../pages/Tours4x4/Tours/Trinidad/Trinidad";
 import Surrealista from "../pages/Tours4x4/Tours/Surrealista/Surrealista";
 import Nacimiento from "../pages/Tours4x4/Tours/Nacimiento/Nacimiento";
 import Miradores from "../pages/Tours4x4/Tours/Miradores/Miradores";
+import Nanacatli from "../pages/Tours4x4/Tours/Nanacatli/Nanacatli";
 import Contact from "../pages/Contact/Contact";
 import Terms from "../pages/Terms/Terms";
 import Gallery from "../pages/Gallery/Gallery";
@@ -64,6 +65,7 @@ function Router() {
       <Route path="/tours4x4/surrealista" element={<Surrealista />} />
       <Route path="/tours4x4/nacimiento" element={<Nacimiento />} />
       <Route path="/tours4x4/miradores" element={<Miradores />} />
+      <Route path="/tours4x4/nanacatli" element={<Nanacatli />} />
 
       {/* gallery */}
       <Route path="/galeria" element={<Gallery />} />
