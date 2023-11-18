@@ -7,3 +7,11 @@ export const toursIDs = {
   tourMarranada: "748fe2ef-de51-406e-b8a8-466c43ca230d",
   tourArqueologico: "3e08421e-e4eb-4f56-9408-4dfd4218b55e",
 };
+
+export const tours4X4IDs = {
+  rutaNacimiento: "ea41bf8e-c08b-461d-b7a2-44f4ac471927",
+  rutaTrinidad: "163f1e8a-30fe-4f64-a9ce-3a4b13c7869a",
+  rutaSurrealista: "ad72db1b-738d-4fe3-8cf0-1cab3fd5bb1a",
+  rutaMiradores: "650dcf18-f688-4b73-bc54-a7c8fb965e28",
+  rutaNanacatli: "5151d310-7705-4b0f-980e-63219fd942bc",
+};

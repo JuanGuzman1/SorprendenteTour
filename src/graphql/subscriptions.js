@@ -223,6 +223,54 @@ export const onDeleteTour = /* GraphQL */ `
     }
   }
 `;
+export const onCreateTour4x4 = /* GraphQL */ `
+  subscription OnCreateTour4x4($filter: ModelSubscriptionTour4x4FilterInput) {
+    onCreateTour4x4(filter: $filter) {
+      id
+      name
+      quad
+      u2p
+      rzr900
+      maverickX3
+      defender
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onUpdateTour4x4 = /* GraphQL */ `
+  subscription OnUpdateTour4x4($filter: ModelSubscriptionTour4x4FilterInput) {
+    onUpdateTour4x4(filter: $filter) {
+      id
+      name
+      quad
+      u2p
+      rzr900
+      maverickX3
+      defender
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onDeleteTour4x4 = /* GraphQL */ `
+  subscription OnDeleteTour4x4($filter: ModelSubscriptionTour4x4FilterInput) {
+    onDeleteTour4x4(filter: $filter) {
+      id
+      name
+      quad
+      u2p
+      rzr900
+      maverickX3
+      defender
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
 export const onCreateUser = /* GraphQL */ `
   subscription OnCreateUser($filter: ModelSubscriptionUserFilterInput) {
     onCreateUser(filter: $filter) {

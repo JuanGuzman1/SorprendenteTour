@@ -1,9 +1,30 @@
-import React from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import "./Nacimiento.scss";
 import LocalPhoneRoundedIcon from "@mui/icons-material/LocalPhoneRounded";
 import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
+import { tours4X4IDs } from "../../../../data/toursIDs";
+import { API, graphqlOperation } from "aws-amplify";
+import { getTour4x4 } from "../../../../graphql/queries";
+import PriceCard4x4 from "../../../../components/PriceCard4x4/PriceCard4x4";
 
 const Nacimiento = () => {
+  const [tourData, setTourData] = useState();
+
+  const fetchTour = useCallback(async () => {
+    const response = await API.graphql(
+      graphqlOperation(getTour4x4, {
+        id: tours4X4IDs.rutaNacimiento,
+      })
+    );
+    const data = response.data.getTour4x4;
+
+    setTourData(data);
+  }, []);
+
+  useEffect(() => {
+    fetchTour();
+  }, [fetchTour]);
+
   return (
     <div className="nacimiento">
       <div className="w-3/4 relative">
@@ -21,12 +42,12 @@ const Nacimiento = () => {
           alt="unknown"
         />
         <img
-          className="md:w-64 md:h-64 w-48 h-48 rounded-full absolute md:bottom-2 bottom-20 md:right-52 right-[-2rem] border-8 border-white object-cover"
+          className="md:w-64 md:h-64 w-48 h-48 rounded-full absolute md:bottom-2 bottom-32 md:right-52 right-[-4rem] border-8 border-white object-cover"
           src="../../../../../../assets/images/tours4x4/nacimiento/circle-3.jpg"
           alt="unknown"
         />
         <img
-          className="md:w-80 md:h-80 w-72 h-72 rounded-full absolute top-8 right-[-7rem] border-8 border-white object-cover"
+          className="md:w-80 md:h-80 w-64 h-64 rounded-full absolute top-8 right-[-5rem] border-8 border-white object-cover"
           src="../../../../../../assets/images/tours4x4/nacimiento/circle-4.jpg"
           alt="unknown"
         />
@@ -50,12 +71,12 @@ const Nacimiento = () => {
               Duracion: 5:00 HRS Aprox
             </p>
           </div>
-          <div className=" bg-[#f47a2d] md:w-[800px] md:h-[500px] w-[420px] h-[420px] rounded-full flex items-center flex-col justify-center">
+          <div className=" bg-[#f47a2d] md:w-[800px] md:h-[500px] w-[320px] h-[320px] rounded-full flex items-center flex-col justify-center">
             <h1 className="text-[#d6382c] md:text-4xl text-2xl font-bold">
               Xilitla 4x4
             </h1>
             <h3 className="text-white text-xl">Lugares a visitar</h3>
-            <ul className="text-white md:mb-2 mb-0 font-semibold text-sm">
+            <ul className="text-white md:mb-2 mb-0 font-semibold md:text-sm text-xs">
               <li>🔘Nacimiento Xilitla y Huichihuayan</li>
               <li>🔘Camino antiguo a Xilitla</li>
               <li>🔘Jardin Surrealista por fuera</li>
@@ -67,7 +88,7 @@ const Nacimiento = () => {
               COTIZA Y RESERVA
             </h1>
             <div className="flex">
-              <div className="text-white mr-2 md:text-sm text-xs">
+              <div className="text-white mr-1 md:text-sm text-xs">
                 <p>
                   <LocalPhoneRoundedIcon />
                   444-189-0212
@@ -81,7 +102,7 @@ const Nacimiento = () => {
                   489-688-0496
                 </p>
               </div>
-              <div className="text-white ml-2 md:text-sm text-xs">
+              <div className="text-white ml-1 md:text-sm text-xs">
                 <p>
                   <EmailRoundedIcon />
                   sorprendentetour@gmail.com
@@ -100,6 +121,7 @@ const Nacimiento = () => {
           />
         </section>
       </div>
+      {tourData && <PriceCard4x4 tour={tourData} />}
     </div>
   );
 };

@@ -167,6 +167,46 @@ export const listTours = /* GraphQL */ `
     }
   }
 `;
+export const getTour4x4 = /* GraphQL */ `
+  query GetTour4x4($id: ID!) {
+    getTour4x4(id: $id) {
+      id
+      name
+      quad
+      u2p
+      rzr900
+      maverickX3
+      defender
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const listTour4x4s = /* GraphQL */ `
+  query ListTour4x4s(
+    $filter: ModelTour4x4FilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listTour4x4s(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        name
+        quad
+        u2p
+        rzr900
+        maverickX3
+        defender
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+  }
+`;
 export const getUser = /* GraphQL */ `
   query GetUser($id: ID!) {
     getUser(id: $id) {

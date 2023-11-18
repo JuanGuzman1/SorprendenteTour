@@ -270,6 +270,63 @@ export const deleteTour = /* GraphQL */ `
     }
   }
 `;
+export const createTour4x4 = /* GraphQL */ `
+  mutation CreateTour4x4(
+    $input: CreateTour4x4Input!
+    $condition: ModelTour4x4ConditionInput
+  ) {
+    createTour4x4(input: $input, condition: $condition) {
+      id
+      name
+      quad
+      u2p
+      rzr900
+      maverickX3
+      defender
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const updateTour4x4 = /* GraphQL */ `
+  mutation UpdateTour4x4(
+    $input: UpdateTour4x4Input!
+    $condition: ModelTour4x4ConditionInput
+  ) {
+    updateTour4x4(input: $input, condition: $condition) {
+      id
+      name
+      quad
+      u2p
+      rzr900
+      maverickX3
+      defender
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const deleteTour4x4 = /* GraphQL */ `
+  mutation DeleteTour4x4(
+    $input: DeleteTour4x4Input!
+    $condition: ModelTour4x4ConditionInput
+  ) {
+    deleteTour4x4(input: $input, condition: $condition) {
+      id
+      name
+      quad
+      u2p
+      rzr900
+      maverickX3
+      defender
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
 export const createUser = /* GraphQL */ `
   mutation CreateUser(
     $input: CreateUserInput!

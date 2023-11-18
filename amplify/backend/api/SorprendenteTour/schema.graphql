@@ -47,6 +47,16 @@ type Tour @model @auth(rules: [{ allow: public }]) {
   pppXilitla: Float
 }
 
+type Tour4x4 @model @auth(rules: [{ allow: public }]) {
+  id: ID!
+  name: String
+  quad: Float
+  u2p: Float
+  rzr900: Float
+  maverickX3: Float
+  defender: Float
+}
+
 type User @model @auth(rules: [{ allow: public }]) {
   id: ID!
   email: String!

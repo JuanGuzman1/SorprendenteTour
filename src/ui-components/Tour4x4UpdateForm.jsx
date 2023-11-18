@@ -6,22 +6,16 @@
 
 /* eslint-disable */
 import * as React from "react";
-import {
-  Button,
-  Flex,
-  Grid,
-  SelectField,
-  TextField,
-} from "@aws-amplify/ui-react";
+import { Button, Flex, Grid, TextField } from "@aws-amplify/ui-react";
 import { fetchByPath, getOverrideProps, validateField } from "./utils";
 import { generateClient } from "aws-amplify/api";
-import { getContactForm } from "../graphql/queries";
-import { updateContactForm } from "../graphql/mutations";
+import { getTour4x4 } from "../graphql/queries";
+import { updateTour4x4 } from "../graphql/mutations";
 const client = generateClient();
-export default function ContactFormUpdateForm(props) {
+export default function Tour4x4UpdateForm(props) {
   const {
     id: idProp,
-    contactForm: contactFormModelProp,
+    tour4x4: tour4x4ModelProp,
     onSuccess,
     onError,
     onSubmit,
@@ -32,55 +26,54 @@ export default function ContactFormUpdateForm(props) {
   } = props;
   const initialValues = {
     name: "",
-    email: "",
-    phone: "",
-    phoneType: "",
-    subject: "",
-    message: "",
+    quad: "",
+    u2p: "",
+    rzr900: "",
+    maverickX3: "",
+    defender: "",
   };
   const [name, setName] = React.useState(initialValues.name);
-  const [email, setEmail] = React.useState(initialValues.email);
-  const [phone, setPhone] = React.useState(initialValues.phone);
-  const [phoneType, setPhoneType] = React.useState(initialValues.phoneType);
-  const [subject, setSubject] = React.useState(initialValues.subject);
-  const [message, setMessage] = React.useState(initialValues.message);
+  const [quad, setQuad] = React.useState(initialValues.quad);
+  const [u2p, setU2p] = React.useState(initialValues.u2p);
+  const [rzr900, setRzr900] = React.useState(initialValues.rzr900);
+  const [maverickX3, setMaverickX3] = React.useState(initialValues.maverickX3);
+  const [defender, setDefender] = React.useState(initialValues.defender);
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
-    const cleanValues = contactFormRecord
-      ? { ...initialValues, ...contactFormRecord }
+    const cleanValues = tour4x4Record
+      ? { ...initialValues, ...tour4x4Record }
       : initialValues;
     setName(cleanValues.name);
-    setEmail(cleanValues.email);
-    setPhone(cleanValues.phone);
-    setPhoneType(cleanValues.phoneType);
-    setSubject(cleanValues.subject);
-    setMessage(cleanValues.message);
+    setQuad(cleanValues.quad);
+    setU2p(cleanValues.u2p);
+    setRzr900(cleanValues.rzr900);
+    setMaverickX3(cleanValues.maverickX3);
+    setDefender(cleanValues.defender);
     setErrors({});
   };
-  const [contactFormRecord, setContactFormRecord] =
-    React.useState(contactFormModelProp);
+  const [tour4x4Record, setTour4x4Record] = React.useState(tour4x4ModelProp);
   React.useEffect(() => {
     const queryData = async () => {
       const record = idProp
         ? (
             await client.graphql({
-              query: getContactForm.replaceAll("__typename", ""),
+              query: getTour4x4.replaceAll("__typename", ""),
               variables: { id: idProp },
             })
-          )?.data?.getContactForm
-        : contactFormModelProp;
-      setContactFormRecord(record);
+          )?.data?.getTour4x4
+        : tour4x4ModelProp;
+      setTour4x4Record(record);
     };
     queryData();
-  }, [idProp, contactFormModelProp]);
-  React.useEffect(resetStateValues, [contactFormRecord]);
+  }, [idProp, tour4x4ModelProp]);
+  React.useEffect(resetStateValues, [tour4x4Record]);
   const validations = {
     name: [],
-    email: [],
-    phone: [],
-    phoneType: [],
-    subject: [],
-    message: [],
+    quad: [],
+    u2p: [],
+    rzr900: [],
+    maverickX3: [],
+    defender: [],
   };
   const runValidationTasks = async (
     fieldName,
@@ -109,11 +102,11 @@ export default function ContactFormUpdateForm(props) {
         event.preventDefault();
         let modelFields = {
           name: name ?? null,
-          email: email ?? null,
-          phone: phone ?? null,
-          phoneType: phoneType ?? null,
-          subject: subject ?? null,
-          message: message ?? null,
+          quad: quad ?? null,
+          u2p: u2p ?? null,
+          rzr900: rzr900 ?? null,
+          maverickX3: maverickX3 ?? null,
+          defender: defender ?? null,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -144,10 +137,10 @@ export default function ContactFormUpdateForm(props) {
             }
           });
           await client.graphql({
-            query: updateContactForm.replaceAll("__typename", ""),
+            query: updateTour4x4.replaceAll("__typename", ""),
             variables: {
               input: {
-                id: contactFormRecord.id,
+                id: tour4x4Record.id,
                 ...modelFields,
               },
             },
@@ -162,7 +155,7 @@ export default function ContactFormUpdateForm(props) {
           }
         }
       }}
-      {...getOverrideProps(overrides, "ContactFormUpdateForm")}
+      {...getOverrideProps(overrides, "Tour4x4UpdateForm")}
       {...rest}
     >
       <TextField
@@ -175,11 +168,11 @@ export default function ContactFormUpdateForm(props) {
           if (onChange) {
             const modelFields = {
               name: value,
-              email,
-              phone,
-              phoneType,
-              subject,
-              message,
+              quad,
+              u2p,
+              rzr900,
+              maverickX3,
+              defender,
             };
             const result = onChange(modelFields);
             value = result?.name ?? value;
@@ -195,160 +188,169 @@ export default function ContactFormUpdateForm(props) {
         {...getOverrideProps(overrides, "name")}
       ></TextField>
       <TextField
-        label="Email"
+        label="Quad"
         isRequired={false}
         isReadOnly={false}
-        value={email}
+        type="number"
+        step="any"
+        value={quad}
         onChange={(e) => {
-          let { value } = e.target;
+          let value = isNaN(parseFloat(e.target.value))
+            ? e.target.value
+            : parseFloat(e.target.value);
           if (onChange) {
             const modelFields = {
               name,
-              email: value,
-              phone,
-              phoneType,
-              subject,
-              message,
+              quad: value,
+              u2p,
+              rzr900,
+              maverickX3,
+              defender,
             };
             const result = onChange(modelFields);
-            value = result?.email ?? value;
+            value = result?.quad ?? value;
           }
-          if (errors.email?.hasError) {
-            runValidationTasks("email", value);
+          if (errors.quad?.hasError) {
+            runValidationTasks("quad", value);
           }
-          setEmail(value);
+          setQuad(value);
         }}
-        onBlur={() => runValidationTasks("email", email)}
-        errorMessage={errors.email?.errorMessage}
-        hasError={errors.email?.hasError}
-        {...getOverrideProps(overrides, "email")}
+        onBlur={() => runValidationTasks("quad", quad)}
+        errorMessage={errors.quad?.errorMessage}
+        hasError={errors.quad?.hasError}
+        {...getOverrideProps(overrides, "quad")}
       ></TextField>
       <TextField
-        label="Phone"
+        label="U2p"
         isRequired={false}
         isReadOnly={false}
-        value={phone}
+        type="number"
+        step="any"
+        value={u2p}
         onChange={(e) => {
-          let { value } = e.target;
+          let value = isNaN(parseFloat(e.target.value))
+            ? e.target.value
+            : parseFloat(e.target.value);
           if (onChange) {
             const modelFields = {
               name,
-              email,
-              phone: value,
-              phoneType,
-              subject,
-              message,
+              quad,
+              u2p: value,
+              rzr900,
+              maverickX3,
+              defender,
             };
             const result = onChange(modelFields);
-            value = result?.phone ?? value;
+            value = result?.u2p ?? value;
           }
-          if (errors.phone?.hasError) {
-            runValidationTasks("phone", value);
+          if (errors.u2p?.hasError) {
+            runValidationTasks("u2p", value);
           }
-          setPhone(value);
+          setU2p(value);
         }}
-        onBlur={() => runValidationTasks("phone", phone)}
-        errorMessage={errors.phone?.errorMessage}
-        hasError={errors.phone?.hasError}
-        {...getOverrideProps(overrides, "phone")}
-      ></TextField>
-      <SelectField
-        label="Phone type"
-        placeholder="Please select an option"
-        isDisabled={false}
-        value={phoneType}
-        onChange={(e) => {
-          let { value } = e.target;
-          if (onChange) {
-            const modelFields = {
-              name,
-              email,
-              phone,
-              phoneType: value,
-              subject,
-              message,
-            };
-            const result = onChange(modelFields);
-            value = result?.phoneType ?? value;
-          }
-          if (errors.phoneType?.hasError) {
-            runValidationTasks("phoneType", value);
-          }
-          setPhoneType(value);
-        }}
-        onBlur={() => runValidationTasks("phoneType", phoneType)}
-        errorMessage={errors.phoneType?.errorMessage}
-        hasError={errors.phoneType?.hasError}
-        {...getOverrideProps(overrides, "phoneType")}
-      >
-        <option
-          children="Local"
-          value="LOCAL"
-          {...getOverrideProps(overrides, "phoneTypeoption0")}
-        ></option>
-        <option
-          children="Celular"
-          value="CELULAR"
-          {...getOverrideProps(overrides, "phoneTypeoption1")}
-        ></option>
-      </SelectField>
-      <TextField
-        label="Subject"
-        isRequired={false}
-        isReadOnly={false}
-        value={subject}
-        onChange={(e) => {
-          let { value } = e.target;
-          if (onChange) {
-            const modelFields = {
-              name,
-              email,
-              phone,
-              phoneType,
-              subject: value,
-              message,
-            };
-            const result = onChange(modelFields);
-            value = result?.subject ?? value;
-          }
-          if (errors.subject?.hasError) {
-            runValidationTasks("subject", value);
-          }
-          setSubject(value);
-        }}
-        onBlur={() => runValidationTasks("subject", subject)}
-        errorMessage={errors.subject?.errorMessage}
-        hasError={errors.subject?.hasError}
-        {...getOverrideProps(overrides, "subject")}
+        onBlur={() => runValidationTasks("u2p", u2p)}
+        errorMessage={errors.u2p?.errorMessage}
+        hasError={errors.u2p?.hasError}
+        {...getOverrideProps(overrides, "u2p")}
       ></TextField>
       <TextField
-        label="Message"
+        label="Rzr900"
         isRequired={false}
         isReadOnly={false}
-        value={message}
+        type="number"
+        step="any"
+        value={rzr900}
         onChange={(e) => {
-          let { value } = e.target;
+          let value = isNaN(parseFloat(e.target.value))
+            ? e.target.value
+            : parseFloat(e.target.value);
           if (onChange) {
             const modelFields = {
               name,
-              email,
-              phone,
-              phoneType,
-              subject,
-              message: value,
+              quad,
+              u2p,
+              rzr900: value,
+              maverickX3,
+              defender,
             };
             const result = onChange(modelFields);
-            value = result?.message ?? value;
+            value = result?.rzr900 ?? value;
           }
-          if (errors.message?.hasError) {
-            runValidationTasks("message", value);
+          if (errors.rzr900?.hasError) {
+            runValidationTasks("rzr900", value);
           }
-          setMessage(value);
+          setRzr900(value);
         }}
-        onBlur={() => runValidationTasks("message", message)}
-        errorMessage={errors.message?.errorMessage}
-        hasError={errors.message?.hasError}
-        {...getOverrideProps(overrides, "message")}
+        onBlur={() => runValidationTasks("rzr900", rzr900)}
+        errorMessage={errors.rzr900?.errorMessage}
+        hasError={errors.rzr900?.hasError}
+        {...getOverrideProps(overrides, "rzr900")}
+      ></TextField>
+      <TextField
+        label="Maverick x3"
+        isRequired={false}
+        isReadOnly={false}
+        type="number"
+        step="any"
+        value={maverickX3}
+        onChange={(e) => {
+          let value = isNaN(parseFloat(e.target.value))
+            ? e.target.value
+            : parseFloat(e.target.value);
+          if (onChange) {
+            const modelFields = {
+              name,
+              quad,
+              u2p,
+              rzr900,
+              maverickX3: value,
+              defender,
+            };
+            const result = onChange(modelFields);
+            value = result?.maverickX3 ?? value;
+          }
+          if (errors.maverickX3?.hasError) {
+            runValidationTasks("maverickX3", value);
+          }
+          setMaverickX3(value);
+        }}
+        onBlur={() => runValidationTasks("maverickX3", maverickX3)}
+        errorMessage={errors.maverickX3?.errorMessage}
+        hasError={errors.maverickX3?.hasError}
+        {...getOverrideProps(overrides, "maverickX3")}
+      ></TextField>
+      <TextField
+        label="Defender"
+        isRequired={false}
+        isReadOnly={false}
+        type="number"
+        step="any"
+        value={defender}
+        onChange={(e) => {
+          let value = isNaN(parseFloat(e.target.value))
+            ? e.target.value
+            : parseFloat(e.target.value);
+          if (onChange) {
+            const modelFields = {
+              name,
+              quad,
+              u2p,
+              rzr900,
+              maverickX3,
+              defender: value,
+            };
+            const result = onChange(modelFields);
+            value = result?.defender ?? value;
+          }
+          if (errors.defender?.hasError) {
+            runValidationTasks("defender", value);
+          }
+          setDefender(value);
+        }}
+        onBlur={() => runValidationTasks("defender", defender)}
+        errorMessage={errors.defender?.errorMessage}
+        hasError={errors.defender?.hasError}
+        {...getOverrideProps(overrides, "defender")}
       ></TextField>
       <Flex
         justifyContent="space-between"
@@ -361,7 +363,7 @@ export default function ContactFormUpdateForm(props) {
             event.preventDefault();
             resetStateValues();
           }}
-          isDisabled={!(idProp || contactFormModelProp)}
+          isDisabled={!(idProp || tour4x4ModelProp)}
           {...getOverrideProps(overrides, "ResetButton")}
         ></Button>
         <Flex
@@ -373,7 +375,7 @@ export default function ContactFormUpdateForm(props) {
             type="submit"
             variation="primary"
             isDisabled={
-              !(idProp || contactFormModelProp) ||
+              !(idProp || tour4x4ModelProp) ||
               Object.values(errors).some((e) => e?.hasError)
             }
             {...getOverrideProps(overrides, "SubmitButton")}

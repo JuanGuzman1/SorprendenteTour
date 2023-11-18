@@ -9,9 +9,9 @@ import * as React from "react";
 import { Button, Flex, Grid, TextField } from "@aws-amplify/ui-react";
 import { fetchByPath, getOverrideProps, validateField } from "./utils";
 import { generateClient } from "aws-amplify/api";
-import { createTour } from "../graphql/mutations";
+import { createTour4x4 } from "../graphql/mutations";
 const client = generateClient();
-export default function TourCreateForm(props) {
+export default function Tour4x4CreateForm(props) {
   const {
     clearOnSuccess = true,
     onSuccess,
@@ -24,23 +24,35 @@ export default function TourCreateForm(props) {
   } = props;
   const initialValues = {
     name: "",
-    pppValles: "",
-    pppXilitla: "",
+    quad: "",
+    u2p: "",
+    rzr900: "",
+    maverickX3: "",
+    defender: "",
   };
   const [name, setName] = React.useState(initialValues.name);
-  const [pppValles, setPppValles] = React.useState(initialValues.pppValles);
-  const [pppXilitla, setPppXilitla] = React.useState(initialValues.pppXilitla);
+  const [quad, setQuad] = React.useState(initialValues.quad);
+  const [u2p, setU2p] = React.useState(initialValues.u2p);
+  const [rzr900, setRzr900] = React.useState(initialValues.rzr900);
+  const [maverickX3, setMaverickX3] = React.useState(initialValues.maverickX3);
+  const [defender, setDefender] = React.useState(initialValues.defender);
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
     setName(initialValues.name);
-    setPppValles(initialValues.pppValles);
-    setPppXilitla(initialValues.pppXilitla);
+    setQuad(initialValues.quad);
+    setU2p(initialValues.u2p);
+    setRzr900(initialValues.rzr900);
+    setMaverickX3(initialValues.maverickX3);
+    setDefender(initialValues.defender);
     setErrors({});
   };
   const validations = {
     name: [],
-    pppValles: [],
-    pppXilitla: [],
+    quad: [],
+    u2p: [],
+    rzr900: [],
+    maverickX3: [],
+    defender: [],
   };
   const runValidationTasks = async (
     fieldName,
@@ -69,8 +81,11 @@ export default function TourCreateForm(props) {
         event.preventDefault();
         let modelFields = {
           name,
-          pppValles,
-          pppXilitla,
+          quad,
+          u2p,
+          rzr900,
+          maverickX3,
+          defender,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -101,7 +116,7 @@ export default function TourCreateForm(props) {
             }
           });
           await client.graphql({
-            query: createTour.replaceAll("__typename", ""),
+            query: createTour4x4.replaceAll("__typename", ""),
             variables: {
               input: {
                 ...modelFields,
@@ -121,7 +136,7 @@ export default function TourCreateForm(props) {
           }
         }
       }}
-      {...getOverrideProps(overrides, "TourCreateForm")}
+      {...getOverrideProps(overrides, "Tour4x4CreateForm")}
       {...rest}
     >
       <TextField
@@ -134,8 +149,11 @@ export default function TourCreateForm(props) {
           if (onChange) {
             const modelFields = {
               name: value,
-              pppValles,
-              pppXilitla,
+              quad,
+              u2p,
+              rzr900,
+              maverickX3,
+              defender,
             };
             const result = onChange(modelFields);
             value = result?.name ?? value;
@@ -151,12 +169,12 @@ export default function TourCreateForm(props) {
         {...getOverrideProps(overrides, "name")}
       ></TextField>
       <TextField
-        label="Ppp valles"
+        label="Quad"
         isRequired={false}
         isReadOnly={false}
         type="number"
         step="any"
-        value={pppValles}
+        value={quad}
         onChange={(e) => {
           let value = isNaN(parseFloat(e.target.value))
             ? e.target.value
@@ -164,29 +182,32 @@ export default function TourCreateForm(props) {
           if (onChange) {
             const modelFields = {
               name,
-              pppValles: value,
-              pppXilitla,
+              quad: value,
+              u2p,
+              rzr900,
+              maverickX3,
+              defender,
             };
             const result = onChange(modelFields);
-            value = result?.pppValles ?? value;
+            value = result?.quad ?? value;
           }
-          if (errors.pppValles?.hasError) {
-            runValidationTasks("pppValles", value);
+          if (errors.quad?.hasError) {
+            runValidationTasks("quad", value);
           }
-          setPppValles(value);
+          setQuad(value);
         }}
-        onBlur={() => runValidationTasks("pppValles", pppValles)}
-        errorMessage={errors.pppValles?.errorMessage}
-        hasError={errors.pppValles?.hasError}
-        {...getOverrideProps(overrides, "pppValles")}
+        onBlur={() => runValidationTasks("quad", quad)}
+        errorMessage={errors.quad?.errorMessage}
+        hasError={errors.quad?.hasError}
+        {...getOverrideProps(overrides, "quad")}
       ></TextField>
       <TextField
-        label="Ppp xilitla"
+        label="U2p"
         isRequired={false}
         isReadOnly={false}
         type="number"
         step="any"
-        value={pppXilitla}
+        value={u2p}
         onChange={(e) => {
           let value = isNaN(parseFloat(e.target.value))
             ? e.target.value
@@ -194,21 +215,123 @@ export default function TourCreateForm(props) {
           if (onChange) {
             const modelFields = {
               name,
-              pppValles,
-              pppXilitla: value,
+              quad,
+              u2p: value,
+              rzr900,
+              maverickX3,
+              defender,
             };
             const result = onChange(modelFields);
-            value = result?.pppXilitla ?? value;
+            value = result?.u2p ?? value;
           }
-          if (errors.pppXilitla?.hasError) {
-            runValidationTasks("pppXilitla", value);
+          if (errors.u2p?.hasError) {
+            runValidationTasks("u2p", value);
           }
-          setPppXilitla(value);
+          setU2p(value);
         }}
-        onBlur={() => runValidationTasks("pppXilitla", pppXilitla)}
-        errorMessage={errors.pppXilitla?.errorMessage}
-        hasError={errors.pppXilitla?.hasError}
-        {...getOverrideProps(overrides, "pppXilitla")}
+        onBlur={() => runValidationTasks("u2p", u2p)}
+        errorMessage={errors.u2p?.errorMessage}
+        hasError={errors.u2p?.hasError}
+        {...getOverrideProps(overrides, "u2p")}
+      ></TextField>
+      <TextField
+        label="Rzr900"
+        isRequired={false}
+        isReadOnly={false}
+        type="number"
+        step="any"
+        value={rzr900}
+        onChange={(e) => {
+          let value = isNaN(parseFloat(e.target.value))
+            ? e.target.value
+            : parseFloat(e.target.value);
+          if (onChange) {
+            const modelFields = {
+              name,
+              quad,
+              u2p,
+              rzr900: value,
+              maverickX3,
+              defender,
+            };
+            const result = onChange(modelFields);
+            value = result?.rzr900 ?? value;
+          }
+          if (errors.rzr900?.hasError) {
+            runValidationTasks("rzr900", value);
+          }
+          setRzr900(value);
+        }}
+        onBlur={() => runValidationTasks("rzr900", rzr900)}
+        errorMessage={errors.rzr900?.errorMessage}
+        hasError={errors.rzr900?.hasError}
+        {...getOverrideProps(overrides, "rzr900")}
+      ></TextField>
+      <TextField
+        label="Maverick x3"
+        isRequired={false}
+        isReadOnly={false}
+        type="number"
+        step="any"
+        value={maverickX3}
+        onChange={(e) => {
+          let value = isNaN(parseFloat(e.target.value))
+            ? e.target.value
+            : parseFloat(e.target.value);
+          if (onChange) {
+            const modelFields = {
+              name,
+              quad,
+              u2p,
+              rzr900,
+              maverickX3: value,
+              defender,
+            };
+            const result = onChange(modelFields);
+            value = result?.maverickX3 ?? value;
+          }
+          if (errors.maverickX3?.hasError) {
+            runValidationTasks("maverickX3", value);
+          }
+          setMaverickX3(value);
+        }}
+        onBlur={() => runValidationTasks("maverickX3", maverickX3)}
+        errorMessage={errors.maverickX3?.errorMessage}
+        hasError={errors.maverickX3?.hasError}
+        {...getOverrideProps(overrides, "maverickX3")}
+      ></TextField>
+      <TextField
+        label="Defender"
+        isRequired={false}
+        isReadOnly={false}
+        type="number"
+        step="any"
+        value={defender}
+        onChange={(e) => {
+          let value = isNaN(parseFloat(e.target.value))
+            ? e.target.value
+            : parseFloat(e.target.value);
+          if (onChange) {
+            const modelFields = {
+              name,
+              quad,
+              u2p,
+              rzr900,
+              maverickX3,
+              defender: value,
+            };
+            const result = onChange(modelFields);
+            value = result?.defender ?? value;
+          }
+          if (errors.defender?.hasError) {
+            runValidationTasks("defender", value);
+          }
+          setDefender(value);
+        }}
+        onBlur={() => runValidationTasks("defender", defender)}
+        errorMessage={errors.defender?.errorMessage}
+        hasError={errors.defender?.hasError}
+        {...getOverrideProps(overrides, "defender")}
       ></TextField>
       <Flex
         justifyContent="space-between"
