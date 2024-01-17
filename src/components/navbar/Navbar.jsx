@@ -39,16 +39,16 @@ const Navbar = () => {
 
   return (
     <nav
-      class={`border-gray-200 px-2 sm:px-4 py-2.5 fixed top-0 z-[200] w-full ${
-        isScrolled ? "navbar scrolled" : " navbar"
+      className={`border-gray-200 px-2 sm:px-4 py-2.5 fixed top-0 z-[200] w-full ${
+        isScrolled ? "navbar scrolled " : "navbar "
       }`}
     >
-      <div class="container flex flex-wrap justify-between items-center mx-auto">
+      <div className="container flex flex-wrap justify-between items-center mx-auto">
         <Link to="/" class="flex">
           <img
             width="200"
             src="assets/logo.png"
-            class="hover:animate-bounce"
+            className="hover:animate-bounce portrait:w-28 "
             alt="logo"
           />
         </Link>
@@ -56,10 +56,9 @@ const Navbar = () => {
           data-collapse-toggle="mobile-menu"
           type="button"
           class="inline-flex items-center p-2 ml-3 text-sm text-white rounded-lg md:hidden hover:bg-cyan-300 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-          aria-controls="mobile-menu-2"
+          aria-controls="mobile-menu"
           aria-expanded="false"
         >
-          <span class="sr-only">Open main menu</span>
           <svg
             class="w-6 h-6"
             fill="currentColor"
@@ -85,31 +84,22 @@ const Navbar = () => {
             ></path>
           </svg>
         </button>
-        <div class="hidden w-full md:block md:w-auto" id="mobile-menu">
-          <ul class="flex flex-col mt-4 md:flex-row md:space-x-6 md:mt-0 md:text-sm md:font-medium">
+        <div className="hidden w-full md:block md:w-auto" id="mobile-menu">
+          <ul className="flex flex-col mt-4 md:flex-row md:space-x-6 md:mt-0 md:text-sm md:font-medium">
             <li>
               <Link
                 onClick={() => gtag_report_conversion("/")}
                 to="/"
-                className="text-xl font-medium text-white block py-2 pr-4 pl-3 rounded md:bg-transparent  md:p-0 dark:text-white"
+                className="font-medium text-white block py-2 pr-4 pl-3 rounded md:bg-transparent  md:p-0 dark:text-white"
               >
                 Inicio
               </Link>
             </li>
             <li>
               <Link
-                onClick={() => gtag_report_conversion("/nosotros")}
-                to="/nosotros"
-                class="text-xl font-medium text-white block py-2 pr-4 pl-3 border-b border-gray-100 hover:bg-cyan-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-              >
-                ¿Quienes somos?
-              </Link>
-            </li>
-            <li>
-              <Link
                 onClick={() => gtag_report_conversion("/paquetes")}
                 to="/paquetes"
-                class="text-xl font-medium block py-2 pr-4 pl-3 text-white border-b border-gray-100 hover:bg-cyan-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                class="font-medium block py-2 pr-4 pl-3 text-white border-b border-gray-100 hover:bg-cyan-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >
                 Paquetes
               </Link>
@@ -118,7 +108,7 @@ const Navbar = () => {
               <Link
                 onClick={() => gtag_report_conversion("/tours")}
                 to="/tours"
-                class="text-xl font-medium block py-2 pr-4 pl-3 text-white border-b border-gray-100 hover:bg-cyan-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                class="font-medium block py-2 pr-4 pl-3 text-white border-b border-gray-100 hover:bg-cyan-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >
                 Tours
               </Link>
@@ -127,7 +117,7 @@ const Navbar = () => {
               <Link
                 onClick={() => gtag_report_conversion("/tours4x4")}
                 to="/tours4x4"
-                class="text-xl font-medium block py-2 pr-4 pl-3 text-red-500 animate-bounce border-b border-gray-100 hover:bg-cyan-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                class="font-medium block py-2 pr-4 pl-3 text-red-500 border-b border-gray-100 hover:bg-cyan-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >
                 Tours Xilitla 4x4
               </Link>
@@ -136,16 +126,25 @@ const Navbar = () => {
               <Link
                 onClick={() => gtag_report_conversion("/galeria")}
                 to="/galeria"
-                class="text-xl font-medium block py-2 pr-4 pl-3 text-white border-b border-gray-100 hover:bg-cyan-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                class="font-medium block py-2 pr-4 pl-3 text-white border-b border-gray-100 hover:bg-cyan-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >
                 Galeria
               </Link>
             </li>
             <li>
               <Link
+                onClick={() => gtag_report_conversion("/nosotros")}
+                to="/nosotros"
+                class="font-medium text-white block py-2 pr-4 pl-3 border-b border-gray-100 hover:bg-cyan-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+              >
+                ¿Quienes somos?
+              </Link>
+            </li>
+            <li>
+              <Link
                 onClick={() => gtag_report_conversion("/contacto")}
                 to="/contacto"
-                class="text-xl font-medium block py-2 pr-4 pl-3 text-white hover:bg-cyan-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                class="font-medium block py-2 pr-4 pl-3 text-white hover:bg-cyan-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
               >
                 Contacto
               </Link>
@@ -154,7 +153,7 @@ const Navbar = () => {
               <Link
                 onClick={() => gtag_report_conversion("/checkout")}
                 to={"/checkout"}
-                class="text-xl font-medium block py-2 pr-4 pl-3 text-white hover:bg-cyan-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                class="font-medium block py-2 pr-4 pl-3 text-white hover:bg-cyan-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
               >
                 <ShoppingCartIcon />
               </Link>
@@ -168,7 +167,7 @@ const Navbar = () => {
             </li>
             <li className="relative inline-block">
               <button
-                class="text-xl font-medium block py-2 pr-4 pl-3 text-white hover:bg-cyan-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                class="font-medium block py-2 pr-4 pl-3 text-white hover:bg-cyan-300 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 onClick={() => setDropOpen(!dropOpen)}
               >
                 <PersonIcon />
