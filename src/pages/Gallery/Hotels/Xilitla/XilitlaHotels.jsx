@@ -1,6 +1,7 @@
 import React from "react";
 import ImageGallery from "../../../../components/Gallery/ImageGallery";
 import {
+  hotelCasaBlanca,
   hotelCafeNaranja,
   hotelCaminoSurreal,
   hotelMagnolia,
@@ -28,7 +29,10 @@ const XilitlaHotels = () => {
             contactanos pregunta por el de tu preferencia y has tu reservacion.
           </p>
         </div>
-
+        <div className="mt-5">
+          <h1 className="text-[30px] text-center">HOTEL CASA BLANCA</h1>
+          <ImageGallery data={hotelCasaBlanca} />
+        </div>
         <div className="mt-5">
           <h1 className="text-[30px] text-center">HOTEL CAFE Y NARANJA</h1>
           <ImageGallery data={hotelCafeNaranja} />

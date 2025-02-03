@@ -1,3 +1,11 @@
+export const hotelCasaBlanca = [
+  "assets/images/hotels/xilitla/CASABLANCA/image1.jpeg",
+  "assets/images/hotels/xilitla/CASABLANCA/image2.jpeg",
+  "assets/images/hotels/xilitla/CASABLANCA/image3.jpeg",
+  "assets/images/hotels/xilitla/CASABLANCA/image4.jpeg",
+  "assets/images/hotels/xilitla/CASABLANCA/video1.mp4",
+];
+
 export const hotelCafeNaranja = [
   "assets/images/hotels/xilitla/CAFEYNARANJA/image1.jpeg",
   "assets/images/hotels/xilitla/CAFEYNARANJA/image2.jpeg",
